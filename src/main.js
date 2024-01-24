@@ -2,7 +2,6 @@
 
 import('./js/home-quote.js');
 import('./js/exercises.js');
-import('./js/motivation.js');
 import('./js/footer.js');
 import('./js/favorites-quote.js');
 import('./js/favorites-section.js');
