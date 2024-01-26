@@ -1,3 +1,4 @@
+// scroll-up
 const goTopBtn = document.querySelector('.go-top');
 goTopBtn.addEventListener('click', goTop);
 window.addEventListener('scroll', trackScroll);
