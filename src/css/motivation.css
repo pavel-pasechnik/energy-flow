@@ -1,21 +1,4 @@
-.go-top {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #7e847f;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  display: none;
-}
-.go-top--show {
-  display: block;
-}
+/* motivation-section-styles */
 .motivation-desc-wrapper {
   border-radius: 30px;
   background: #1b1b1b;
@@ -45,6 +28,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.3;
+}
+.motivation-icon {
+  max-width: none;
 }
 .motivation-icon-wrappper {
   margin-right: 18px;
