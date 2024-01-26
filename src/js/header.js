@@ -1,9 +1,16 @@
+//navigation current class
+
 function onload() {
   const lnk = document.querySelectorAll('.navigation-link');
-  for (let i = 0; i < lnk.length; i++)
-    if (lnk[i].href == document.URL.split(/[\?#]/)[0]) {
+  const pathName = window.location.pathname;
+
+  for (let i = 0; i < lnk.length; i++) {
+    const currentHref = lnk[i].pathname;
+
+    if ((pathName === '/' && i === 0) || currentHref === pathName) {
       lnk[i].classList.add('current-page-link');
     }
+  }
 }
 
 onload();
