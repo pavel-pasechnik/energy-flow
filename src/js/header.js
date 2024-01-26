@@ -1,24 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+function onload() {
+  const lnk = document.querySelectorAll('.navigation-link');
+  for (let i = 0; i < lnk.length; i++)
+    if (lnk[i].href == document.URL.split(/[\?#]/)[0]) {
+      lnk[i].classList.add('current-page-link');
+    }
+}
 
-  const navigationLinks = document.querySelectorAll('.navigation-link');
-
-  Array.from(navigationLinks)
-    .reduce((accumulator, link) => {
-      const linkPages = link
-        .getAttribute('href')
-        .split('/')
-        .pop()
-        .split('.')[0];
-      const isCurrentPages = linkPages === currentPage;
-
-      if (isCurrentPages) {
-        accumulator.push(link);
-      }
-
-      return accumulator;
-    }, [])
-    .forEach(link => {
-      link.classList.add('current-page-link');
-    });
-});
+onload();
