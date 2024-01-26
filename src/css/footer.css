@@ -39,21 +39,18 @@
   }
   
   @media (min-width: 375px) {
-    .container {
+    .footer-container {
       max-width: 375px;
     }
   }
   @media (min-width: 768px) {
-    section {
-      padding: 8px 0;
-    }
-    .container {
+    .footer-container {
       padding: 0 16px;
       max-width: 768px;
     }
   }
   @media (min-width: 1440px) {
-    .container {
+    .footer-container {
       max-width: 1440px;
     }
   }
