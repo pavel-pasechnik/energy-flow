@@ -300,13 +300,16 @@
     border-radius: 50px;
     width: 1408px;
     height: 454px;
+
   }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .footer {
+
       background-image: url(../img/footer/d-f-img/desk-foot-2x.jpg);
+
     }
   }
 
@@ -333,4 +336,6 @@
     margin-left: 0;
     margin-right: 48px;
   }
+
 }
+
