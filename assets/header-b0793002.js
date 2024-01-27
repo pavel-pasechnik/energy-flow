@@ -1,2 +1,0 @@
-document.addEventListener("DOMContentLoaded",o);document.readyState==="complete"||document.readyState!=="loading"&&!document.documentElement.doScroll?o():document.addEventListener("DOMContentLoaded",o);function o(){const t=document.querySelectorAll(".navigation-link"),n=window.location.pathname;for(let e=0;e<t.length;e++){const d=t[e].pathname;(n==="/"&&e===0||n!=="/"&&d===n)&&t[e].classList.add("current-page-link")}}
-//# sourceMappingURL=header-b0793002.js.map
