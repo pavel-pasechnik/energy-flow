@@ -1,3 +1,7 @@
+.home-qourter {
+  margin-top: 16px;
+}
+
 .home-quote-container {
   display: flex;
   flex-direction: column;
