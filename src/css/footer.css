@@ -31,6 +31,7 @@
     url('./fonts/DMSans-Medium.woff2') format('woff2');
 }
 
+
 .footer-container {
   margin: 0 auto;
   padding: 0 20px;
@@ -52,6 +53,7 @@
     max-width: 1440px;
   }
 }
+
 
 /* ________________Mobile version_____________ */
 
@@ -221,73 +223,77 @@
       background-image: url(../img/footer/t-f-img/tab-foot-2x.jpg);
     }
   }
-}
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.footer-group {
-  margin-right: 145px;
-  margin-left: 48px;
-}
+  .footer-group {
+    margin-right: 145px;
+    margin-left: 48px;
+  }
 
-.logo-footer {
-  font-size: 28px;
-  line-height: 1;
-}
+  .logo-footer {
+    font-size: 28px;
+    line-height: 1;
+  }
 
-.social-list {
-  margin-top: 30px;
-}
-.social-icon {
-  width: 28px;
-  height: 28px;
-}
+  .social-list {
+    margin-top: 30px;
+  }
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
 
-.footer-credo {
-  width: 345px;
+  .footer-credo {
+    width: 345px;
 
-  font-size: 54px;
-  line-height: 0.93;
-  margin-bottom: 32px;
-}
+    font-size: 54px;
+    line-height: 0.93;
+    margin-bottom: 32px;
+  }
 
-.footer-credo-item {
-  font-size: 54px;
-  line-height: 0.93;
-}
+  .footer-credo-item {
+    font-size: 54px;
+    line-height: 0.93;
+  }
 
-.section-subscription {
-  margin-left: 343px;
-}
+  .section-subscription {
+    margin-left: 343px;
+  }
 
-.footer-box-title {
-  margin-bottom: 20px;
-  font-size: 18px;
-  line-height: 1.33;
-}
-.footer-button {
-  width: 100%;
-  padding: 12px 157px;
-}
-.input-footer {
-  margin-bottom: 20px;
-  width: 100%;
-}
+  .footer-box-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .footer-button {
+    width: 100%;
+    padding: 12px 157px;
+  }
+  .input-footer {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 
-.security {
-  display: flex;
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  width: 437px;
-}
+  .security {
+    display: flex;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 437px;
+  }
 
-.security-text {
-  font-size: 14px;
-  line-height: 1.28;
-}
+  .security-text {
+    font-size: 14px;
+    line-height: 1.28;
+  }
 
-.security-text.first {
-  margin-right: 32px;
+  .security-text.first {
+    margin-right: 32px;
+  }
 }
 
 /* _________________Desktop-version_______________- */
@@ -300,17 +306,18 @@
     border-radius: 50px;
     width: 1408px;
     height: 454px;
-
   }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .footer {
-
       background-image: url(../img/footer/d-f-img/desk-foot-2x.jpg);
-
     }
+  }
+  .footer-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
 
   .footer-group {
@@ -336,6 +343,4 @@
     margin-left: 0;
     margin-right: 48px;
   }
-
 }
-
