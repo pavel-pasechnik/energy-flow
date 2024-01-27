@@ -1,5 +1,17 @@
 import { getRequest } from './api-energy-flow';
 
+// Додала слухач подій для кнопки старту вправи в галереї
+document.addEventListener('click', event => {
+  // Перевірте, чи натискання відбулося на кнопці "Start"
+  if (event.target.classList.contains('exercises-gallery-btn-start')) {
+    // Одержання ID вправи з атрибуту data-action
+    const exerciseId = event.target.dataset.action;
+
+    // Викличте вашу функцію showExerciseModal з отриманим ID
+    showExerciseModal(exerciseId);
+  }
+});
+
 // Функція для виклику API та показу модального вікна з даними вправи
 function showExerciseModal(exerciseId) {
   getRequest(`/exercises/${exerciseId}`).then(data => {
@@ -162,15 +174,10 @@ function closeExerciseModal() {
   }
 }
 
-// Додавання слухача події для відкриття модального вікна
-document.getElementById('startButton').addEventListener('click', () => {
-  const exerciseId = '64f389465ae26083f39b17df';
-  showExerciseModal(exerciseId);
-});
-
 // Додавання слухача події для закриття модального вікна по клавіші "Escape"
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeExerciseModal();
   }
 });
+
