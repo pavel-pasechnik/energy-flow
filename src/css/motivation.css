@@ -76,4 +76,7 @@
   .motivation-desc-wrapper {
     padding: 64px;
   }
+  .motivation-girl {
+    max-width: none;
+  }
 }
