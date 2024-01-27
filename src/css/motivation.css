@@ -1,4 +1,7 @@
 /* motivation-section-styles */
+.motivation {
+  margin-top: 16px;
+}
 .motivation-desc-wrapper {
   border-radius: 30px;
   background: #1b1b1b;
