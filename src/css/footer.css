@@ -65,6 +65,9 @@
   border-radius: 30px;
   width: 335px;
   height: 471px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 @media (min-device-pixel-ratio: 2),
