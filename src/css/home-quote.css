@@ -66,6 +66,7 @@
 .home-quote-img {
   width: 335px;
   height: 272px;
+  max-width: none;
 }
 
 @media screen and (min-width: 768px) {
