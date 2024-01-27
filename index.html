@@ -118,13 +118,25 @@
         </svg>
       </div>
     </div>
-    <img
-      class="home-quote-img"
-      srcset="/energy-flow/assets/home-quote-img-mobile-1x-34767fbc.png 335w, /energy-flow/assets/home-quote-img-mobile-2x-b1ed90b7.png 670w, /energy-flow/assets/home-quote-img-desktop-1x-8d00afe0.png 704w, /energy-flow/assets/home-quote-img-desktop-2x-5b0e9f1d.png 1408w, /energy-flow/assets/home-quote-img-tablet-1x-602475c9.png 736w, /energy-flow/assets/home-quote-img-tablet-2x-b237dadf.png 1472w"
-      sizes="(max-width: 767px) 335px, ((min-width: 768px) and (max-width: 1439px)) 736px, 704px"
-      src="/energy-flow/assets/home-quote-img-mobile-1x-34767fbc.png"
-      alt="Beauty girl"
-    />
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="/energy-flow/assets/home-quote-img-desktop-1x-8d00afe0.png 1x, /energy-flow/assets/home-quote-img-desktop-2x-5b0e9f1d.png 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="/energy-flow/assets/home-quote-img-tablet-1x-602475c9.png 1x, /energy-flow/assets/home-quote-img-tablet-2x-b237dadf.png 2x"
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="/energy-flow/assets/home-quote-img-mobile-1x-34767fbc.png 1x, /energy-flow/assets/home-quote-img-mobile-2x-b1ed90b7.png 2x"
+      />
+      <img
+        class="motivation-girl"
+        src="/energy-flow/assets/motivation-girl-d-ea3a0d2a.png"
+        alt="girl"
+      />
+    </picture>
   </div>
 </section>
 
