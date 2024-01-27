@@ -61,7 +61,7 @@
 .footer {
     margin: 0 auto;
     padding: 40px 0;
-    background-image: url(../img/footer/m-f-img/mob-foot-1x.jpg);
+    background-image: url(../img/Footer/m-f-img/mob-foot-1x.jpg);
     background-size: cover;
     border-radius: 30px;
     width: 335px;
@@ -72,7 +72,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .footer {
-      background-image: url(../img/footer/m-f-img/mob-foot-2x.jpg);
+      background-image: url(../img/Footer/m-f-img/mob-foot-2x.jpg);
     }
   }
   
@@ -212,7 +212,7 @@
     .footer {
       position: relative;
       padding: 64px 0;
-      background-image: url(../img/footer/t-f-img/tab-foot-1x.jpg);
+      background-image: url(../img/Footer/t-f-img/tab-foot-1x.jpg);
       border-radius: 50px;
       width: 736px;
       height: 576px;
@@ -221,7 +221,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .footer {
-        background-image: url(../img/footer/t-f-img/tab-foot-2x.jpg);
+        background-image: url(../img/Footer/t-f-img/tab-foot-2x.jpg);
       }
     }
     .container {
@@ -303,7 +303,7 @@
     .footer {
       position: relative;
       padding: 64px 0;
-      background-image: url(../img/footer/d-f-img/desk-foot-1x.jpg);
+      background-image: url(../img/Footer/d-f-img/desk-foot-1x.jpg);
       border-radius: 50px;
       width: 1408px;
       height: 454px;
@@ -313,7 +313,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .footer {
-        background-image: url(../img/footer/d-f-img/desk-foot-2x.jpg);
+        background-image: url(../img/Footer/d-f-img/desk-foot-2x.jpg);
       }
     }
     .container {
