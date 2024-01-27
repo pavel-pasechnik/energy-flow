@@ -223,11 +223,6 @@
   }
 }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .footer-group {
   margin-right: 145px;
   margin-left: 48px;
@@ -313,11 +308,6 @@
     .footer {
       background-image: url(../img/footer/d-f-img/desk-foot-2x.jpg);
     }
-  }
-
-  .footer-container {
-    flex-wrap: nowrap;
-    justify-content: space-between;
   }
 
   .footer-group {
