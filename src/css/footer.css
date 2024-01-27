@@ -223,7 +223,7 @@
       background-image: url(../img/Footer/t-f-img/tab-foot-2x.jpg);
     }
   }
-  .container {
+  .footer-container {
     display: flex;
     flex-wrap: wrap;
   }
@@ -315,7 +315,7 @@
       background-image: url(../img/Footer/d-f-img/desk-foot-2x.jpg);
     }
   }
-  .container {
+  .footer-container {
     flex-wrap: nowrap;
     justify-content: space-between;
   }
