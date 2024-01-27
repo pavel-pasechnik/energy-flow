@@ -33,9 +33,9 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
+    display: flex;
+    gap: 4px;
 }
-
-
 
 .favorites-trash,
 .favorites-arrow {
@@ -125,6 +125,42 @@
     line-height: 1.5;
 }
 
+.favorites-container-error-notification {
+    border-radius: 30px;
+    background: #E8E8E8;
+}
+
+.favorites-container-error-title {
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    /* 100% */
+    letter-spacing: -0.64px;
+    padding: 40px 20px 0px;
+}
+
+.favorites-container-error-description {
+    padding: 80px 44px 128px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.favorites-error-description {
+    color: #1B1B1B;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 128.571% */
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -175,6 +211,13 @@
 
     .faforites-scroll-bar::-webkit-scrollbar-thumb {
         background: #777;
+    }
+
+    .favorites-container-error-title {
+        font-size: 44px;
+        line-height: 1;
+        letter-spacing: -0.02;
+        padding: 64px 48px 0px;
     }
 
 }
