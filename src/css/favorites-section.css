@@ -1,7 +1,7 @@
 .favorites-main {
     border-radius: 30px;
     background: #E8E8E8;
-    padding: 0 20px 20px;
+    padding: 0 20px 40px;
     margin-top: 100px;
 }
 
@@ -157,13 +157,61 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px;
-    /* 128.571% */
+    line-height: 1.29;
+}
+
+.favorites-pagination-main-container-btn {
+    padding: 0 92px;
+}
+
+.favorites-pagination-container-btn {
+    display: flex;
+    gap: 8px;
+}
+
+.favorites-pagination-btn {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    border: 1px solid #1B1B1B;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.favorites-pagination-btn-not-activ {
+    width: 12px;
+    height: 32px;
+    color: rgba(27, 27, 27, 0.40);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
 @media screen and (min-width: 768px) {
+
+    .favorites-pagination-btn {
+        display: none;
+    }
 
     .favorites-main {
         padding: 0 16px 64px 48px;
@@ -216,8 +264,17 @@
     .favorites-container-error-title {
         font-size: 44px;
         line-height: 1;
-        letter-spacing: -0.02;
+        letter-spacing: -0.02em;
         padding: 64px 48px 0px;
+    }
+
+    .favorites-container-error-description {
+        padding: 208px 91px 437px;
+    }
+
+    .favorites-error-description {
+        font-size: 18px;
+        line-height: 1.33;
     }
 
 }
@@ -230,5 +287,9 @@
 
     .favorits-item {
         width: 424px;
+    }
+
+    .favorites-container-error-description {
+        padding: 146px 427px 258px;
     }
 }
