@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     
-    <script type="module" crossorigin src="/energy-flow/assets/main-ee0f8dfb.js"></script>
+    <script type="module" crossorigin src="/energy-flow/assets/main-95fdeb95.js"></script>
     <script type="module" crossorigin src="/energy-flow/assets/vendor-e6025c9a.js"></script>
     <script type="module" crossorigin src="/energy-flow/assets/footer-8d8835fb.js"></script>
-    <link rel="stylesheet" href="/energy-flow/assets/main-948e47d0.css">
+    <link rel="stylesheet" href="/energy-flow/assets/main-1e5bcada.css">
     <link rel="stylesheet" href="/energy-flow/assets/vendor-ef539242.css">
   </head>
   <body>
@@ -210,15 +210,26 @@
       <!-- motivation section -->
 <section class="motivation">
   <div class="container motivation-container">
-    <img
-      class="motivation-girl"
-      srcset="/energy-flow/assets/motivation-girl-m-5f72e085.png 335w, /energy-flow/assets/motivation-girl-m@2x-dff5b043.png 670w, /energy-flow/assets/motivation-girl-t-0365a79c.png 736w, /energy-flow/assets/motivation-girl-t@2x-92773437.png 1472w, /energy-flow/assets/motivation-girl-d-ea3a0d2a.png 704w, /energy-flow/assets/motivation-girl-d@2x-7bc0a81d.png 1408w"
-      sizes="(min-width: 1440px) 704px, 
-                  (min-width: 768px) 736px, 
-                  (max-width: 768px) 335px"
-      src="/energy-flow/assets/motivation-girl-d-ea3a0d2a.png"
-      alt="girl"
-    />
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="/energy-flow/assets/motivation-girl-d-ea3a0d2a.png 1x, /energy-flow/assets/motivation-girl-d@2x-7bc0a81d.png 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="/energy-flow/assets/motivation-girl-t-0365a79c.png 1x, /energy-flow/assets/motivation-girl-t@2x-92773437.png 2x"
+      />
+      <source
+        media="(max-width: 768px)"
+        srcset="/energy-flow/assets/motivation-girl-m-5f72e085.png 1x, /energy-flow/assets/motivation-girl-m@2x-dff5b043.png 2x"
+      />
+      <img
+        class="motivation-girl"
+        src="/energy-flow/assets/motivation-girl-d-ea3a0d2a.png"
+        alt="girl"
+      />
+    </picture>
+
     <div class="motivation-desc-wrapper">
       <div class="motivation-icon-wrappper">
         <svg width="20" height="20" class="motivation-icon">
