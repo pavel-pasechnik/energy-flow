@@ -17,19 +17,33 @@
         </svg>
       </div>
     </div>
-    <img
-      class="home-quote-img"
-      srcset="
-        ./img/home-quorte/home-quote-img-mobile-1x.png   335w,
-        ./img/home-quorte/home-quote-img-mobile-2x.png   670w,
-        ./img/home-quorte/home-quote-img-desktop-1x.png  704w,
-        ./img/home-quorte/home-quote-img-desktop-2x.png 1408w,
-        ./img/home-quorte/home-quote-img-tablet-1x.png   736w,
-        ./img/home-quorte/home-quote-img-tablet-2x.png  1472w
-      "
-      sizes="(max-width: 767px) 335px, ((min-width: 768px) and (max-width: 1439px)) 736px, 704px"
-      src="./img/home-quorte/home-quote-img-mobile-1x.png"
-      alt="Beauty girl"
-    />
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./img/home-quote/home-quote-img-desktop-1x.png 1x,
+          ./img/home-quote/home-quote-img-desktop-2x.png 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./img/home-quote/home-quote-img-tablet-1x.png 1x,
+          ./img/home-quote/home-quote-img-tablet-2x.png 2x
+        "
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./img/home-quote/home-quote-img-mobile-1x.png 1x,
+          ./img/home-quote/home-quote-img-mobile-2x.png 2x
+        "
+      />
+      <img
+        class="motivation-girl"
+        src="./img/motivation/motivation-girl-d.png"
+        alt="girl"
+      />
+    </picture>
   </div>
 </section>
