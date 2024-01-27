@@ -1,0 +1,191 @@
+.favorites-main {
+    border-radius: 30px;
+    background: #E8E8E8;
+    padding: 0 20px 20px;
+    margin-top: 100px;
+}
+
+.favorites-main-title {
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    /*не тягнеться */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.favorits-item {
+    padding: 16px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background: #FFF;
+}
+
+.favorites-title-descriptoin {
+    color: #1B1B1B;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+
+.favorites-trash,
+.favorites-arrow {
+    stroke: #1B1B1B;
+    fill: #E8E8E8;
+    letter-spacing: 0px;
+    line-height: 0px;
+}
+
+.favorites-btn-arrow,
+.favorites-btn-trash {
+    padding: 0px;
+    border: none;
+    background: transparent;
+}
+
+.favorites-icon-man {
+    border: none;
+    background: #FFF;
+    padding: 0;
+    line-height: 0;
+    border-radius: 50%;
+    stroke: rgba(126, 132, 127, 1);
+    fill: rgba(246, 246, 246, 1);
+}
+
+.favoritese-title {
+    width: 76px;
+    text-align: center;
+    border-radius: 15px;
+    background: #7E847F;
+    color: #F6F6F6;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 5px 8px;
+}
+
+.favorites-title-btn-start {
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.13;
+}
+
+.favorites-container-workout,
+.favorites-container-start {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.favorites-container-nav {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding-bottom: 25px;
+
+}
+
+.favorite-title-exercises {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.favorites-description-workout {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 6px;
+    column-gap: 16px;
+    justify-content: space-between;
+}
+
+.favorites-description-workout-span {
+    color: rgba(27, 27, 27, 0.40);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .favorites-main {
+        padding: 0 16px 64px 48px;
+    }
+
+    .favorits-item {
+        width: 313px;
+        padding: 16px;
+        margin: 0;
+    }
+
+    .favorites-list-item {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 14px;
+        row-gap: 20px;
+    }
+
+    .favorites-main-title {
+        font-size: 44px;
+        line-height: 49px;
+        /* 100% */
+        letter-spacing: -0.88px;
+        padding-bottom: 32px;
+        padding-top: 64px;
+    }
+
+    .faforites-scroll-bar {
+        height: 479px;
+        margin: 0 auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .faforites-scroll-bar::-webkit-scrollbar {
+        height: 153px;
+        scroll-behavior: smooth;
+        width: 8px;
+
+    }
+
+    .faforites-scroll-bar::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    .faforites-scroll-bar::-webkit-scrollbar-thumb {
+        background: #777;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .favorites-list-item {
+        column-gap: 20px;
+        row-gap: 28px;
+    }
+
+    .favorits-item {
+        width: 424px;
+    }
+}
