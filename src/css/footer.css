@@ -8,7 +8,7 @@
     --dark-white: #e8e8e8;
     --white: #ffffff;
   }
-  
+
   @font-face {
     font-family: 'DM Sans', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
@@ -31,13 +31,13 @@
       url('./fonts/DMSans-Bold.woff2') format('woff2'),
       url('./fonts/DMSans-Medium.woff2') format('woff2');
   }
-  
+
 
   .footer-container {
     margin: 0 auto;
     padding: 0 20px;
   }
-  
+
   @media (min-width: 375px) {
     .footer-container {
       max-width: 375px;
@@ -67,7 +67,7 @@
     width: 335px;
     height: 471px;
   }
-  
+
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
@@ -75,7 +75,7 @@
       background-image: url(../img/footer/m-f-img/mob-foot-2x.jpg);
     }
   }
-  
+
   .footer-group {
     margin-bottom: 40px;
   }
@@ -88,13 +88,13 @@
     line-height: 1.13;
     letter-spacing: -0.02em;
   }
-  
+
   .social-list {
     display: flex;
     gap: 8px;
     margin-top: 9px;
   }
-  
+
   .social-link-footer {
     display: flex;
     padding: 8px;
@@ -129,7 +129,7 @@
     line-height: 32px;
     letter-spacing: -0.64px;
   }
-  
+
   .footer-box-title {
     margin-bottom: 20px;
     color: var(--secondary-color);
@@ -139,7 +139,7 @@
     font-weight: 400;
     line-height: 1.28;
   }
-  
+
   .section-subscription {
     margin-left: 0;
   }
@@ -162,14 +162,14 @@
     font-weight: 400;
     line-height: 18px;
   }
-  
+
   .input-footer:hover,
   .input-footer:focus,
   .input-footer:active {
     border: 1px solid #1b1b1b;
     outline: none;
   }
-  
+
   .footer-button {
     display: flex;
     padding: 12px 130px;
@@ -193,7 +193,7 @@
   .footer-button:focus {
     background: var(--dark-grey);
   }
-  
+
   .security-text {
     color: var(--secondary-color);
     font-family: 'DM Sans';
@@ -205,9 +205,9 @@
     opacity: 0.9;
     margin-bottom: 10px;
   }
-  
+
   /* ____________Tablet version_______________ */
-  
+
   @media (min-width: 768px) {
     .footer {
       position: relative;
@@ -224,21 +224,18 @@
         background-image: url(../img/footer/t-f-img/tab-foot-2x.jpg);
       }
     }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
     }
-  
+
     .footer-group {
       margin-right: 145px;
       margin-left: 48px;
     }
-  
+
     .logo-footer {
       font-size: 28px;
       line-height: 1;
     }
-  
+
     .social-list {
       margin-top: 30px;
     }
@@ -246,24 +243,24 @@
       width: 28px;
       height: 28px;
     }
-  
+
     .footer-credo {
       width: 345px;
-  
+
       font-size: 54px;
       line-height: 0.93;
       margin-bottom: 32px;
     }
-  
+
     .footer-credo-item {
       font-size: 54px;
       line-height: 0.93;
     }
-  
+
     .section-subscription {
       margin-left: 343px;
     }
-  
+
     .footer-box-title {
       margin-bottom: 20px;
       font-size: 18px;
@@ -277,7 +274,7 @@
       margin-bottom: 20px;
       width: 100%;
     }
-  
+
     .security {
       display: flex;
       position: absolute;
@@ -286,19 +283,19 @@
       transform: translate(-50%, 50%);
       width: 437px;
     }
-  
+
     .security-text {
       font-size: 14px;
       line-height: 1.28;
     }
-  
+
     .security-text.first {
       margin-right: 32px;
     }
   }
-  
+
   /* _________________Desktop-version_______________- */
-  
+
   @media (min-width: 1440px) {
     .footer {
       position: relative;
@@ -308,7 +305,7 @@
       width: 1408px;
       height: 454px;
     }
-  
+
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
@@ -316,15 +313,11 @@
         background-image: url(../img/footer/d-f-img/desk-foot-2x.jpg);
       }
     }
-    .container {
-      flex-wrap: nowrap;
-      justify-content: space-between;
-    }
-  
+
     .footer-group {
       margin-right: 162px;
     }
-  
+
     .social-list {
       margin-top: 40px;
     }
@@ -334,12 +327,12 @@
       line-height: 0.96;
       margin-bottom: 0;
     }
-  
+
     .footer-credo-item {
       font-size: 64px;
       line-height: 0.96;
     }
-  
+
     .section-subscription {
       margin-left: 0;
       margin-right: 48px;
