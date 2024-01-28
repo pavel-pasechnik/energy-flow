@@ -1,3 +1,4 @@
+
 import { getRequest } from './api-energy-flow';
 
 const ulFavoritesList = document.querySelector('.favorites-list-item');
