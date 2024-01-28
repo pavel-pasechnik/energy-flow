@@ -12,8 +12,8 @@
     max-width: 335px;
     height: 272px;
     padding: 40px 20px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     border-radius: 30px;
     background: #7E847F;
 }
@@ -127,8 +127,9 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 }
 
 @media screen and (min-width: 1280px) {
+
 .quote_fav {
-    display: flex;
+    display: block;
 }
 
 .quote {
