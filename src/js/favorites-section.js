@@ -95,6 +95,8 @@ async function renderFavoritseList() {
   window.addEventListener('resize', check);
 }
 
+// функція рендеру картки
+
 function cardMarking(obj) {
   return obj.reduce(
     (html, { bodyPart, burnedCalories, target, time, equipment }) =>
