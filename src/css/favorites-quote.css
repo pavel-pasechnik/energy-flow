@@ -5,7 +5,6 @@
     background: #F6F6F6;
     margin-top: 38px;
     margin-bottom: 20px;
-   
 }
 
 .quote {
@@ -38,6 +37,8 @@ h3 {
 
 .daily-norm-bg-box {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bg-img {
@@ -47,8 +48,6 @@ h3 {
     background-image: url('../img/favorites-quote/quote-fav-mobile.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 @media screen and (min-resolution: 192dpi) and (max-width: 767px),
@@ -70,8 +69,6 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     padding-right: 101px;
     padding-bottom: 97px;
     padding-left: 102px;
-    margin-left: auto;
-        margin-right: auto;
 }
 
 .icon-dumbbell{
@@ -102,20 +99,19 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     min-width: 736px;
     height: 302px;   
     padding: 64px 80px;
-    margin-left: 16px;
-    margin-right: 16px;
 }
 
 .bg-img {
-    width: 368px;
+    min-width: 368px;
     height: 302px;
+    background-image: url('../img/favorites-quote/quote-fav-tablet.jpg');
 }
 
 @media screen and (min-resolution: 192dpi) and (min-width: 768px),
 screen and (min-resolution: 2dppx) and (min-width: 768px),
 screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     .bg-img {
-        background-image: url('../img/favorites-quote/quote-fav-tablet.jpg');
+        background-image: url('../img/favorites-quote/quote-fav-tablet@2x.jpg');
         background-size: cover;
     }
 }
@@ -123,4 +119,38 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 .daily-norm-bg-box {
     display: flex;
 }
+
+.daily-norm{
+    width: 368px;
+    height: 302px;
 }
+}
+
+@media screen and (min-width: 1280px) {
+.quote_fav {
+    display: flex;
+}
+
+.quote {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bg-img {
+    width: 352px;
+    background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
+screen and (min-resolution: 2dppx) and (min-width: 1280px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
+    .bg-img {
+        background-image: url('../img/favorites-quote/quote-fav-desktop@2x.jpg');
+    }
+}
+
+.daily-norm{
+    width: 352px;
+    }
+}
+
