@@ -1,3 +1,4 @@
+
 // !Sample import of postRequest and its use
 //
 // import { postRequest } from './api-energy-flow';
@@ -6,179 +7,72 @@
 //   console.log(data);
 // });
 
-import * as basicLightBox from 'basiclightbox';
 
-const form = document.querySelector('#formEmail');
-const emailInput = document.querySelector('#formInput');
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
+const fullUrl = window.location.pathname;
+const lastSlashIndex = fullUrl.lastIndexOf('/');
+const result = fullUrl.substring(lastSlashIndex);
 
-form.addEventListener('submit', handleFormSubmit);
-// emailInput.addEventListener('keyup', handleKeyPress);
+if (result === '/index.html' || result === '/') {
+    const footerForm = document.querySelector('#footer-form'); 
 
-function handleFormSubmit(event) {
-  event.preventDefault();
-  const email = emailInput.value.trim();
 
-  if (!validateEmail(email)) {
-    alert('Please enter a valid email address');
-    return;
-  }
-
-  if (email === '') {
-    alert('Please enter an email address');
-    return;
-  }
-
-  sendDataToServer({ email })
-    .then(() => {
-      console.log('Data sent successfully');
-      emailInput.value = '';
-      subModal();
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-}
-
-function sendDataToServer(data) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log('Imitating sending data to server:', data);
-      resolve();
-    }, 2000);
+  footerForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitForm();
+    footerForm.reset();
   });
 }
 
-function validateEmail(email) {
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-}
+async function submitForm() {
+    const footerForm = document.querySelector('#footer-form');
+  const formData = new FormData(footerForm);
+  const emailValue = formData.get('email');
+  const formattedData = { email: emailValue };
 
-function subModal() {
-  const instance = basicLightBox.create(
-    `
-   <div class="sub-modal">
-      <button class="remove-btn">
-     
-      </button>
-      <div class="sub-modal-content">
-         <h2 class="products-titel">Thank you for enrolling in our <span>training program</span></h2>
-         <p>We assure you of effective and top-notch training sessions that will exceed your expectations. Stick with us, and we guarantee you numerous exciting learning experiences.</p>
-      </div>
-  
-   </div>
-   `,
-    {
-      onClose: instance => subModal.removeEventListener('click', modalClose),
-    }
-  );
-  instance.show();
-  const subModal = document.querySelector('.sub-modal');
-  subModal.addEventListener('click', modalClose);
+  try {
+    const response = await axios.post(footerForm.action, formattedData, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  function modalClose(evt) {
-    if (
-      evt.target.className === 'remove-btn' ||
-      evt.target.className === 'remove-btn-img'
-    ) {
-      instance.close();
+    const data = response.data;
+    if (data && data.message) {
+      showSuccess();
     }
-    return;
+  } catch (error) {
+    if (error.response && error.response.status !== 409) {
+      showError();
+    }
+    if (error.response && error.response.status === 409) {
+      showError409();
+    }
   }
 }
 
+function showError() {
+  Swal.fire({
+    title: 'Bad request',
+    text: 'Something went wrong.',
+    icon: 'error',
+  });
+}
 
+function showError409() {
+  Swal.fire({
+    title: 'Warning!',
+    text: 'Subscription already exists',
+    icon: 'warning',
+  });
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// КОПІЯ КОДУ
-
-// import * as basicLightBox from 'basiclightbox';
-
-// const form = document.querySelector('#formEmail');
-// const emailInput = document.querySelector('#formInput');
-
-// form.addEventListener('submit', handleFormSubmit);
-
-
-// function handleFormSubmit(event) {
-//   event.preventDefault();
-//   const email = emailInput.value.trim();
-
-//   if (!validateEmail(email)) {
-//     alert('Please enter a valid email address');
-//     return;
-//   }
-
-//   if (email === '') {
-//     alert('Please enter an email address');
-//     return;
-//   }
-
-//   sendDataToServer({ email })
-//     .then(() => {
-//       console.log('Data sent successfully');
-//       emailInput.value = '';
-//       subModal();
-//     })
-//     .catch(error => {
-//       console.error('There was a problem with the fetch operation:', error);
-//     });
-// }
-
-// function sendDataToServer(data) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       console.log('Imitating sending data to server:', data);
-//       resolve();
-//     }, 2000);
-//   });
-// }
-
-// function validateEmail(email) {
-//   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//   return emailRegex.test(email);
-// }
-
-// function subModal() {
-//   const instance = basicLightBox.create(
-//     `
-//    <div class="sub-modal">
-//       <button class="remove-btn">
-     
-//       </button>
-//       <div class="sub-modal-content">
-//          <h2 class="products-titel">Thank you for enrolling in our <span>training program</span></h2>
-//          <p>We assure you of effective and top-notch training sessions that will exceed your expectations. Stick with us, and we guarantee you numerous exciting learning experiences.</p>
-//       </div>
-  
-//    </div>
-//    `,
-//     {
-//       onClose: instance => subModal.removeEventListener('click', modalClose),
-//     }
-//   );
-//   instance.show();
-//   const subModal = document.querySelector('.sub-modal');
-//   subModal.addEventListener('click', modalClose);
-
-//   function modalClose(evt) {
-//     if (
-//       evt.target.className === 'remove-btn' ||
-//       evt.target.className === 'remove-btn-img'
-//     ) {
-//       instance.close();
-//     }
-//     return;
-//   }
-// }
+function showSuccess() {
+  Swal.fire({
+    title: 'Thank you for enrolling in our training program!',
+    text: "We assure you of effective and top-notch training sessions that will exceed your expectations. Stick with us, and we guarantee you numerous exciting learning experiences.",
+    icon: 'success',
+  });
+}
