@@ -1,25 +1,105 @@
 import { getRequest } from './api-energy-flow';
-import { postRequest } from './api-energy-flow';
 
 const ulFavoritesList = document.querySelector('.favorites-list-item');
 
 const savedFavoritesExercises = JSON.parse(localStorage.getItem('favorites'));
 
-async function renderFavoritseList() {
+// функція отримання массиву вправ з localStorage
+async function getFavoritseList() {
+  let arrayData = [];
+
   for (const _id of savedFavoritesExercises) {
-    let result = await getRequest(`/exercises/${_id}`)
+    await getRequest(`/exercises/${_id}`)
       .then(data => {
-        return data;
+        return arrayData.push(data);
       })
       .catch(error => console.log(error));
-
-    ulFavoritesList.insertAdjacentHTML('beforeend', cardMarking(result));
   }
+  return arrayData;
+}
+
+// пагінация по сторінкам за допомогою кнопочок
+
+async function renderFavoritseList() {
+  let arrayData = await getFavoritseList();
+  const perPage = 8;
+  let currentPage = 1;
+
+  // функція для показу сторінки за значенням perPage
+  function check() {
+    if (window.matchMedia('(max-width: 376px)').matches) {
+      function favoritesList(arrayData, perPage, currentPage) {
+        ulFavoritesList.innerHTML = '';
+        currentPage--;
+        const start = perPage * currentPage;
+        const end = start + perPage;
+        const paginationData = arrayData.slice(start, end);
+        ulFavoritesList.innerHTML = cardMarking(paginationData);
+      }
+
+      // функція формування списку кнопочок + стилізация
+
+      function favoritesListPaginationBtn(arrData, perPage) {
+        const containerPagonationList = document.querySelector('.pagination');
+        const pagesCount = Math.ceil(arrData.length / perPage);
+        const listPaginationBtn = document.createElement('ul');
+        listPaginationBtn.classList.add('favorites-pagination-container-btn');
+
+        for (let i = 0; i < pagesCount; i++) {
+          const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
+          listPaginationBtn.appendChild(itemPagonationBtn);
+        }
+        containerPagonationList.appendChild(listPaginationBtn);
+      }
+
+      // формування та стилізація кількості кнопочок
+
+      function favoritesItemPaginationBtn(page) {
+        const itemPagonationBtn = document.createElement('li');
+        itemPagonationBtn.innerText = page;
+
+        if (currentPage == page) {
+          itemPagonationBtn.classList.add('favorites-pagination-btn');
+        }
+        if (currentPage !== page) {
+          itemPagonationBtn.classList.add('favorites-pagination-btn-not-activ');
+        }
+
+        itemPagonationBtn.addEventListener('click', () => {
+          // event.preventDefault();
+          currentPage = page;
+          favoritesList(arrayData, perPage, currentPage);
+
+          let currentItemLi = document.querySelector(
+            'li.favorites-pagination-btn'
+          );
+          currentItemLi.classList.remove('favorites-pagination-btn');
+          currentItemLi.classList.add('favorites-pagination-btn-not-activ');
+
+          itemPagonationBtn.classList.remove(
+            'favorites-pagination-btn-not-activ'
+          );
+          itemPagonationBtn.classList.add('favorites-pagination-btn');
+        });
+
+        return itemPagonationBtn;
+      }
+
+      favoritesList(arrayData, perPage, currentPage);
+      favoritesListPaginationBtn(arrayData, perPage);
+    } else {
+      ulFavoritesList.innerHTML = cardMarking(arrayData);
+    }
+  }
+  check();
+  window.addEventListener('resize', check);
 }
 
 function cardMarking(obj) {
-  const { bodyPart, burnedCalories, target, time, equipment } = obj;
-  return `<li class="favorits-item">
+  return obj.reduce(
+    (html, { bodyPart, burnedCalories, target, time, equipment }) =>
+      html +
+      `<li class="favorits-item">
           <div class="favorites-container-nav">
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
@@ -60,7 +140,9 @@ function cardMarking(obj) {
               ${target}
             </p>
           </div>
-        </li>`;
+        </li>`,
+    ''
+  );
 }
 
 renderFavoritseList();
