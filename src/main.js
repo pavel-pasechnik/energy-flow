@@ -11,4 +11,4 @@ import('./js/footer.js');
 import('./js/scroll-up.js');
 import('./js/menu.js');
 import('./js/modal.js');
-import('./js/modal-rating.js');
+// import('./js/modal-rating.js');
