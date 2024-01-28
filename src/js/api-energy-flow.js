@@ -19,11 +19,18 @@ export const postRequest = async (url = '', object = {}) => {
   try {
     if (url === '' || object === '') return;
     const response = await axios.post(url, object);
-    return response.data.message;
+    return response;
   } catch (error) {
-    if (error.response === undefined) return;
-    console.error(error.response.data.message);
+    throw error;
   }
 };
 
 postRequest();
+
+// !Sample import of postRequest and its use
+//
+// import { postRequest } from './api-energy-flow';
+//
+// postRequest('/subscription', { email: 'test@gmail.com' }).then(data => {
+//   console.log(data);
+// });

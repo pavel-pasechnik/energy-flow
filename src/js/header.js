@@ -1,24 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+// function onload() {
+//   const lnk = document.querySelectorAll('.navigation-link');
+//   const pathName = window.location.pathname;
+//   for (let i = 0; i < lnk.length; i++) {
+//     const currentHref = lnk[i].pathname;
+//     if (
+//       (pathName === '/' && i === 0) ||
+//       (pathName !== '/' && currentHref === pathName)
+//     ) {
+//       lnk[i].classList.add('current-page-link');
+//     }
+//   }
+// }
 
-  const navigationLinks = document.querySelectorAll('.navigation-link');
-
-  Array.from(navigationLinks)
-    .reduce((accumulator, link) => {
-      const linkPages = link
-        .getAttribute('href')
-        .split('/')
-        .pop()
-        .split('.')[0];
-      const isCurrentPages = linkPages === currentPage;
-
-      if (isCurrentPages) {
-        accumulator.push(link);
-      }
-
-      return accumulator;
-    }, [])
-    .forEach(link => {
-      link.classList.add('current-page-link');
-    });
-});
+function onload() {
+  const lnk = document.querySelectorAll('.navigation-link');
+  const pathName = window.location.pathname;
+  for (let i = 0; i < lnk.length; i++) {
+    const currentHref = lnk[i].pathname;
+    if (
+      (pathName === '/' && i === 0) ||
+      (pathName !== '/' && currentHref === pathName)
+    ) {
+      lnk[i].classList.add('current-page-link');
+    }
+  }
+}
+onload();
