@@ -27,8 +27,10 @@ function fillModalWithData(data) {
   exerciseDetails.innerHTML = `
     <div class="exercise-details">
       <button id="closeButton" class="close-button">
-        <img src="./img/close.svg" alt="Close Icon">
-      </button>
+    <svg class="close-icon" fill="#1B1B1B">
+      <use href="./img/sprite.svg#close"></use>
+    </svg>
+  </button>
       <div class="content-wrapper">
         <div class="left-section">
           <div class="exercise-image">
@@ -37,7 +39,6 @@ function fillModalWithData(data) {
         </div>
         <div class="right-section">
           <div class="exercise-info">
-            <div class="details">
               <h2 class="exercise-name">${data.name}</h2>
               <div class="star-container">
                 <span class="rating-value">${formatRating(data.rating)}</span>
@@ -56,14 +57,15 @@ function fillModalWithData(data) {
                 <p>${data.description}</p>
               </div>
               <div class="action-buttons">
-                <button class="favorite-button" id="favoriteButton">
-                  <span>Add to Favorites</span>
-                  <img src="./img/heart.svg" alt="Favorite Icon">
-                </button>
+                 <button class="favorite-button" id="favoriteButton">
+    <span>Add to Favorites</span>
+    <svg class="heart-icon">
+      <use href="./img/sprite.svg#heart"></use>
+    </svg>
+  </button>
                 <button class="rating-button rate-button">Give a Rating</button>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>`;
@@ -108,8 +110,14 @@ function formatRating(rating) {
 function getStarRating(rating) {
   const filledStars = Math.round(rating);
   const emptyStars = 5 - filledStars;
-  const filledStarSvg = '<img src="./img/colorstar.svg" alt="Filled Star" class="star">';
-  const emptyStarSvg = '<img src="./img/star.svg" alt="Empty Star" class="star">';
+ const filledStarSvg = `<svg class="star">
+    <use href="./img/sprite.svg#colorstar"></use>
+</svg>`;
+  const emptyStarSvg = `
+  <svg class="star">
+    <use href="./img/sprite.svg#star"></use>
+  </svg>
+`;
   
   let stars = '';
 
@@ -151,12 +159,18 @@ function removeFromFavorites(exerciseId) {
 
 // Function to set the "Remove from Favorites" button state
 function setRemoveFromFavorites(button) {
-  button.innerHTML = '<span>Remove from</span> <img src="./img/heart.svg" alt="Favorite Icon">';
+  const span = button.querySelector('span');
+  span.textContent = 'Remove from';
+  const use = button.querySelector('use');
+  use.setAttribute('href', './img/sprite.svg#heart');
 }
 
 // Function to set the "Add to Favorites" button state
 function setAddToFavorites(button) {
-  button.innerHTML = '<span>Add to Favorites</span> <img src="./img/heart.svg" alt="Favorite Icon">';
+  const span = button.querySelector('span');
+  span.textContent = 'Add to Favorites';
+  const use = button.querySelector('use');
+  use.setAttribute('href', './img/sprite.svg#heart');
 }
 
 // Function to close the modal window

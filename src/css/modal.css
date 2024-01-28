@@ -20,6 +20,11 @@
     opacity: 1;
 }
 
+.modal-content {
+    box-sizing: border-box;
+    display: flex;
+}
+
 .content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -86,25 +91,25 @@
     }
 
     .exercise-image {
-    width: 100%;
-    height: auto;
-          }
-    
+        width: 100%;
+        height: auto;
+    }
+
     .right-section {
-    width: 100%;
-}
-    
+        width: 100%;
+    }
+
     .left-section {
-    width: 100%;
-    padding-right:0;
-          }
+        width: 100%;
+        padding-right: 0;
+    }
 
     .exercise-description {
-    margin-top: 8px;
-    width: 80%;
-    height: auto;
-            }
-   }
+        margin-top: 8px;
+        width: 80%;
+        height: auto;
+    }
+}
 
 .left-section {
     width: 270px;
@@ -116,11 +121,6 @@
     width: 342px;
     flex: 2;
     margin-left: 40px;
-}
-
-.modal-content {
-    box-sizing: border-box;
-    display: flex;
 }
 
 .exercise-image {
@@ -192,6 +192,11 @@
     margin-right: 2px;
     flex-shrink: 0;
 }
+.heart-icon {
+        width: 18px;
+        height: 18px;
+    }
+
 
 .modal-content {
     display: flex;
@@ -219,7 +224,7 @@
     text-align: left;
     color: #1B1B1B;
     margin-right: 16px;
-    margin-top:16px;
+    margin-top: 16px;
 }
 
 .info-label {
@@ -313,11 +318,18 @@
     position: absolute;
     top: 15px;
     right: 15px;
+    width: 20px;
+    height: 20px;
 }
 
 .close-button:hover {
     opacity: 0.8;
 }
+.close-icon {
+    width: 18px;
+    height: 18px;
+    fill: #ff0000 !important;
+            }
 
 .rating-value {
     font-family: 'DM Sans', sans-serif;
@@ -329,8 +341,6 @@
     margin-right: 8px;
     color: #1B1B1B;
 }
-
-
 
 
 
