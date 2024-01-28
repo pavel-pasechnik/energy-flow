@@ -1,0 +1,119 @@
+.home-qourter {
+  margin-top: 16px;
+}
+
+.home-quote-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-quote-phrase {
+  width: 100%;
+  display: flex;
+  position: relative;
+  border-radius: 30px;
+  background: #7e847f;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.home-quote-phrase-block {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  row-gap: 14px;
+}
+
+.home-qoute-phrase-title {
+  color: #f6f6f6;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.home-quote-phrase-text {
+  width: 249px;
+  color: rgba(246, 246, 246, 0.6);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.home-quote-phrase-author {
+  color: #f6f6f6;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.home-quote-block-inverted-commas {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+.home-quote-block-inverted-commas svg {
+  width: 28px;
+  height: 28px;
+}
+
+.home-quote-img {
+  width: 335px;
+  height: 272px;
+  max-width: none;
+}
+
+@media screen and (min-width: 768px) {
+  .home-quote-phrase {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .home-qoute-phrase-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .home-quote-phrase-text {
+    width: 526px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .home-quote-block-inverted-commas {
+    top: 32px;
+    right: 80px;
+  }
+
+  .home-quote-block-inverted-commas svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-quote-img {
+    width: 736px;
+    height: 302px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .home-quote-container {
+    flex-direction: row;
+  }
+
+  .home-quote-phrase {
+    padding: 64px;
+  }
+
+  .home-quote-img {
+    width: 704px;
+  }
+}

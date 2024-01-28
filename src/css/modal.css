@@ -1,0 +1,338 @@
+.modal {
+    display: none;
+    position: fixed;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 732px;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.is-visible {
+    display: flex;
+    opacity: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-section {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .left-section {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .exercise-description {
+        margin-top: 8px;
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .right-section {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .exercise-name {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 16px;
+        width: 100%;
+    }
+
+    .favorite-button,
+    .rating-button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .exercise-image {
+    width: 100%;
+    height: auto;
+          }
+    
+    .right-section {
+    width: 100%;
+}
+    
+    .left-section {
+    width: 100%;
+    padding-right:0;
+          }
+
+    .exercise-description {
+    margin-top: 8px;
+    width: 80%;
+    height: auto;
+            }
+   }
+
+.left-section {
+    width: 270px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.right-section {
+    width: 342px;
+    flex: 2;
+    margin-left: 40px;
+}
+
+.modal-content {
+    box-sizing: border-box;
+    display: flex;
+}
+
+.exercise-image {
+    position: relative;
+    width: 270px;
+    height: 259px;
+    border-radius: 12px;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.exercise-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1B1B1B33;
+    border-radius: 12px;
+    z-index: -1;
+    /* Забезпечує, що фон розміщується за основним зображенням */
+}
+
+.exercise-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.exercise-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1B1B1B;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-top: 8px;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+
+.modal-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.section-divider-top,
+.section-divider-bottom {
+    border: 1px solid #1B1B1B33;
+    width: 100%;
+}
+
+.info-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.info-item {
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1B1B1B;
+    margin-right: 16px;
+    margin-top:16px;
+}
+
+.info-label {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1B1B1B66;
+    display: flex;
+}
+
+.exercise-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgba(27, 27, 27, 0.6);
+    margin-top: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 7px;
+    margin-top: 32px;
+}
+
+.favorite-button {
+    width: 194px;
+    height: 48px;
+    border-radius: 30px;
+    padding: 12px 24px;
+    gap: 8px;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    white-space: nowrap;
+    background: #7e847f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    justify-content: space-between;
+}
+
+.favorite-button:hover {
+    background: #6c736f;
+}
+
+.favorite-button:active {
+    background: #5a605c;
+}
+
+.rating-button {
+    width: 141px;
+    height: 48px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid #1B1B1B;
+    gap: 8px;
+    background: #F6F6F6;
+    color: #1B1B1B;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.rating-button:hover,
+.rating-button:focus {
+    color: #7E847F;
+    border: 1px solid #7E847F;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close-button:hover {
+    opacity: 0.8;
+}
+
+.rating-value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-right: 8px;
+    color: #1B1B1B;
+}
+
+
+
+
+
+
+
