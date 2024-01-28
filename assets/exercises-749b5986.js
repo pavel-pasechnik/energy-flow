@@ -1,4 +1,4 @@
-import{getRequest as d}from"./api-energy-flow-08c61571.js";import{S as x}from"./vendor-e6025c9a.js";const a=document.querySelector(".subspecies"),f=document.querySelector(".exercises-nav-panel"),i=document.querySelector(".exercises-gallery");document.querySelector(".exercises-nav-input");let v=1,c="Muscles";const u={filter:c,page:v,limit:12};let p="";const r={page:1,limit:9},g=new x(".subspecies a",{captionDelay:250,captionsData:"alt",close:!0});function b(e){d("/filters",e).then(s=>{const{results:l}=s;console.log(l);let n=l.reduce((o,t)=>o+`<a class="subspecies-item" href="">
+import{getRequest as d}from"./api-energy-flow-29420f42.js";import{S as x}from"./vendor-d0789155.js";const a=document.querySelector(".subspecies"),f=document.querySelector(".exercises-nav-panel"),i=document.querySelector(".exercises-gallery");document.querySelector(".exercises-nav-input");let v=1,c="Muscles";const u={filter:c,page:v,limit:12};let p="";const r={page:1,limit:9},g=new x(".subspecies a",{captionDelay:250,captionsData:"alt",close:!0});function b(e){d("/filters",e).then(s=>{const{results:l}=s;console.log(l);let n=l.reduce((o,t)=>o+`<a class="subspecies-item" href="">
   <button
    type="button"
    data-value="${t.name}"
@@ -57,4 +57,4 @@ import{getRequest as d}from"./api-energy-flow-08c61571.js";import{S as x}from"./
     </li>
   </ul>
 </a>`,"");i.innerHTML=n,g.refresh()}).catch(s=>{console.log(s)})}
-//# sourceMappingURL=exercises-2640026e.js.map
+//# sourceMappingURL=exercises-749b5986.js.map
