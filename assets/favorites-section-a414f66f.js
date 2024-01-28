@@ -1,4 +1,4 @@
-import{getRequest as o}from"./api-energy-flow-a1c48d5d.js";import"./vendor-cae18210.js";const n=document.querySelector(".favorites-list-item"),c=JSON.parse(localStorage.getItem("favorites"));async function v(){for(const t of c){let e=await o(`/exercises/${t}`).then(s=>s).catch(s=>console.log(s));n.insertAdjacentHTML("beforeend",l(e))}}function l(t){const{bodyPart:e,burnedCalories:s,target:i,time:a,equipment:r}=t;return`<li class="favorits-item">
+import{getRequest as o}from"./api-energy-flow-a51fea21.js";import"./vendor-cae18210.js";const n=document.querySelector(".favorites-list-item"),c=JSON.parse(localStorage.getItem("favorites"));async function v(){for(const t of c){let e=await o(`/exercises/${t}`).then(s=>s).catch(s=>console.log(s));n.insertAdjacentHTML("beforeend",l(e))}}function l(t){const{bodyPart:e,burnedCalories:s,target:i,time:a,equipment:r}=t;return`<li class="favorits-item">
           <div class="favorites-container-nav">
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
@@ -40,4 +40,4 @@ import{getRequest as o}from"./api-energy-flow-a1c48d5d.js";import"./vendor-cae18
             </p>
           </div>
         </li>`}v();
-//# sourceMappingURL=favorites-section-b139e3e8.js.map
+//# sourceMappingURL=favorites-section-a414f66f.js.map
