@@ -4,17 +4,20 @@
 
 <!-- Модальне вікно рейтингу -->
 <div id="ratingModal" class="modal">
-   
-    <form id="ratingForm">
+  <form id="ratingForm">
+    <label><input type="radio" name="rating" value="1" />1</label>
+    <label><input type="radio" name="rating" value="2" />2</label>
 
-        <label><input type="radio" name="rating" value="1">1</label>
-        <label><input type="radio" name="rating" value="2">2</label>
-        
-        
-      
-        <label>Email: <input type="text" id="emailInput" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required></label>
+    <label
+      >Email:
+      <input
+        type="text"
+        id="emailInput"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        required
+    /></label>
 
-        <!-- кнопка для відправки форми -->
-        <button type="submit">Send</button>
-    </form>
+    <!-- кнопка для відправки форми -->
+    <button type="submit">Send</button>
+  </form>
 </div>
