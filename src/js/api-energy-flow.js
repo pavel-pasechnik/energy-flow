@@ -19,7 +19,6 @@ export const postRequest = async (url = '', object = {}) => {
   try {
     if (url === '' || object === '') return;
     const response = await axios.post(url, object);
-    console.log(response);
     return response;
   } catch (error) {
     throw error;
