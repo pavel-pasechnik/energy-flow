@@ -5,18 +5,36 @@ const subspecies = document.querySelector('.subspecies');
 const navBtns = document.querySelector('.exercises-nav-panel');
 const exercisesGallery = document.querySelector('.exercises-gallery');
 const searchInput = document.querySelector('.exercises-nav-input');
+const searchForm = document.querySelector('.exercises-nav-input-block');
 
 let currentPage = 1;
 let currentSubspecies = 'Muscles';
+let lowerCurrentSubspecies;
+let screenWidth = window.innerWidth;
+let currentLimit = 0;
+let currentLimitExercises = 0;
+let currentValue = '';
+// Логіка для відображення цількості карток
+if (screenWidth <= 375) {
+  currentLimit = 8;
+  currentLimitExercises = 8;
+} else if (screenWidth <= 768) {
+  currentLimit = 12;
+  currentLimitExercises = 8;
+} else {
+  currentLimit = 12;
+  currentLimitExercises = 9;
+}
+
 const params = {
   filter: currentSubspecies,
   page: currentPage,
-  limit: 12,
+  limit: currentLimit,
 };
-let currentValue = '';
+
 const params2 = {
-  page: 1,
-  limit: 9,
+  page: currentPage,
+  limit: currentLimitExercises,
 };
 const lightbox = new SimpleLightbox('.subspecies a', {
   captionDelay: 250,
@@ -56,7 +74,7 @@ function renderSubspecies(params) {
       lightbox.refresh();
     })
     .catch(error => {
-      console.log(error);
+      console.error(error.message);
     });
 }
 renderSubspecies(params);
@@ -64,11 +82,12 @@ renderSubspecies(params);
 navBtns.addEventListener('click', event => {
   currentSubspecies = event.target.textContent;
   params.filter = currentSubspecies;
-
+  delete params2[lowerCurrentSubspecies];
   renderSubspecies(params);
   lightbox.refresh();
   showGallery(subspecies);
   hideGallery(exercisesGallery);
+  hideGallery(searchForm);
 });
 // Функції щоб сховати або показати галерею
 function showGallery(doShow) {
@@ -78,20 +97,34 @@ function hideGallery(doHide) {
   doHide.style.display = 'none';
 }
 // Слухач на картки з підвидами
+
 subspecies.addEventListener('click', event => {
   event.preventDefault();
-  currentValue = event.target.dataset.value;
 
-  let lowerCurrentSubspecies = currentSubspecies.toLowerCase();
-  if (lowerCurrentSubspecies === 'body parts') {
-    lowerCurrentSubspecies = 'bodypart';
+  if (event.target.tagName === 'BUTTON') {
+    currentValue = event.target.dataset.value;
+    lowerCurrentSubspecies = currentSubspecies.toLowerCase();
+    if (lowerCurrentSubspecies === 'body parts') {
+      lowerCurrentSubspecies = 'bodypart';
+    }
+    params2[lowerCurrentSubspecies] = currentValue;
+    console.log(params2);
+    hideGallery(subspecies);
+    showGallery(exercisesGallery);
+    showGallery(searchForm);
+    renderExercises(params2);
+
+    console.log(params2);
   }
-  params2[lowerCurrentSubspecies] = currentValue;
+});
+// Слухач на інпут
+searchForm.addEventListener('submit', event => {
+  event.preventDefault();
+  console.log(searchInput.value);
+  params2.keyword = searchInput.value.trim();
   console.log(params2);
-  hideGallery(subspecies);
-  showGallery(exercisesGallery);
   renderExercises(params2);
-  delete params2[lowerCurrentSubspecies];
+  delete params2.keyword;
   console.log(params2);
 });
 // слухач при натисканні на старт, на картці з вправою, повертає її ID
@@ -113,8 +146,13 @@ const ExercisesId = getExercisesId();
 function renderExercises(param) {
   const requestParams2 = getRequest('/exercises', param)
     .then(data => {
-      const { results } = data;
+      console.log(data);
+      const { page, totalPages, results } = data;
+      console.log(`page: ${page}, totalPages: ${totalPages}`);
       console.log(results);
+      if (Array.from(results).length === 0) {
+        console.log('Without result');
+      }
       let ExercisesHtml = results.reduce(
         (html, image) =>
           html +
@@ -169,3 +207,4 @@ function renderExercises(param) {
       console.log(error);
     });
 }
+// awdawdawdaw
