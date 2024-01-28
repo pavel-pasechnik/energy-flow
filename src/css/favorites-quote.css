@@ -1,0 +1,156 @@
+@media screen and (min-width: 375px) {
+
+.quote_fav {
+    display: block;
+    background: #F6F6F6;
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+.quote {
+    display: grid;
+    max-width: 335px;
+    height: 272px;
+    padding: 40px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    background: #7E847F;
+}
+
+.quote-title-box{
+    display: flex;
+}
+
+h3 {
+    color: #F6F6F6;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 61px;
+    margin-left: 12px;
+}
+
+.daily-norm-bg-box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-img {
+    max-width: 335px;
+    height: 272px;
+    border-radius: 30px;
+    background-image: url('../img/favorites-quote/quote-fav-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+    .bg-img {
+        background-image: url('../img/favorites-quote/quote-fav-mobile@2x.jpg');
+        background-size: cover;
+    }
+}
+
+.daily-norm{
+    display: block;
+    width: 335px;
+    height: 272px;
+    border-radius: 30px;
+    background: #FFF;
+    padding-top: 96px;
+    padding-right: 101px;
+    padding-bottom: 97px;
+    padding-left: 102px;
+}
+
+.icon-dumbbell{
+    margin-bottom: 15px;
+}
+
+.dailyy-time{
+    color: #1B1B1B;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1em;
+    margin-bottom: 6px;
+}
+
+.daily-text{
+    color: rgba(27, 27, 27, 0.60);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+}
+
+@media screen and (min-width: 768px) {
+.quote {
+    min-width: 736px;
+    height: 302px;   
+    padding: 64px 80px;
+}
+
+.bg-img {
+    min-width: 368px;
+    height: 302px;
+    background-image: url('../img/favorites-quote/quote-fav-tablet.jpg');
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+screen and (min-resolution: 2dppx) and (min-width: 768px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+    .bg-img {
+        background-image: url('../img/favorites-quote/quote-fav-tablet@2x.jpg');
+        background-size: cover;
+    }
+}
+
+.daily-norm-bg-box {
+    display: flex;
+}
+
+.daily-norm{
+    width: 368px;
+    height: 302px;
+}
+}
+
+@media screen and (min-width: 1280px) {
+.quote_fav {
+    display: flex;
+}
+
+.quote {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bg-img {
+    width: 352px;
+    background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
+screen and (min-resolution: 2dppx) and (min-width: 1280px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
+    .bg-img {
+        background-image: url('../img/favorites-quote/quote-fav-desktop@2x.jpg');
+    }
+}
+
+.daily-norm{
+    width: 352px;
+    }
+}
+
