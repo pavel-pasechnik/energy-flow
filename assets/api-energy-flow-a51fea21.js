@@ -1,2 +1,0 @@
-import{b as r}from"./vendor-cae18210.js";r.defaults.baseURL="https://energyflow.b.goit.study/api";const o=async(s="/exercises",t={})=>{try{return(await r.get(s,{params:t})).data}catch(e){console.error(e.response.data.message)}};o();const a=async(s="",t={})=>{try{if(s===""||t==="")return;const e=await r.post(s,t);return console.log(e),e}catch(e){throw e}};a();export{o as getRequest,a as postRequest};
-//# sourceMappingURL=api-energy-flow-a51fea21.js.map
