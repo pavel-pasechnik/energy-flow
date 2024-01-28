@@ -1,0 +1,51 @@
+<!-- motivation section -->
+<section class="motivation">
+  <div class="container motivation-container">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./img/motivation/motivation-girl-d.png    1x,
+          ./img/motivation/motivation-girl-d@2x.png 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./img/motivation/motivation-girl-t.png    1x,
+          ./img/motivation/motivation-girl-t@2x.png 2x
+        "
+      />
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          ./img/motivation/motivation-girl-m.png    1x,
+          ./img/motivation/motivation-girl-m@2x.png 2x
+        "
+      />
+      <img
+        class="motivation-girl"
+        src="./img/motivation/motivation-girl-d.png"
+        alt="girl"
+      />
+    </picture>
+
+    <div class="motivation-desc-wrapper">
+      <div class="motivation-icon-wrappper">
+        <svg width="20" height="20" class="motivation-icon">
+          <use href="./img/motivation.svg#Vector"></use>
+        </svg>
+      </div>
+      <div class="motivation-desc">
+        <h3 class="motivation-title">110 min</h3>
+        <p class="motivation-text">Daily norm of sports</p>
+        <p class="motivation-text-2">
+          The World Health Organization recommends at least 150 minutes of
+          moderate-intensity aerobic physical activity throughout the week for
+          adults aged 18-64. However, what happens if we adjust that number to
+          110 minutes every day?
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

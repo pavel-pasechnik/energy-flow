@@ -1,0 +1,49 @@
+<section class="home-qourter">
+  <div class="container home-quote-container">
+    <div class="home-quote-phrase">
+      <div class="home-quote-block-icon">
+        <svg width="32" height="32">
+          <use href="./img/home-quote.svg#icon-run-person"></use>
+        </svg>
+      </div>
+      <div class="home-quote-phrase-block">
+        <p class="home-qoute-phrase-title">Quote of the day</p>
+        <p class="home-quote-phrase-text"></p>
+        <p class="home-quote-phrase-author"></p>
+      </div>
+      <div class="home-quote-block-inverted-commas">
+        <svg>
+          <use href="./img/home-quote.svg#icon-inverted-commas"></use>
+        </svg>
+      </div>
+    </div>
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./img/home-quote/home-quote-img-desktop-1x.png 1x,
+          ./img/home-quote/home-quote-img-desktop-2x.png 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./img/home-quote/home-quote-img-tablet-1x.png 1x,
+          ./img/home-quote/home-quote-img-tablet-2x.png 2x
+        "
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./img/home-quote/home-quote-img-mobile-1x.png 1x,
+          ./img/home-quote/home-quote-img-mobile-2x.png 2x
+        "
+      />
+      <img
+        class="home-quote-img"
+        src="./img/home-quote/home-quote-img-desktop-1x.png"
+        alt="quote girl"
+      />
+    </picture>
+  </div>
+</section>

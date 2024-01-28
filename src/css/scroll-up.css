@@ -1,0 +1,19 @@
+/* scroll-up-styles */
+.go-top {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #7e847f;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
+.go-top--show {
+  display: block;
+}

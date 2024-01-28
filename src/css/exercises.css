@@ -1,0 +1,263 @@
+.exercises-container {
+  width: 1408px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: none;
+  padding-top: 30px;
+  margin: 0 auto;
+  background: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercises-title {
+  display: flex;
+  padding-left: 40px;
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  padding-bottom: 32px;
+}
+.exercises-nav-box {
+  padding-left: 48px;
+  padding-right: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+}
+.exercises-nav-input {
+  display: inline-flex;
+  padding: 12px 208px 12px 14px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #f6f6f6;
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.subspecies {
+  display: flex;
+  flex-direction: row;
+  row-gap: 40px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 64px;
+}
+
+.subspecies-item {
+  display: flex;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+.subspecies-item-btn {
+  width: 313px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 105px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 12px;
+  border: 0.5px solid rgba(246, 246, 246, 0.3);
+  background: linear-gradient(
+      0deg,
+      rgba(16, 16, 16, 0.7) 0%,
+      rgba(16, 16, 16, 0.7) 100%
+    ),
+    lightgray -16.825px 0.844px / 121.36% 108.504% no-repeat;
+  background-size: cover;
+}
+.subspecies-item-name {
+  color: #f6f6f6;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+.subspecies-item-group {
+  color: rgba(246, 246, 246, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.exercises-nav-panel {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.exercises-button {
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #f6f6f6;
+  border-color: #f6f6f6;
+}
+.exercises-button:active {
+  background: #7e847f;
+  border-color: #7e847f;
+  color: #f6f6f6;
+}
+/*  */
+.exercises-gallery {
+  display: flex;
+  flex-direction: row;
+  row-gap: 28px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 64px;
+}
+.exercises-gallery-item {
+  display: flex;
+  flex-direction: column;
+  width: 424px;
+  max-width: 100%;
+  height: 141px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #fff;
+  padding: 16px;
+}
+/*  */
+
+.exercises-gallery-top {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  width: 100%;
+}
+.exercises-gallery-top-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.badge {
+  border-radius: 15px;
+  background: #7e847f;
+  display: inline-flex;
+  padding: 5px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #f6f6f6;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.exercises-gallery-raiting {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.exercises-gallery-raiting-svg {
+  fill: #eea10c;
+}
+.exercises-gallery-raiting {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.exercises-gallery-center-icon {
+  width: 24px;
+  height: 24px;
+}
+.exercises-gallery-btn-start {
+  border: none;
+  background-color: #fff;
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: end;
+}
+.exercises-gallery-btn-icon {
+  box-sizing: content-box;
+  width: 16px;
+  height: 16px;
+}
+/*  */
+.exercises-gallery-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+.exercises-gallery-name {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+}
+/*  */
+.exercises-gallery-bottom {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.exercises-gallery-bottom-point {
+  color: rgba(27, 27, 27, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.exercises-gallery-bottom-point-value {
+  padding-left: 4px;
+  color: #1b1b1b;
+}
