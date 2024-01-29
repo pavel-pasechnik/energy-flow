@@ -34,7 +34,7 @@ async function renderFavoritseList() {
     console.log(arrayData);
     const perPage = 8;
     let currentPage = 1;
-
+    window.removeEventListener('resize', check);
     if (window.matchMedia('(max-width: 376px)').matches) {
       function favoritesList(arrayData, perPage, currentPage) {
         ulFavoritesList.innerHTML = '';
@@ -55,9 +55,11 @@ async function renderFavoritseList() {
 
         for (let i = 0; i < pagesCount; i++) {
           const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
-          listPaginationBtn.appendChild(itemPagonationBtn);
+          let countPage = listPaginationBtn.appendChild(itemPagonationBtn);
+          return countPage;
         }
-        containerPagonationList.appendChild(listPaginationBtn);
+        containerPagonationList.innerHTML = countPage;
+        // containerPagonationList.appendChild(listPaginationBtn);
       }
 
       // формування та стилізація кількості кнопочок
@@ -100,6 +102,7 @@ async function renderFavoritseList() {
     }
 
     ulFavoritesList.addEventListener('click', event => {
+      window.removeEventListener('resize', check);
       const element = event.target;
       if (arrayData.length === 0 || arrayData === null) {
         mainContainerFavorites.classList.add('is-hidden');
@@ -115,7 +118,7 @@ async function renderFavoritseList() {
     });
   }
   check();
-  // window.addEventListener('resize', check);
+  window.addEventListener('resize', check);
 }
 
 // функція рендеру картки
