@@ -1,7 +1,6 @@
 .quote-fav {
     display: flex;
     background: #F6F6F6;
-    /* padding-top: 96px; */
     margin-bottom: 20px;
 }
 
@@ -11,7 +10,6 @@
 
 .quote {
     display: grid;
-    /* max-width: 335px; */
     width: 100%;
     height: 272px;
     padding: 40px 20px;
@@ -46,7 +44,6 @@ h3 {
 }
 
 .bg-img {
-    /* max-width: 335px; */
     width: 100%;
     height: 272px;
     border-radius: 30px;
@@ -66,7 +63,6 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
 
 .daily-norm {
     display: block;
-    /* width: 335px; */
     width: 100%;
     height: 272px;
     border-radius: 30px;
@@ -102,87 +98,88 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
 
 @media screen and (min-width: 375px) {
 
-    .quote {
-        max-width: 335px;
-    }
+.quote {
+    max-width: 335px;
+}
 
-    .bg-img {
-        max-width: 335px;
-    }
+.bg-img {
+    max-width: 335px;
+}
 
-    .daily-norm {
-        width: 335px;
-    }
+.daily-norm {
+    width: 335px;
+}
 }
 
 @media screen and (min-width: 768px) {
 
-    /* .quote_fav {
+.quote {
+    min-width: 736px;
+    height: 302px;
+    padding: 64px 80px;
     margin-top: 180px;
-}  */
+}
 
-    .quote {
-        min-width: 736px;
-        height: 302px;
-        padding: 64px 80px;
-        margin-top: 180px;
-    }
+.bg-img {
+    min-width: 368px;
+    height: 302px;
+    background-image: url('../img/favorites-quote/quote-fav-tablet.jpg');
+}
 
-    .bg-img {
-        min-width: 368px;
-        height: 302px;
-        background-image: url('../img/favorites-quote/quote-fav-tablet.jpg');
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+screen and (min-resolution: 2dppx) and (min-width: 768px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+.bg-img {
+    background-image: url('../img/favorites-quote/quote-fav-tablet@2x.jpg');
+    background-size: cover;
     }
+}
 
-    @media screen and (min-resolution: 192dpi) and (min-width: 768px),
-    screen and (min-resolution: 2dppx) and (min-width: 768px),
-    screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
-        .bg-img {
-            background-image: url('../img/favorites-quote/quote-fav-tablet@2x.jpg');
-            background-size: cover;
-        }
-    }
+.daily-norm-bg-box {
+    display: flex;
+}
 
-    .daily-norm-bg-box {
-        display: flex;
-    }
-
-    .daily-norm {
-        width: 368px;
-        height: 302px;
-    }
+.daily-norm {
+    width: 368px;
+    height: 302px;
+}
 }
 
 @media screen and (min-width: 1280px) {
 
-    .quote_fav {
-        display: flex;
-    }
+.quote_fav {
+    display: flex;
+}
 
-    .box-quote-fav {
-        display: block;
-    }
+.box-quote-fav {
+    display: flex;
+}
 
-    .quote {
-        width: 704px;
-        margin-left: 0;
-        margin-right: 0;
-    }
+.quote {
+    width: 704px;
+    margin-left: 0;
+    margin-right: 0;
+}
+    
+.daily-norm-bg-box {
+    margin-top: 180px;
+}
 
+.bg-img {
+    width: 352px;
+    background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
+screen and (min-resolution: 2dppx) and (min-width: 1280px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
     .bg-img {
-        width: 352px;
-        background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
+        background-image: url('../img/favorites-quote/quote-fav-desktop@2x.jpg');
     }
+}
 
-    @media screen and (min-resolution: 192dpi) and (min-width: 1280px),
-    screen and (min-resolution: 2dppx) and (min-width: 1280px),
-    screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
-        .bg-img {
-            background-image: url('../img/favorites-quote/quote-fav-desktop@2x.jpg');
-        }
-    }
-
-    .daily-norm {
-        width: 352px;
-    }
+.daily-norm {
+    width: 352px;
+        
+}
 }
