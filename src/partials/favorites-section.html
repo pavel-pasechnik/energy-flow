@@ -1,4 +1,3 @@
-
 <section class="container">
   <div class="favorites-main">
     <h2 class="favorites-main-title">Favorites</h2>
@@ -11,7 +10,7 @@
               <p class="favoritese-title">WORKOUT</p>
               <button type="button" class="favorites-btn-trash">
                 <svg width="16" height="16" class="favorites-trash">
-                  <use href="./img/symbol-defs.svg#icon-trash-favorites"></use>
+                  <use href="../img/sprite.svg#favorites-trash"></use>
                 </svg>
               </button>
             </div>
@@ -19,14 +18,14 @@
               <p class="favorites-title-btn-start">Start</p>
               <button type="button" class="favorites-btn-arrow">
                 <svg class="favorites-arrow" width="14" height="14" alt="arrow">
-                  <use href="../img/favorites-arrow.svg"></use>
+                  <use href="../img/sprite.svg#favorites-arrow"></use>
                 </svg>
               </button>
             </div>
           </div>
           <div class="favorite-title-exercises">
             <svg width="24" height="24" class="favorites-icon-man">
-              <use href="./img/symbol-defs.svg#icon-icon-favorites"></use>
+              <use href="../img/sprite.svg#favorites-man"></use>
             </svg>
             <p class="favorites-title-name">Air bike</p>
           </div>
@@ -55,17 +54,29 @@
   </div>
 </section>
 <section class="container">
-  <div class="favorites-container-error-notification is-hidden">
-    <h2 class="favorites-container-error-title">Favorites</h2>
+  <div class="favorites-container-error-notification">
+    <!-- <h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
-      <svg class="favorites-container-error-icon" width="85" height="52">
-        <use href="../img/favorites-dumbbell.svg"></use>
-      </svg>
+      <img
+        srcset="
+          ../img/favorites-section/mobile-dumbbell.png             85w,
+          ../img/favorites-section/mobile-dumbbell@2x.png         170w,
+          ../img/favorites-section/tablet-desctop-dumbbell.png    116w,
+          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 116w
+        "
+        sizes="
+      (min-width: 1440px) 116px, 
+      (min-width: 768px) 116px, 
+      (max-width: 767px) 85px"
+        src="../img/favorites-section/mobile-dumbbell.png"
+        alt="dumbbell"
+      />
+
       <p class="favorites-error-description">
         It appears that you haven't added any exercises to your favorites yet.
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
       </p>
-    </div>
+    </div> -->
   </div>
 </section>
