@@ -4,6 +4,8 @@ const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
 );
+
+const mainContainerFavorites = document.querySelector('.favorites-main');
 // функція отримання массиву вправ з localStorage
 // async function getFavoritseList() {
 //   let arrayData = [];
@@ -25,6 +27,10 @@ async function renderFavoritseList() {
   // функція для показу сторінки за значенням perPage
   function check() {
     let arrayData = JSON.parse(localStorage.getItem('favorites'));
+    if (arrayData.length === 0 || arrayData === null) {
+      mainContainerFavorites.classList.add('is-hidden');
+      return renderErrorCard(arrayData);
+    }
     console.log(arrayData);
     renderErrorCard(arrayData);
     const perPage = 8;
@@ -162,8 +168,7 @@ function cardMarking(obj) {
 }
 
 function renderErrorCard(array) {
-  if (array.length === 0) {
-    return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
+  return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
         srcset="
@@ -186,7 +191,6 @@ function renderErrorCard(array) {
         for easier access in the future.
       </p>
     </div>`);
-  }
 }
 
 renderFavoritseList();
