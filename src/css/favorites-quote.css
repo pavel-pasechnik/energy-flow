@@ -1,19 +1,20 @@
-@media screen and (min-width: 375px) {
-
 .quote_fav {
     display: block;
     background: #F6F6F6;
-    margin-top: 38px;
+    /* padding-top: 96px; */
+    /* margin-top: 96px; */
     margin-bottom: 20px;
 }
 
 .quote {
     display: grid;
-    max-width: 335px;
+    /* max-width: 335px; */
+    width: 100%;
     height: 272px;
     padding: 40px 20px;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 96px; */
     border-radius: 30px;
     background: #7E847F;
 }
@@ -42,7 +43,8 @@ h3 {
 }
 
 .bg-img {
-    max-width: 335px;
+    /* max-width: 335px; */
+    width: 100%;
     height: 272px;
     border-radius: 30px;
     background-image: url('../img/favorites-quote/quote-fav-mobile.jpg');
@@ -61,7 +63,8 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
 
 .daily-norm{
     display: block;
-    width: 335px;
+    /* width: 335px; */
+    width: 100%;
     height: 272px;
     border-radius: 30px;
     background: #FFF;
@@ -73,6 +76,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
 
 .icon-dumbbell{
     margin-bottom: 15px;
+    fill: #1B1B1B;
 }
 
 .dailyy-time{
@@ -92,13 +96,32 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     font-weight: 400;
     line-height: 1.3em;
 }
+@media screen and (min-width: 375px) {
+
+.quote{
+    max-width: 335px;
+}
+
+.bg-img {
+    max-width: 335px;
+}
+
+.daily-norm {
+   width: 335px; 
+ }
 }
 
 @media screen and (min-width: 768px) {
+
+/* .quote_fav {
+    margin-top: 180px;
+}  */
+
 .quote {
     min-width: 736px;
     height: 302px;   
     padding: 64px 80px;
+    margin-top: 180px;
 }
 
 .bg-img {
@@ -129,16 +152,20 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 1280px) {
 
 .quote_fav {
-    display: block;
+    display: flex;
+    /* margin-top: 156px; */
 }
 
 .quote {
+    width: 704px;
+    margin-top: 156px;
     margin-left: 0;
     margin-right: 0;
 }
 
 .bg-img {
     width: 352px;
+    margin-top: 156px;
     background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
 }
 
@@ -152,6 +179,12 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
 
 .daily-norm{
     width: 352px;
+    margin-top: 156px;
     }
 }
 
+
+/* Марджини?
+Стилізація іконок " та гантелі
+Якийсь додатковий обєкт на 1280
+позиціонування на десктопі не по формату */
