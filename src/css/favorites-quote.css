@@ -145,7 +145,7 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 
 .quote_fav {
     display: flex;
@@ -180,6 +180,5 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
 
 .daily-norm {
     width: 352px;
-        
 }
 }
