@@ -11,13 +11,13 @@ const listPaginationBtn = document.querySelector(
 );
 
 // пагінация по сторінкам за допомогою кнопочок
-mainContainerFavorites.classList.remove('is-hidden');
+
 async function renderFavoritseList() {
   // функція для показу сторінки за значенням perPage
   function check() {
     let arrayData = JSON.parse(localStorage.getItem('favorites'));
     if (arrayData.length === 0 || arrayData === null) {
-      mainContainerFavorites.classList.add('is-hidden');
+      mainContainerFavorites.remove();
       return renderErrorCard(arrayData);
     }
 
