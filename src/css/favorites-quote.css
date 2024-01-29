@@ -10,6 +10,7 @@
 
 .quote {
     display: grid;
+    position: relative;
     width: 100%;
     height: 272px;
     padding: 40px 20px;
@@ -30,11 +31,20 @@ h3 {
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    line-height: 28px;
+    line-height: 1.4em;
     margin-top: 2px;
     margin-bottom: 2px;
-    margin-right: 61px;
-    margin-left: 12px;
+}
+
+.icon-inverted_commas {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+}
+
+.icon-inverted_commas svg {
+    width: 28px;
+    height: 28px;
 }
 
 .daily-norm-bg-box {
@@ -120,6 +130,21 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
     margin-top: 180px;
 }
 
+h3 {
+    font-size: 24px;
+    line-height: 2em;
+}
+
+.icon-inverted_commas {
+    top: 32px;
+    right: 80px;
+}
+
+.icon-inverted_commas svg {
+    width: 48px;
+    height: 48px;
+}
+
 .bg-img {
     min-width: 368px;
     height: 302px;
@@ -143,6 +168,11 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     width: 368px;
     height: 302px;
 }
+
+.dailyy-time{
+    font-size: 24px;
+    line-height: 1.33em;
+}
 }
 
 @media screen and (min-width: 1440px) {
@@ -156,23 +186,30 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 }
 
 .quote {
-    width: 704px;
+    min-width: 704px;
     margin-left: 0;
     margin-right: 0;
+    padding: 64px 64px;
+}
+
+.icon-inverted_commas {
+    right: 64px;
 }
     
 .daily-norm-bg-box {
     margin-top: 180px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .bg-img {
-    width: 352px;
+    min-width: 352px;
     background-image: url('../img/favorites-quote/quote-fav-desktop.jpg');
 }
 
-@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
-screen and (min-resolution: 2dppx) and (min-width: 1280px),
-screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+screen and (min-resolution: 2dppx) and (min-width: 1440px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
     .bg-img {
         background-image: url('../img/favorites-quote/quote-fav-desktop@2x.jpg');
     }
