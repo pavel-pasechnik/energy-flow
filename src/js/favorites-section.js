@@ -32,7 +32,6 @@ async function renderFavoritseList() {
       return renderErrorCard(arrayData);
     }
     console.log(arrayData);
-    renderErrorCard(arrayData);
     const perPage = 8;
     let currentPage = 1;
 
@@ -102,6 +101,10 @@ async function renderFavoritseList() {
 
     ulFavoritesList.addEventListener('click', event => {
       const element = event.target;
+      if (arrayData.length === 0 || arrayData === null) {
+        mainContainerFavorites.classList.add('is-hidden');
+        return renderErrorCard(arrayData);
+      }
       if (element.classList.contains('favorites-btn-trash')) {
         let i = element.dataset.id;
         const b = arrayData.filter(id => id._id !== i);
