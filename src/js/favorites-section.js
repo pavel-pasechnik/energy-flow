@@ -4,7 +4,9 @@ const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
 );
-// функція отримання массиву вправ з localStorage
+
+// const savedFavoritesExercises = JSON.parse(localStorage.getItem('favorites'));
+// // функція отримання массиву вправ з localStorage
 // async function getFavoritseList() {
 //   let arrayData = [];
 
@@ -22,6 +24,7 @@ const containerErrorMasseg = document.querySelector(
 // пагінация по сторінкам за допомогою кнопочок
 
 async function renderFavoritseList() {
+  // let arrayData = JSON.parse(localStorage.getItem('favorites'));
   // функція для показу сторінки за значенням perPage
   function check() {
     let arrayData = JSON.parse(localStorage.getItem('favorites'));
@@ -99,8 +102,10 @@ async function renderFavoritseList() {
       if (element.classList.contains('favorites-btn-trash')) {
         let i = element.dataset.id;
         const b = arrayData.filter(id => id._id !== i);
-        let c = localStorage.setItem('favorites', JSON.stringify(b));
+        console.log(b);
+        localStorage.setItem('favorites', JSON.stringify(b));
         console.log(i);
+
         check();
       }
     });
