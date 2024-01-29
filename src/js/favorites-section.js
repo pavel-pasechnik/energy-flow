@@ -126,103 +126,10 @@ async function renderFavoritseList() {
     check();
     window.addEventListener('resize', check);
   }
-  // Otherwise, do nothing
+  // переривання функції
   else {
-    // console.log('You are not on the target page');
     return;
   }
-  // функція для показу сторінки за значенням perPage
-  // function check() {
-  //   let arrayData = JSON.parse(localStorage.getItem('favorites'));
-  //   if (arrayData.length === 0 || arrayData === null) {
-  //     mainContainerFavorites.remove();
-  //     return renderErrorCard(arrayData);
-  //   }
-
-  //   console.log(arrayData);
-  //   const perPage = 8;
-  //   let currentPage = 1;
-
-  //   if (window.matchMedia('(max-width: 376px)').matches) {
-  //     function favoritesList(arrayData, perPage, currentPage) {
-  //       ulFavoritesList.innerHTML = '';
-  //       currentPage--;
-  //       const start = perPage * currentPage;
-  //       const end = start + perPage;
-  //       const paginationData = arrayData.slice(start, end);
-  //       ulFavoritesList.innerHTML = cardMarking(paginationData);
-  //     }
-
-  //     // функція формування списку кнопочок + стилізация
-
-  //     function favoritesListPaginationBtn(arrData, perPage) {
-  //       listPaginationBtn.innerHTML = '';
-  //       const containerPagonationList = document.querySelector('.pagination');
-  //       const pagesCount = Math.ceil(arrData.length / perPage);
-
-  //       for (let i = 0; i < pagesCount; i++) {
-  //         const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
-  //         listPaginationBtn.appendChild(itemPagonationBtn);
-  //       }
-  //       containerPagonationList.appendChild(listPaginationBtn);
-  //     }
-
-  //     // формування та стилізація кількості кнопочок
-
-  //     function favoritesItemPaginationBtn(page) {
-  //       const itemPagonationBtn = document.createElement('li');
-  //       itemPagonationBtn.innerText = page;
-
-  //       if (currentPage == page) {
-  //         itemPagonationBtn.classList.add('favorites-pagination-btn');
-  //       }
-  //       if (currentPage !== page) {
-  //         itemPagonationBtn.classList.add('favorites-pagination-btn-not-activ');
-  //       }
-
-  //       itemPagonationBtn.addEventListener('click', () => {
-  //         // event.preventDefault();
-  //         currentPage = page;
-  //         favoritesList(arrayData, perPage, currentPage);
-
-  //         let currentItemLi = document.querySelector(
-  //           'li.favorites-pagination-btn'
-  //         );
-  //         currentItemLi.classList.remove('favorites-pagination-btn');
-  //         currentItemLi.classList.add('favorites-pagination-btn-not-activ');
-
-  //         itemPagonationBtn.classList.remove(
-  //           'favorites-pagination-btn-not-activ'
-  //         );
-  //         itemPagonationBtn.classList.add('favorites-pagination-btn');
-  //       });
-
-  //       return itemPagonationBtn;
-  //     }
-
-  //     favoritesList(arrayData, perPage, currentPage);
-  //     favoritesListPaginationBtn(arrayData, perPage);
-  //   } else {
-  //     ulFavoritesList.innerHTML = cardMarking(arrayData);
-  //   }
-
-  //   ulFavoritesList.addEventListener('click', event => {
-  //     const element = event.target;
-  //     if (arrayData.length === 0 || arrayData === null) {
-  //       mainContainerFavorites.classList.add('is-hidden');
-  //       return renderErrorCard(arrayData);
-  //     }
-  //     if (element.classList.contains('favorites-btn-trash')) {
-  //       let i = element.dataset.id;
-  //       const b = arrayData.filter(id => id._id !== i);
-  //       let c = localStorage.setItem('favorites', JSON.stringify(b));
-  //       console.log(i);
-  //       check();
-  //     }
-  //   });
-  // }
-  // check();
-  // window.addEventListener('resize', check);
 }
 
 // функція рендеру картки
