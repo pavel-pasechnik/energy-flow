@@ -6,23 +6,12 @@ const containerErrorMasseg = document.querySelector(
 );
 
 const mainContainerFavorites = document.querySelector('.favorites-main');
-// функція отримання массиву вправ з localStorage
-// async function getFavoritseList() {
-//   let arrayData = [];
-
-//   for (const _id of savedFavoritesExercises) {
-//     await getRequest(`/exercises/${_id}`)
-//       .then(data => {
-//         return arrayData.push(data);
-//       })
-//       .catch(error => console.log(error));
-//   }
-
-//   return arrayData;
-// }
+const listPaginationBtn = document.querySelector(
+  '.favorites-pagination-container-btn'
+);
 
 // пагінация по сторінкам за допомогою кнопочок
-
+mainContainerFavorites.classList.remove('is-hidden');
 async function renderFavoritseList() {
   // функція для показу сторінки за значенням perPage
   function check() {
@@ -31,10 +20,11 @@ async function renderFavoritseList() {
       mainContainerFavorites.classList.add('is-hidden');
       return renderErrorCard(arrayData);
     }
+
     console.log(arrayData);
     const perPage = 8;
     let currentPage = 1;
-    window.removeEventListener('resize', check);
+
     if (window.matchMedia('(max-width: 376px)').matches) {
       function favoritesList(arrayData, perPage, currentPage) {
         ulFavoritesList.innerHTML = '';
@@ -48,18 +38,15 @@ async function renderFavoritseList() {
       // функція формування списку кнопочок + стилізация
 
       function favoritesListPaginationBtn(arrData, perPage) {
+        listPaginationBtn.innerHTML = '';
         const containerPagonationList = document.querySelector('.pagination');
         const pagesCount = Math.ceil(arrData.length / perPage);
-        const listPaginationBtn = document.createElement('ul');
-        listPaginationBtn.classList.add('favorites-pagination-container-btn');
 
         for (let i = 0; i < pagesCount; i++) {
           const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
-          let countPage = listPaginationBtn.appendChild(itemPagonationBtn);
-          return countPage;
+          listPaginationBtn.appendChild(itemPagonationBtn);
         }
-        containerPagonationList.innerHTML = countPage;
-        // containerPagonationList.appendChild(listPaginationBtn);
+        containerPagonationList.appendChild(listPaginationBtn);
       }
 
       // формування та стилізація кількості кнопочок
@@ -102,7 +89,6 @@ async function renderFavoritseList() {
     }
 
     ulFavoritesList.addEventListener('click', event => {
-      window.removeEventListener('resize', check);
       const element = event.target;
       if (arrayData.length === 0 || arrayData === null) {
         mainContainerFavorites.classList.add('is-hidden');
