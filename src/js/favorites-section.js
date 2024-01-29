@@ -11,7 +11,7 @@ const listPaginationBtn = document.querySelector(
 );
 
 // пагінация по сторінкам за допомогою кнопочок
-
+mainContainerFavorites.classList.remove('is-hidden');
 async function renderFavoritseList() {
   // функція для показу сторінки за значенням perPage
   function check() {
