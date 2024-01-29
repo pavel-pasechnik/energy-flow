@@ -39,7 +39,7 @@ function fillModalWithData(data) {
     <div class="exercise-details">
       <button id="closeButton" class="close-button">
         <svg class="close-icon" width="12" height="12" >
-          <use href="./img/sprite.svg#close"></use>
+          <use href="../img/sprite.svg#close"></use>
         </svg>
       </button>
       <div class="content-wrapper">
@@ -71,7 +71,7 @@ function fillModalWithData(data) {
               <button class="favorite-button" id="favoriteButton">
                 <span>Add to Favorites</span>
                 <svg class="heart-icon" width="20" height="20" >
-                  <use href="./img/sprite.svg#heart"></use>
+                  <use href="../img/sprite.svg#heart"></use>
                 </svg>
               </button>
             </div>
@@ -129,11 +129,11 @@ function getStarRating(rating) {
   const filledStars = Math.round(rating);
   const emptyStars = 5 - filledStars;
   const filledStarSvg = `<svg class="star" width="18" height="18" >
-    <use href="./img/sprite.svg#colorstar"></use>
+    <use href="../img/sprite.svg#colorstar"></use>
   </svg>`;
   const emptyStarSvg = `
     <svg class="star empty-star" width="18" height="18" >
-      <use href="./img/sprite.svg#star"></use>
+      <use href="../img/sprite.svg#star"></use>
     </svg>`;
 
   let stars = '';
@@ -179,7 +179,7 @@ function setRemoveFromFavorites(button) {
   const span = button.querySelector('span');
   span.textContent = 'Remove from';
   const use = button.querySelector('use');
-  use.setAttribute('href', './img/sprite.svg#heart');
+  use.setAttribute('href', '../img/sprite.svg#heart');
 }
 
 // Function to set the "Add to Favorites" button state
@@ -187,13 +187,24 @@ function setAddToFavorites(button) {
   const span = button.querySelector('span');
   span.textContent = 'Add to Favorites';
   const use = button.querySelector('use');
-  use.setAttribute('href', './img/sprite.svg#heart');
+  use.setAttribute('href', '../img/sprite.svg#heart');
 }
 
-// Added event listener for the start button in the exercise gallery
+// // Added event listener for the start button in the exercise gallery
+// document.addEventListener('click', event => {
+//   if (event.target.classList.contains('exercises-gallery-btn-start')) {
+//     const exerciseId = event.target.dataset.action;
+//     showExerciseModal(exerciseId);
+//   }
+// });
+// пропрацювати
 document.addEventListener('click', event => {
   if (event.target.classList.contains('exercises-gallery-btn-start')) {
     const exerciseId = event.target.dataset.action;
+    showExerciseModal(exerciseId);
+  }
+  if (event.target.classList.contains('favorites-btn-arrow')) {
+    const exerciseId = event.target.getAttribute('data-action');
     showExerciseModal(exerciseId);
   }
 });
