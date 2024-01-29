@@ -25,11 +25,33 @@ const containerErrorMasseg = document.querySelector(
 
 async function renderFavoritseList() {
   // let arrayData = JSON.parse(localStorage.getItem('favorites'));
+  // let arrayData = await getFavoritseList();
   // функція для показу сторінки за значенням perPage
-  function check() {
-    let arrayData = JSON.parse(localStorage.getItem('favorites'));
+  async function check() {
+    let savedFavoritesExercises = JSON.parse(localStorage.getItem('favorites'));
+    if (savedFavoritesExercises === null) {
+      return renderErrorCard();
+    }
+    console.log(savedFavoritesExercises);
+    async function getFavoritseList() {
+      let arrayData = [];
+
+      for (const _id of savedFavoritesExercises) {
+        await getRequest(`/exercises/${_id}`)
+          .then(data => {
+            return arrayData.push(data);
+          })
+          .catch(error => console.log(error));
+      }
+
+      return arrayData;
+    }
+
+    let arrayData = await getFavoritseList();
+
+    // let arrayData = JSON.parse(localStorage.getItem('favorites'));
     console.log(arrayData);
-    renderErrorCard(arrayData);
+    // renderErrorCard(arrayData);
     const perPage = 8;
     let currentPage = 1;
 
@@ -101,9 +123,17 @@ async function renderFavoritseList() {
       const element = event.target;
       if (element.classList.contains('favorites-btn-trash')) {
         let i = element.dataset.id;
-        const b = arrayData.filter(id => id._id !== i);
+        let b = arrayData.filter(id => id._id !== i);
+        // b.forEach(element =>
+        //   localStorage.setItem('favorites', JSON.stringify(element._id))
+        // );
+        for (let i = 0; i < b.length; i++) {
+          for (const element of b) {
+            localStorage.setItem('favorites', JSON.stringify(element._id));
+          }
+        }
         console.log(b);
-        localStorage.setItem('favorites', JSON.stringify(b));
+        // localStorage.setItem('favorites', JSON.stringify(b));
         console.log(i);
 
         check();
@@ -167,8 +197,7 @@ function cardMarking(obj) {
 }
 
 function renderErrorCard(array) {
-  if (array.length === 0) {
-    return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
+  return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
         srcset="
@@ -191,7 +220,6 @@ function renderErrorCard(array) {
         for easier access in the future.
       </p>
     </div>`);
-  }
 }
 
 renderFavoritseList();
