@@ -27,7 +27,7 @@ function fillModalWithData(data) {
   exerciseDetails.innerHTML = `
     <div class="exercise-details">
       <button id="closeButton" class="close-button">
-    <svg class="close-icon" fill="#1B1B1B">
+    <svg class="close-icon">
       <use href="./img/sprite.svg#close"></use>
     </svg>
   </button>
@@ -63,7 +63,7 @@ function fillModalWithData(data) {
       <use href="./img/sprite.svg#heart"></use>
     </svg>
   </button>
-                <button class="rating-button rate-button">Give a Rating</button>
+                
               </div>
             </div>
         </div>
@@ -114,7 +114,7 @@ function getStarRating(rating) {
     <use href="./img/sprite.svg#colorstar"></use>
 </svg>`;
   const emptyStarSvg = `
-  <svg class="star">
+  <svg class="star empty-star">
     <use href="./img/sprite.svg#star"></use>
   </svg>
 `;
