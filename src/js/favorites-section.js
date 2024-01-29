@@ -4,29 +4,24 @@ const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
 );
-// функція отримання массиву вправ з localStorage
-// async function getFavoritseList() {
-//   let arrayData = [];
 
-//   for (const _id of savedFavoritesExercises) {
-//     await getRequest(`/exercises/${_id}`)
-//       .then(data => {
-//         return arrayData.push(data);
-//       })
-//       .catch(error => console.log(error));
-//   }
-
-//   return arrayData;
-// }
+const mainContainerFavorites = document.querySelector('.favorites-main');
+const listPaginationBtn = document.querySelector(
+  '.favorites-pagination-container-btn'
+);
 
 // пагінация по сторінкам за допомогою кнопочок
-
+mainContainerFavorites.classList.remove('is-hidden');
 async function renderFavoritseList() {
   // функція для показу сторінки за значенням perPage
   function check() {
     let arrayData = JSON.parse(localStorage.getItem('favorites'));
+    if (arrayData.length === 0 || arrayData === null) {
+      mainContainerFavorites.classList.add('is-hidden');
+      return renderErrorCard(arrayData);
+    }
+
     console.log(arrayData);
-    renderErrorCard(arrayData);
     const perPage = 8;
     let currentPage = 1;
 
@@ -43,10 +38,9 @@ async function renderFavoritseList() {
       // функція формування списку кнопочок + стилізация
 
       function favoritesListPaginationBtn(arrData, perPage) {
+        listPaginationBtn.innerHTML = '';
         const containerPagonationList = document.querySelector('.pagination');
         const pagesCount = Math.ceil(arrData.length / perPage);
-        const listPaginationBtn = document.createElement('ul');
-        listPaginationBtn.classList.add('favorites-pagination-container-btn');
 
         for (let i = 0; i < pagesCount; i++) {
           const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
@@ -96,6 +90,10 @@ async function renderFavoritseList() {
 
     ulFavoritesList.addEventListener('click', event => {
       const element = event.target;
+      if (arrayData.length === 0 || arrayData === null) {
+        mainContainerFavorites.classList.add('is-hidden');
+        return renderErrorCard(arrayData);
+      }
       if (element.classList.contains('favorites-btn-trash')) {
         let i = element.dataset.id;
         const b = arrayData.filter(id => id._id !== i);
@@ -106,7 +104,7 @@ async function renderFavoritseList() {
     });
   }
   check();
-  // window.addEventListener('resize', check);
+  window.addEventListener('resize', check);
 }
 
 // функція рендеру картки
@@ -162,8 +160,7 @@ function cardMarking(obj) {
 }
 
 function renderErrorCard(array) {
-  if (array.length === 0) {
-    return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
+  return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
         srcset="
@@ -186,7 +183,6 @@ function renderErrorCard(array) {
         for easier access in the future.
       </p>
     </div>`);
-  }
 }
 
 renderFavoritseList();
