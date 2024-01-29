@@ -190,3 +190,4 @@ function renderErrorCard(array) {
 }
 
 renderFavoritseList();
+
