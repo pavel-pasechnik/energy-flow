@@ -1,8 +1,8 @@
-const u=document.querySelector(".favorites-list-item"),k=document.querySelector(".favorites-container-error-notification"),h=document.querySelector(".favorites-main"),b=document.querySelector(".favorites-pagination-container-btn");function x(){const v=window.location.href,o="favorites";return v.includes(o)}const C=x();async function B(){if(C){let a=function(e){if(e.length===0||e===null){h.remove(),M();return}const r=8;let n=1;if(window.matchMedia("(max-width: 376px)").matches){let c=function(i,t,s){u.innerHTML="",s--;const p=t*s,d=p+t,m=i.slice(p,d);u.innerHTML=L(m)},l=function(i,t){b.innerHTML="";const s=document.querySelector(".pagination"),p=Math.ceil(i.length/t);for(let d=0;d<p;d++){const m=f(d+1);b.appendChild(m)}s.appendChild(b)},f=function(i){const t=document.createElement("li");return t.innerText=i,n==i&&t.classList.add("favorites-pagination-btn"),n!==i&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{n=i,c(e,r,n);let s=document.querySelector("li.favorites-pagination-btn");s.classList.remove("favorites-pagination-btn"),s.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var w=c,g=l,y=f;c(e,r,n),l(e,r)}else u.innerHTML=L(e);u.addEventListener("click",c=>{const l=c.target;if(e.length===0||e===null){h.classList.add("is-hidden"),M();return}if(l.classList.contains("favorites-btn-trash")){let f=l.dataset.id;const i=e.filter(t=>t._id!==f);localStorage.setItem("favorites",JSON.stringify(i)),a(i)}})};var v=a;h.classList.remove("is-hidden");let o=JSON.parse(localStorage.getItem("favorites"))||[];a(o)}else return}function L(v){return v.reduce((o,{bodyPart:a,burnedCalories:e,target:r,time:n,equipment:w,_id:g})=>o+`<li class="favorits-item">
+const p=document.querySelector(".favorites-list-item"),M=document.querySelector(".favorites-container-error-notification"),w=document.querySelector(".favorites-main"),h=document.querySelector(".favorites-pagination-container-btn");function k(){const v=window.location.href,a="favorites";return v.includes(a)}const C=k();async function x(){if(C){let f=function(s){if(s.length===0||s===null){w.remove(),y();return}const r=8;let o=1;if(window.matchMedia("(max-width: 376px)").matches){let c=function(e,t,i){p.innerHTML="",i--;const n=t*i,d=n+t,g=e.slice(n,d);p.innerHTML=L(g)},m=function(e,t){h.innerHTML="";const i=document.querySelector(".pagination"),n=Math.ceil(e.length/t);for(let d=0;d<n;d++){const g=l(d+1);h.appendChild(g)}i.appendChild(h)},l=function(e){const t=document.createElement("li");return t.innerText=e,o==e&&t.classList.add("favorites-pagination-btn"),o!==e&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{o=e,c(s,r,o);let i=document.querySelector("li.favorites-pagination-btn");i.classList.remove("favorites-pagination-btn"),i.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var b=c,u=m,B=l;c(s,r,o),m(s,r)}else p.innerHTML=L(s);p.addEventListener("click",c=>{const l=c.target.closest(".favorites-btn-trash");if(l){let e=l.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(n=>n._id!==e);localStorage.setItem("favorites",JSON.stringify(i)),x()}})};var v=f;w.classList.remove("is-hidden");let a=JSON.parse(localStorage.getItem("favorites"))||[];f(a)}else return}function L(v){return v.reduce((a,{bodyPart:f,burnedCalories:s,target:r,time:o,equipment:b,_id:u})=>a+`<li class="favorits-item">
           <div class="favorites-container-nav">
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
-              <button type="button" class="favorites-btn-trash" data-id="${g}" ">
+              <button type="button" class="favorites-btn-trash" data-id="${u}" ">
                   <svg id="favorites-trash" width="16" height="16" viewBox="0 0 16 16" fill="none">
   <path d="M10.6667 4.00001V3.46668C10.6667 2.71994 10.6667 2.34657 10.5213 2.06136C10.3935 1.81047 10.1895 1.6065 9.93865 1.47867C9.65344 1.33334 9.28007 1.33334 8.53333 1.33334H7.46667C6.71993 1.33334 6.34656 1.33334 6.06135 1.47867C5.81046 1.6065 5.60649 1.81047 5.47866 2.06136C5.33333 2.34657 5.33333 2.71994 5.33333 3.46668V4.00001M6.66667 7.66668V11M9.33333 7.66668V11M2 4.00001H14M12.6667 4.00001V11.4667C12.6667 12.5868 12.6667 13.1468 12.4487 13.5747C12.2569 13.951 11.951 14.2569 11.5746 14.4487C11.1468 14.6667 10.5868 14.6667 9.46667 14.6667H6.53333C5.41323 14.6667 4.85318 14.6667 4.42535 14.4487C4.04903 14.2569 3.74307 13.951 3.55132 13.5747C3.33333 13.1468 3.33333 12.5868 3.33333 11.4667V4.00001" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -10,7 +10,7 @@ const u=document.querySelector(".favorites-list-item"),k=document.querySelector(
             </div>
             <div class="favorites-container-start">
  
-              <button type="button" class="favorites-btn-arrow favorites-title-btn-start" data-action="${g}">Start
+              <button type="button" class="favorites-btn-arrow favorites-title-btn-start" data-action="${u}">Start
 
                 <svg id="favorites-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
   <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,18 +36,18 @@ const u=document.querySelector(".favorites-list-item"),k=document.querySelector(
               <span class="favorites-description-workout-span"
                 >Burned calories:
               </span>
-              ${e} / ${n} min
+              ${s} / ${o} min
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Body part:</span>
-              ${a}
+              ${f}
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Target:</span>
-              ${w}
+              ${b}
             </p>
           </div>
-        </li>`,"")}function M(){return k.innerHTML=`<h2 class="favorites-container-error-title">Favorites</h2>
+        </li>`,"")}function y(){return M.innerHTML=`<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
         srcset="
@@ -69,5 +69,5 @@ const u=document.querySelector(".favorites-list-item"),k=document.querySelector(
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
       </p>
-    </div>`}B();
-//# sourceMappingURL=favorites-section-eb59939e.js.map
+    </div>`}x();
+//# sourceMappingURL=favorites-section-0aa4b728.js.map

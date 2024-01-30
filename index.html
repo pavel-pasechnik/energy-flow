@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     
-    <script type="module" crossorigin src="/energy-flow/assets/main-f27a1944.js"></script>
-    <script type="module" crossorigin src="/energy-flow/assets/vendor-cae18210.js"></script>
-    <script type="module" crossorigin src="/energy-flow/assets/api-energy-flow-1a327691.js"></script>
-    <script type="module" crossorigin src="/energy-flow/assets/footer-9611d9bc.js"></script>
-    <link rel="stylesheet" href="/energy-flow/assets/main-e33694e6.css">
-    <link rel="stylesheet" href="/energy-flow/assets/vendor-7ae7b69d.css">
+    <script type="module" crossorigin src="/energy-flow/assets/main-99af1e56.js"></script>
+    <script type="module" crossorigin src="/energy-flow/assets/vendor-5ed05576.js"></script>
+    <script type="module" crossorigin src="/energy-flow/assets/api-energy-flow-ba3f6c65.js"></script>
+    <script type="module" crossorigin src="/energy-flow/assets/footer-78dc97b1.js"></script>
+    <link rel="stylesheet" href="/energy-flow/assets/main-f0ac7fb5.css">
+    <link rel="stylesheet" href="/energy-flow/assets/vendor-31bd9d84.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -143,21 +143,36 @@
 
       <!-- EXERCISES SECTION -->
       <section class="exercises-container container">
-  <h2 class="exercises-title">Exercises</h2>
-  <p style="display: none"></p>
-  <div class="exercises-nav-box">
-    <ul class="exercises-nav-panel">
-      <button class="exercises-button">Muscles</button>
-      <button class="exercises-button">Body parts</button>
-      <button class="exercises-button">Equipment</button>
-    </ul>
-    <form class="exercises-nav-input-block" style="display: none">
-      <input class="exercises-nav-input" type="text" />
-      <button class="input-submit-button" type="submit"></button>
-    </form>
+  <div class="exercises-wrapper">
+    <div class="exercises-container-top">
+      <h2 class="exercises-title">
+        Exercises
+        <p class="is-hidden"></p>
+      </h2>
+      <div class="exercises-nav-box">
+        <ul class="exercises-nav-panel">
+          <button class="exercises-button exercises-button-isactive">
+            Muscles
+          </button>
+          <button class="exercises-button">Body parts</button>
+          <button class="exercises-button">Equipment</button>
+        </ul>
+        <div class="exercises-nav-input-block is-hidden">
+          <input class="exercises-nav-input" type="text" placeholder="Search" />
+
+          <!-- <button class="input-submit-button" type="submit"> -->
+          <svg class="input-search-icon" width="18" height="18">
+            <use href="../img/sprite.svg#search"></use>
+          </svg>
+          <!-- </button> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="subspecies"></div>
+    <div class="exercises-gallery is-hidden"></div>
+    <div class="pagination"></div>
   </div>
-  <div class="subspecies"></div>
-  <div class="exercises-gallery" style="display: none"></div>
 </section>
 <!-- Картка з вправою -->
 <!-- <a class="exercises-gallery-item">
