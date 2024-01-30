@@ -41,7 +41,7 @@ async function renderFavoritseList() {
   // умова при якої скріпт виконується
   if (isOnTargetPage) {
     mainContainerFavorites.classList.remove('is-hidden');
-    let arrayData = JSON.parse(localStorage.getItem('favorites'));
+    let arrayData = JSON.parse(localStorage.getItem('favorites')) || [];
 
     function check(array) {
       console.log(array);
