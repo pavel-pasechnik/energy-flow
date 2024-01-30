@@ -10,101 +10,126 @@ const listPaginationBtn = document.querySelector(
   '.favorites-pagination-container-btn'
 );
 
-// пагінация по сторінкам за допомогою кнопочок
-mainContainerFavorites.classList.remove('is-hidden');
+// беремо значення поточної сторінки
+const currentURL = window.location.href;
+
+// визначаємо поточний Url для порівняння
+const targetURL = 'http://localhost:5173/favorites.html';
+
+// функция яка повертає true або false при порівнянні
+function checkURL() {
+  if (currentURL === targetURL) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const isOnTargetPage = checkURL();
+
+// mainContainerFavorites.classList.remove('is-hidden');
 async function renderFavoritseList() {
-  // функція для показу сторінки за значенням perPage
-  function check() {
-    let arrayData = JSON.parse(localStorage.getItem('favorites'));
-    if (arrayData.length === 0 || arrayData === null) {
-      mainContainerFavorites.classList.add('is-hidden');
-      return renderErrorCard(arrayData);
-    }
-
-    console.log(arrayData);
-    const perPage = 8;
-    let currentPage = 1;
-
-    if (window.matchMedia('(max-width: 376px)').matches) {
-      function favoritesList(arrayData, perPage, currentPage) {
-        ulFavoritesList.innerHTML = '';
-        currentPage--;
-        const start = perPage * currentPage;
-        const end = start + perPage;
-        const paginationData = arrayData.slice(start, end);
-        ulFavoritesList.innerHTML = cardMarking(paginationData);
-      }
-
-      // функція формування списку кнопочок + стилізация
-
-      function favoritesListPaginationBtn(arrData, perPage) {
-        listPaginationBtn.innerHTML = '';
-        const containerPagonationList = document.querySelector('.pagination');
-        const pagesCount = Math.ceil(arrData.length / perPage);
-
-        for (let i = 0; i < pagesCount; i++) {
-          const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
-          listPaginationBtn.appendChild(itemPagonationBtn);
-        }
-        containerPagonationList.appendChild(listPaginationBtn);
-      }
-
-      // формування та стилізація кількості кнопочок
-
-      function favoritesItemPaginationBtn(page) {
-        const itemPagonationBtn = document.createElement('li');
-        itemPagonationBtn.innerText = page;
-
-        if (currentPage == page) {
-          itemPagonationBtn.classList.add('favorites-pagination-btn');
-        }
-        if (currentPage !== page) {
-          itemPagonationBtn.classList.add('favorites-pagination-btn-not-activ');
-        }
-
-        itemPagonationBtn.addEventListener('click', () => {
-          // event.preventDefault();
-          currentPage = page;
-          favoritesList(arrayData, perPage, currentPage);
-
-          let currentItemLi = document.querySelector(
-            'li.favorites-pagination-btn'
-          );
-          currentItemLi.classList.remove('favorites-pagination-btn');
-          currentItemLi.classList.add('favorites-pagination-btn-not-activ');
-
-          itemPagonationBtn.classList.remove(
-            'favorites-pagination-btn-not-activ'
-          );
-          itemPagonationBtn.classList.add('favorites-pagination-btn');
-        });
-
-        return itemPagonationBtn;
-      }
-
-      favoritesList(arrayData, perPage, currentPage);
-      favoritesListPaginationBtn(arrayData, perPage);
-    } else {
-      ulFavoritesList.innerHTML = cardMarking(arrayData);
-    }
-
-    ulFavoritesList.addEventListener('click', event => {
-      const element = event.target;
+  // умова при якої скріпт виконується
+  if (isOnTargetPage) {
+    mainContainerFavorites.classList.remove('is-hidden');
+    function check() {
+      let arrayData = JSON.parse(localStorage.getItem('favorites'));
       if (arrayData.length === 0 || arrayData === null) {
-        mainContainerFavorites.classList.add('is-hidden');
+        mainContainerFavorites.remove();
         return renderErrorCard(arrayData);
       }
-      if (element.classList.contains('favorites-btn-trash')) {
-        let i = element.dataset.id;
-        const b = arrayData.filter(id => id._id !== i);
-        let c = localStorage.setItem('favorites', JSON.stringify(b));
-        console.log(i);
-        check();
+
+      console.log(arrayData);
+      const perPage = 8;
+      let currentPage = 1;
+
+      if (window.matchMedia('(max-width: 376px)').matches) {
+        function favoritesList(arrayData, perPage, currentPage) {
+          ulFavoritesList.innerHTML = '';
+          currentPage--;
+          const start = perPage * currentPage;
+          const end = start + perPage;
+          const paginationData = arrayData.slice(start, end);
+          ulFavoritesList.innerHTML = cardMarking(paginationData);
+        }
+
+        // функція формування списку кнопочок + стилізация
+
+        function favoritesListPaginationBtn(arrData, perPage) {
+          listPaginationBtn.innerHTML = '';
+          const containerPagonationList = document.querySelector('.pagination');
+          const pagesCount = Math.ceil(arrData.length / perPage);
+
+          for (let i = 0; i < pagesCount; i++) {
+            const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
+            listPaginationBtn.appendChild(itemPagonationBtn);
+          }
+          containerPagonationList.appendChild(listPaginationBtn);
+        }
+
+        // формування та стилізація кількості кнопочок
+
+        function favoritesItemPaginationBtn(page) {
+          const itemPagonationBtn = document.createElement('li');
+          itemPagonationBtn.innerText = page;
+
+          if (currentPage == page) {
+            itemPagonationBtn.classList.add('favorites-pagination-btn');
+          }
+          if (currentPage !== page) {
+            itemPagonationBtn.classList.add(
+              'favorites-pagination-btn-not-activ'
+            );
+          }
+
+          itemPagonationBtn.addEventListener('click', () => {
+            // event.preventDefault();
+            currentPage = page;
+            favoritesList(arrayData, perPage, currentPage);
+
+            let currentItemLi = document.querySelector(
+              'li.favorites-pagination-btn'
+            );
+            currentItemLi.classList.remove('favorites-pagination-btn');
+            currentItemLi.classList.add('favorites-pagination-btn-not-activ');
+
+            itemPagonationBtn.classList.remove(
+              'favorites-pagination-btn-not-activ'
+            );
+            itemPagonationBtn.classList.add('favorites-pagination-btn');
+          });
+
+          return itemPagonationBtn;
+        }
+
+        favoritesList(arrayData, perPage, currentPage);
+        favoritesListPaginationBtn(arrayData, perPage);
+      } else {
+        ulFavoritesList.innerHTML = cardMarking(arrayData);
       }
-    });
+
+      ulFavoritesList.addEventListener('click', event => {
+        const element = event.target;
+        if (arrayData.length === 0 || arrayData === null) {
+          mainContainerFavorites.classList.add('is-hidden');
+          return renderErrorCard(arrayData);
+        }
+        if (element.classList.contains('favorites-btn-trash')) {
+          let i = element.dataset.id;
+          const b = arrayData.filter(id => id._id !== i);
+          let c = localStorage.setItem('favorites', JSON.stringify(b));
+          console.log(i);
+          check();
+        }
+      });
+    }
+    check();
+    window.addEventListener('resize', check);
   }
-  check();
-  window.addEventListener('resize', check);
+  // переривання функції
+  else {
+    return;
+  }
 }
 
 // функція рендеру картки
@@ -125,7 +150,7 @@ function cardMarking(obj) {
             </div>
             <div class="favorites-container-start">
               <p class="favorites-title-btn-start">Start</p>
-              <button type="button" class="favorites-btn-arrow">
+              <button type="button" class="favorites-btn-arrow" data-action="${_id}">
                 <svg class="favorites-arrow" width="14" height="14" alt="arrow">
                   <use href="../img/sprite.svg#favorites-arrow"></use>
                 </svg>
