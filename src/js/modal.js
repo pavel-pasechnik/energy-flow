@@ -75,14 +75,15 @@ function fillModalWithData(data) {
             <div class="exercise-description">
               <p>${data.description}</p>
             </div>
-            <div class="action-buttons">
-              <button class="favorite-button" id="favoriteButton">
-                <span>Add to Favorites</span>
-                <svg class="heart-icon" width="20" height="20" >
-                  <use href="/energy-flow/assets/sprite-0567d6ea.svg#heart"></use>
-                </svg>
-              </button>
-            </div>
+              <div class="action-buttons">
+                  <button class="favorite-button" id="favoriteButton">
+                    <span>Add to Favorites</span>
+                    <svg class="heart-icon" width="20" height="20" >
+                    <use href="/energy-flow/assets/sprite-0567d6ea.svg#heart"></use>
+                    </svg>
+                  </button>
+                  <button class="rating-button" data-action="${data._id}">Give a Rating</button>
+              </div>
           </div>
         </div>
       </div>
@@ -90,6 +91,8 @@ function fillModalWithData(data) {
 
   modalContent.appendChild(exerciseDetails);
   modal.classList.add('is-visible');
+
+
 
   const favoriteButton = document.getElementById('favoriteButton');
 
