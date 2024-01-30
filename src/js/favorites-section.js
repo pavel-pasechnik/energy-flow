@@ -1,5 +1,3 @@
-import { getRequest } from './api-energy-flow';
-
 const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
@@ -11,23 +9,34 @@ const listPaginationBtn = document.querySelector(
 );
 
 // беремо значення поточної сторінки
-const currentURL = window.location.href;
+// const currentURL = window.location.href;
 
-// визначаємо поточний Url для порівняння
-const targetURL = 'http://localhost:5173/favorites.html';
+// // визначаємо поточний Url для порівняння
+// const targetURL = 'http://localhost:5173/favorites.html';
 
 // функция яка повертає true або false при порівнянні
+// function checkURL() {
+//   if (currentURL === targetURL) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
 function checkURL() {
-  if (currentURL === targetURL) {
-    return true;
-  } else {
-    return false;
-  }
+  // беремо значення поточної сторінки
+  const currentURL = window.location.href;
+
+  // визначаємо поточний Url для порівняння
+  const targetURL = 'favorites';
+
+  // повертає true або false
+
+  return currentURL.includes(targetURL);
 }
 
 const isOnTargetPage = checkURL();
 
-// mainContainerFavorites.classList.remove('is-hidden');
 async function renderFavoritseList() {
   // умова при якої скріпт виконується
   if (isOnTargetPage) {
@@ -35,7 +44,8 @@ async function renderFavoritseList() {
     let arrayData = JSON.parse(localStorage.getItem('favorites'));
 
     function check(array) {
-      // let arrayData = JSON.parse(localStorage.getItem('favorites'));
+      console.log(array);
+
       if (array.length === 0 || array === null) {
         mainContainerFavorites.remove();
         return renderErrorCard(array);
@@ -85,7 +95,6 @@ async function renderFavoritseList() {
           }
 
           itemPagonationBtn.addEventListener('click', () => {
-            // event.preventDefault();
             currentPage = page;
             favoritesList(array, perPage, currentPage);
 
@@ -126,7 +135,7 @@ async function renderFavoritseList() {
       });
     }
     check(arrayData);
-    window.addEventListener('resize', check);
+    // window.addEventListener('resize', check);
   }
   // переривання функції
   else {
