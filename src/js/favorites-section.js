@@ -30,8 +30,6 @@ function checkURL() {
   // визначаємо поточний Url для порівняння
   const targetURL = 'favorites';
 
-  // повертає true або false
-
   return currentURL.includes(targetURL);
 }
 
@@ -47,7 +45,7 @@ async function renderFavoritseList() {
       console.log(array);
 
       if (array.length === 0 || array === null) {
-        // mainContainerFavorites.remove();
+        mainContainerFavorites.remove();
         renderErrorCard();
         return;
       }
@@ -121,7 +119,7 @@ async function renderFavoritseList() {
       ulFavoritesList.addEventListener('click', event => {
         const element = event.target;
         if (array.length === 0 || array === null) {
-          // mainContainerFavorites.classList.add('is-hidden');
+          mainContainerFavorites.classList.add('is-hidden');
           renderErrorCard();
           return;
         }
