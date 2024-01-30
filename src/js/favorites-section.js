@@ -42,8 +42,6 @@ async function renderFavoritseList() {
     let arrayData = JSON.parse(localStorage.getItem('favorites')) || [];
 
     function check(array) {
-      console.log(array);
-
       if (array.length === 0 || array === null) {
         mainContainerFavorites.remove();
         renderErrorCard();
@@ -127,7 +125,6 @@ async function renderFavoritseList() {
           let i = element.dataset.id;
           const b = array.filter(id => id._id !== i);
           let c = localStorage.setItem('favorites', JSON.stringify(b));
-          console.log(i);
           check(b);
         }
       });
