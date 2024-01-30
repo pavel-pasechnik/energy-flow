@@ -34,3 +34,16 @@ postRequest();
 // postRequest('/subscription', { email: 'test@gmail.com' }).then(data => {
 //   console.log(data);
 // });
+
+// The function of creating a patch
+export const patchRequest = async (url = '', object = {}) => {
+  try {
+    if (url === '' || object === '') return;
+    const response = await axios.patch(url, object);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+patchRequest();
