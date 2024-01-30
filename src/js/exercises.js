@@ -1,4 +1,5 @@
 import { getRequest } from './api-energy-flow';
+import AddLoading from './';
 function checkURL() {
   const currentURL = window.location.href;
   const targetURL = 'index';
@@ -105,7 +106,8 @@ if (isOnTargetPage) {
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
       renderSubspecies(params);
-      getPagination(params, renderSubspecies);
+      // getPagination(params, renderSubspecies);
+      addPaginationClickListener(params, renderSubspecies);
       subspecies.classList.remove('is-hidden');
       exercisesGallery.classList.add('is-hidden');
       searchBlock.classList.add('is-hidden');
@@ -131,14 +133,16 @@ if (isOnTargetPage) {
       searchBlock.classList.remove('is-hidden');
       renderExercises(params2);
       scroll.scrollIntoView({ behavior: 'smooth' });
-      getPagination(params2, renderExercises);
+      // getPagination(params2, renderExercises);
+      addPaginationClickListener(params2, renderExercises);
     }
   });
   // Слухач на інпут
   searchBtn.addEventListener('click', event => {
     params2.keyword = searchInput.value.trim();
     renderExercises(params2);
-    getPagination(params2, renderExercises);
+    // getPagination(params2, renderExercises);
+    addPaginationClickListener(params2, renderExercises);
     delete params2.keyword;
   });
   //функция для пагинации страниц
@@ -162,16 +166,42 @@ if (isOnTargetPage) {
   const ExercisesId = getExercisesId();
   // Слухач по пагінації
 
-  function getPagination(param, callback) {
-    pagination.addEventListener('click', event => {
+  // function alpha(param, callback, event) {
+  //   if (event.target.tagName === 'BUTTON') {
+  //     param.page = parseInt(event.target.textContent);
+  //     callback(param);
+  //     scroll.scrollIntoView({ behavior: 'smooth' });
+  //     param.page = 1;
+  //   }
+  // }
+  // Функція для додавання слухача події кліка на пагінації
+  function addPaginationClickListener(param, callback) {
+    pagination.addEventListener('click', paginationClickHandler);
+
+    // Внутрішня функція-обробник події кліка на пагінації
+    function paginationClickHandler(event) {
       if (event.target.tagName === 'BUTTON') {
-        param.page = parseInt(event.target.textContent);
-        callback(param);
-        scroll.scrollIntoView({ behavior: 'smooth' });
-        param.page = 1;
+        const page = parseInt(event.target.textContent);
+        updatePaginationParam(param, page, callback);
       }
-    });
+    }
   }
+
+  // Функція для видалення слухача події кліка на пагінації
+  function removePaginationClickListener() {
+    pagination.removeEventListener('click', paginationClickHandler);
+  }
+
+  // function getPagination(param, callback) {
+  //   pagination.addEventListener('click', event => {
+  //     if (event.target.tagName === 'BUTTON') {
+  //       param.page = parseInt(event.target.textContent);
+  //       callback(param);
+  //       scroll.scrollIntoView({ behavior: 'smooth' });
+  //       param.page = 1;
+  //     }
+  //   });
+  // }
 
   // Функція для рендеру вправ
 
