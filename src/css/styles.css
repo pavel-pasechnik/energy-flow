@@ -22,7 +22,7 @@
 @import url('./favorites-section.css');
 @import url('./menu.css');
 @import url('./modal.css');
-/* @import url('./modal-rating.css'); */
+@import url('./modal-rating.css');
 
 :root {
   color: #1b1b1b;
