@@ -48,7 +48,8 @@ async function renderFavoritseList() {
 
       if (array.length === 0 || array === null) {
         mainContainerFavorites.remove();
-        return renderErrorCard(array);
+        renderErrorCard();
+        return;
       }
       const perPage = 8;
       let currentPage = 1;
@@ -121,7 +122,8 @@ async function renderFavoritseList() {
         const element = event.target;
         if (array.length === 0 || array === null) {
           mainContainerFavorites.classList.add('is-hidden');
-          return renderErrorCard(array);
+          renderErrorCard();
+          return;
         }
         if (element.classList.contains('favorites-btn-trash')) {
           let i = element.dataset.id;
@@ -193,7 +195,7 @@ function cardMarking(obj) {
   );
 }
 
-function renderErrorCard(array) {
+function renderErrorCard() {
   return (containerErrorMasseg.innerHTML = `<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
