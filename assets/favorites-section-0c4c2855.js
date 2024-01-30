@@ -1,4 +1,4 @@
-const u=document.querySelector(".favorites-list-item"),y=document.querySelector(".favorites-container-error-notification"),h=document.querySelector(".favorites-main"),b=document.querySelector(".favorites-pagination-container-btn");function S(){const o=window.location.href,a="favorites";return o.includes(a)}const k=S();async function T(){if(k){let r=function(e){if(console.log(e),e.length===0||e===null)return h.remove(),x();const c=8;let s=1;if(window.matchMedia("(max-width: 376px)").matches){let l=function(i,t,n){u.innerHTML="",n--;const p=t*n,f=p+t,m=i.slice(p,f);u.innerHTML=L(m)},d=function(i,t){b.innerHTML="";const n=document.querySelector(".pagination"),p=Math.ceil(i.length/t);for(let f=0;f<p;f++){const m=v(f+1);b.appendChild(m)}n.appendChild(b)},v=function(i){const t=document.createElement("li");return t.innerText=i,s==i&&t.classList.add("favorites-pagination-btn"),s!==i&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{s=i,l(e,c,s);let n=document.querySelector("li.favorites-pagination-btn");n.classList.remove("favorites-pagination-btn"),n.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var w=l,g=d,M=v;l(e,c,s),d(e,c)}else u.innerHTML=L(e);u.addEventListener("click",l=>{const d=l.target;if(e.length===0||e===null)return h.classList.add("is-hidden"),x();if(d.classList.contains("favorites-btn-trash")){let v=d.dataset.id;const i=e.filter(t=>t._id!==v);localStorage.setItem("favorites",JSON.stringify(i)),console.log(v),r(i)}})};var o=r;h.classList.remove("is-hidden");let a=JSON.parse(localStorage.getItem("favorites"));r(a)}else return}function L(o){return o.reduce((a,{bodyPart:r,burnedCalories:e,target:c,time:s,equipment:w,_id:g})=>a+`<li class="favorits-item">
+const u=document.querySelector(".favorites-list-item"),S=document.querySelector(".favorites-container-error-notification"),h=document.querySelector(".favorites-main"),b=document.querySelector(".favorites-pagination-container-btn");function k(){const f=window.location.href,o="favorites";return f.includes(o)}const y=k();async function T(){if(y){let a=function(e){if(console.log(e),e.length===0||e===null){h.remove(),x();return}const r=8;let s=1;if(window.matchMedia("(max-width: 376px)").matches){let c=function(i,t,n){u.innerHTML="",n--;const p=t*n,v=p+t,m=i.slice(p,v);u.innerHTML=L(m)},l=function(i,t){b.innerHTML="";const n=document.querySelector(".pagination"),p=Math.ceil(i.length/t);for(let v=0;v<p;v++){const m=d(v+1);b.appendChild(m)}n.appendChild(b)},d=function(i){const t=document.createElement("li");return t.innerText=i,s==i&&t.classList.add("favorites-pagination-btn"),s!==i&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{s=i,c(e,r,s);let n=document.querySelector("li.favorites-pagination-btn");n.classList.remove("favorites-pagination-btn"),n.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var w=c,g=l,M=d;c(e,r,s),l(e,r)}else u.innerHTML=L(e);u.addEventListener("click",c=>{const l=c.target;if(e.length===0||e===null){h.classList.add("is-hidden"),x();return}if(l.classList.contains("favorites-btn-trash")){let d=l.dataset.id;const i=e.filter(t=>t._id!==d);localStorage.setItem("favorites",JSON.stringify(i)),console.log(d),a(i)}})};var f=a;h.classList.remove("is-hidden");let o=JSON.parse(localStorage.getItem("favorites"));a(o)}else return}function L(f){return f.reduce((o,{bodyPart:a,burnedCalories:e,target:r,time:s,equipment:w,_id:g})=>o+`<li class="favorits-item">
           <div class="favorites-container-nav">
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
@@ -21,7 +21,7 @@ const u=document.querySelector(".favorites-list-item"),y=document.querySelector(
             <svg width="24" height="24" class="favorites-icon-man">
               <use href="../../src/img/sprite.svg#favorites-man"></use>
             </svg>
-            <p class="favorites-title-name">${c}</p>
+            <p class="favorites-title-name">${r}</p>
           </div>
           <div class="favorites-description-workout">
             <p class="favorites-title-descriptoin">
@@ -32,14 +32,14 @@ const u=document.querySelector(".favorites-list-item"),y=document.querySelector(
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Body part:</span>
-              ${r}
+              ${a}
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Target:</span>
               ${w}
             </p>
           </div>
-        </li>`,"")}function x(o){return y.innerHTML=`<h2 class="favorites-container-error-title">Favorites</h2>
+        </li>`,"")}function x(){return S.innerHTML=`<h2 class="favorites-container-error-title">Favorites</h2>
     <div class="favorites-container-error-description">
       <img
         srcset="
@@ -62,4 +62,4 @@ const u=document.querySelector(".favorites-list-item"),y=document.querySelector(
         for easier access in the future.
       </p>
     </div>`}T();
-//# sourceMappingURL=favorites-section-2b4a5bff.js.map
+//# sourceMappingURL=favorites-section-0c4c2855.js.map
