@@ -31,6 +31,8 @@ function closeExerciseModal() {
   // Hide both modal and backdrop
   modal.classList.remove('is-visible');
   backdrop.classList.remove('is-visible');
+
+  location.reload();
 }
 
 // Fill the modal with data
@@ -218,6 +220,8 @@ document.addEventListener('click', event => {
     showExerciseModal(exerciseId, clickedElement.classList.contains('exercises-gallery-btn-start'));
   }
 });
+
+
 
 
 
