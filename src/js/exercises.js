@@ -188,7 +188,6 @@ if (isOnTargetPage) {
   function renderExercises(param) {
     getRequest('/exercises', param)
       .then(data => {
-        console.log(data);
         const { page, totalPages, results } = data;
         if (Array.from(results).length === 0) {
           withoutResult.classList.remove('is-hidden');
@@ -253,7 +252,6 @@ if (isOnTargetPage) {
           pagination.removeEventListener('click', event => {
             if (event.target.tagName === 'BUTTON') {
               param.page = parseInt(event.target.textContent);
-              console.log(param);
               callback(param);
               param.page = 1;
             }
