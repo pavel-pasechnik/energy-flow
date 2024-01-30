@@ -124,6 +124,11 @@ async function renderFavoritseList() {
           let updatedFavorites = currentFavorites.filter(
             exercise => exercise._id !== exerciseId
           );
+          //   if (array.length === 0 || array === null) {
+          //     mainContainerFavorites.classList.add('is-hidden');
+          //     renderErrorCard();
+          //     return;
+          //   }
           localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
           renderFavoritseList();
         }
