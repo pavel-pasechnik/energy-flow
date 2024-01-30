@@ -33,8 +33,9 @@
 
 
 .footer-container {
-  margin: 0 auto;
+  max-width: 375px;
   padding: 0 20px;
+  margin: 0 auto;
 }
 
 @media (min-width: 375px) {
@@ -57,19 +58,62 @@
 
 /* ________________Mobile version_____________ */
 
+.footer-container {
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 375px) {
+  .footer-container {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 0 16px;
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer-container {
+    max-width: 1440px;
+  }
+}
+
 .footer {
   margin: 0 auto;
   padding: 40px 0;
-  background-image: url(../img/footer/m-f-img/mob-foot-1x.jpg);
   background-size: cover;
   border-radius: 30px;
-  width: 335px;
+  width: 100%;
+  max-width: 375px;
   height: 471px;
   margin-top: 16px;
   margin-bottom: 16px;
-  width: 100%;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    padding: 64px 0;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 768px;
+    height: 576px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    padding: 64px 0;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 1408px;
+    height: 454px;
+  }
+}
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
