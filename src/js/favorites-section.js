@@ -124,29 +124,11 @@ async function renderFavoritseList() {
           let updatedFavorites = currentFavorites.filter(
             exercise => exercise._id !== exerciseId
           );
-          //   if (array.length === 0 || array === null) {
-          //     mainContainerFavorites.classList.add('is-hidden');
-          //     renderErrorCard();
-          //     return;
-          //   }
+
           localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
           renderFavoritseList();
         }
       });
-      // ulFavoritesList.addEventListener('click', event => {
-      //   const element = event.target;
-      //   if (array.length === 0 || array === null) {
-      //     mainContainerFavorites.classList.add('is-hidden');
-      //     renderErrorCard();
-      //     return;
-      //   }
-      //   if (element.classList.contains('favorites-btn-trash')) {
-      //     let i = element.dataset.id;
-      //     const b = array.filter(id => id._id !== i);
-      //     let c = localStorage.setItem('favorites', JSON.stringify(b));
-      //     check(b);
-      //   }
-      // });
     }
     check(arrayData);
     // window.addEventListener('resize', check);
