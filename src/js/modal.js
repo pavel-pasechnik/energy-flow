@@ -39,7 +39,7 @@ function fillModalWithData(data) {
     <div class="exercise-details">
       <button id="closeButton" class="close-button">
         <svg class="close-icon" width="12" height="12" >
-          <use href="../img/sprite.svg#close"></use>
+          <use href="/energy-flow/assets/sprite-0567d6ea.svg#close"></use>
         </svg>
       </button>
       <div class="content-wrapper">
