@@ -47,7 +47,7 @@ async function renderFavoritseList() {
       console.log(array);
 
       if (array.length === 0 || array === null) {
-        mainContainerFavorites.remove();
+        // mainContainerFavorites.remove();
         renderErrorCard();
         return;
       }
@@ -121,7 +121,7 @@ async function renderFavoritseList() {
       ulFavoritesList.addEventListener('click', event => {
         const element = event.target;
         if (array.length === 0 || array === null) {
-          mainContainerFavorites.classList.add('is-hidden');
+          // mainContainerFavorites.classList.add('is-hidden');
           renderErrorCard();
           return;
         }
@@ -154,16 +154,18 @@ function cardMarking(obj) {
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
               <button type="button" class="favorites-btn-trash" data-id="${_id}" ">
-                <svg id="favorites-trash" viewBox="0 0 32 32" width="32" height="32">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M21.333 8V6.933c0-1.493 0-2.24-.291-2.811a2.666 2.666 0 0 0-1.165-1.165c-.57-.291-1.317-.291-2.811-.291h-2.133c-1.493 0-2.24 0-2.811.291-.502.256-.91.664-1.165 1.165-.291.57-.291 1.317-.291 2.811V8m2.667 7.333V22m5.334-6.667V22M4 8h24m-2.667 0v14.933c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436h-5.867c-2.24 0-3.36 0-4.216-.436a3.996 3.996 0 0 1-1.748-1.748c-.436-.856-.436-1.976-.436-4.216V8"/>
-  </svg>
+                  <svg id="favorites-trash" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M10.6667 4.00001V3.46668C10.6667 2.71994 10.6667 2.34657 10.5213 2.06136C10.3935 1.81047 10.1895 1.6065 9.93865 1.47867C9.65344 1.33334 9.28007 1.33334 8.53333 1.33334H7.46667C6.71993 1.33334 6.34656 1.33334 6.06135 1.47867C5.81046 1.6065 5.60649 1.81047 5.47866 2.06136C5.33333 2.34657 5.33333 2.71994 5.33333 3.46668V4.00001M6.66667 7.66668V11M9.33333 7.66668V11M2 4.00001H14M12.6667 4.00001V11.4667C12.6667 12.5868 12.6667 13.1468 12.4487 13.5747C12.2569 13.951 11.951 14.2569 11.5746 14.4487C11.1468 14.6667 10.5868 14.6667 9.46667 14.6667H6.53333C5.41323 14.6667 4.85318 14.6667 4.42535 14.4487C4.04903 14.2569 3.74307 13.951 3.55132 13.5747C3.33333 13.1468 3.33333 12.5868 3.33333 11.4667V4.00001" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </button>
             </div>
             <div class="favorites-container-start">
-              <p class="favorites-title-btn-start">Start</p>
-              <button type="button" class="favorites-btn-arrow" data-action="${_id}">
-                <svg id="favorites-arrow" viewBox="0 0 32 32" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.971" d="m15 28 13-13m0 0L15 2m13 13H2"/>                  
-                </svg>
+ 
+              <button type="button" class="favorites-btn-arrow favorites-title-btn-start" data-action="${_id}">Start
+
+                <svg id="favorites-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </button>
             </div>
           </div>
