@@ -220,7 +220,7 @@ function renderErrorCard() {
           ../img/favorites-section/mobile-dumbbell.png             85w,
           ../img/favorites-section/mobile-dumbbell@2x.png         170w,
           ../img/favorites-section/tablet-desctop-dumbbell.png    116w,
-          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 116w
+          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
         "
         sizes="
       (min-width: 1440px) 116px, 
