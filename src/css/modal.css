@@ -39,8 +39,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        top: 0;
-        left: 25px;
+        top: 0; 
+        left: 30px; 
         transform: none;
         max-height: 100%;
         overflow-y: auto; 
