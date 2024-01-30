@@ -14,6 +14,7 @@ if (isOnTargetPage) {
   const searchBlock = document.querySelector('.exercises-nav-input-block');
   const searchBtn = document.querySelector('.input-search-icon');
   const pagination = document.querySelector('.pagination');
+  const scroll = document.querySelector('#exercises');
 
   let currentPage = 1;
   let currentSubspecies = 'Muscles';
@@ -75,7 +76,6 @@ if (isOnTargetPage) {
           ''
         );
         subspecies.innerHTML = subspeciesHtml;
-
         if (totalPages > 1) {
           const pag = paginationPages(page, totalPages);
           pagination.innerHTML = pag;
@@ -100,6 +100,7 @@ if (isOnTargetPage) {
         }
       });
       //
+      scroll.scrollIntoView({ behavior: 'smooth' });
       currentSubspecies = event.target.textContent.trim();
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
@@ -124,13 +125,13 @@ if (isOnTargetPage) {
         lowerCurrentSubspecies = 'bodypart';
       }
       params2[lowerCurrentSubspecies] = currentValue;
-      console.log(params2);
+
       subspecies.classList.add('is-hidden');
       exercisesGallery.classList.remove('is-hidden');
       searchBlock.classList.remove('is-hidden');
       renderExercises(params2);
+      scroll.scrollIntoView({ behavior: 'smooth' });
       getPagination(params2, renderExercises);
-      console.log(params2);
     }
   });
   // Слухач на інпут
@@ -138,9 +139,7 @@ if (isOnTargetPage) {
     params2.keyword = searchInput.value.trim();
     renderExercises(params2);
     getPagination(params2, renderExercises);
-    console.log(params2);
     delete params2.keyword;
-    console.log(params2);
   });
   //функция для пагинации страниц
   function paginationPages(page, totalPages) {
@@ -167,8 +166,8 @@ if (isOnTargetPage) {
     pagination.addEventListener('click', event => {
       if (event.target.tagName === 'BUTTON') {
         param.page = parseInt(event.target.textContent);
-        console.log(param);
         callback(param);
+        scroll.scrollIntoView({ behavior: 'smooth' });
         param.page = 1;
       }
     });
@@ -179,7 +178,6 @@ if (isOnTargetPage) {
   function renderExercises(param) {
     getRequest('/exercises', param)
       .then(data => {
-        console.log(data);
         const { page, totalPages, results } = data;
         if (Array.from(results).length === 0) {
           console.log('Without result');
@@ -238,7 +236,6 @@ if (isOnTargetPage) {
           pagination.removeEventListener('click', event => {
             if (event.target.tagName === 'BUTTON') {
               param.page = parseInt(event.target.textContent);
-              console.log(param);
               callback(param);
               param.page = 1;
             }
