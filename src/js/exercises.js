@@ -18,6 +18,7 @@ if (isOnTargetPage) {
   const pagination = document.querySelector('.pagination');
   const scrollToUp = document.querySelector('.exercises-container');
   const currentExer = document.querySelector('.exercises-current-ex');
+  const withoutResult = document.querySelector('.without-exercises');
 
   let currentPage = 1;
   let currentSubspecies = 'Muscles';
@@ -190,7 +191,9 @@ if (isOnTargetPage) {
         console.log(data);
         const { page, totalPages, results } = data;
         if (Array.from(results).length === 0) {
-          console.log('Without result');
+          withoutResult.classList.remove('is-hidden');
+        } else {
+          withoutResult.classList.add('is-hidden');
         }
         let ExercisesHtml = results.reduce(
           (html, image) =>
