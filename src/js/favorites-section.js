@@ -50,8 +50,6 @@ async function renderFavoritseList() {
         mainContainerFavorites.remove();
         return renderErrorCard(array);
       }
-
-      console.log(array);
       const perPage = 8;
       let currentPage = 1;
 
@@ -155,7 +153,7 @@ function cardMarking(obj) {
               <p class="favoritese-title">WORKOUT</p>
               <button type="button" class="favorites-btn-trash" data-id="${_id}" ">
                 <svg width="16" height="16" class="favorites-trash">
-                  <use href="../img/sprite.svg#favorites-trash"></use>
+                  <use href="../../src/img/sprite.svg#favorites-trash"></use>
                 </svg>
               </button>
             </div>
@@ -163,14 +161,14 @@ function cardMarking(obj) {
               <p class="favorites-title-btn-start">Start</p>
               <button type="button" class="favorites-btn-arrow" data-action="${_id}">
                 <svg class="favorites-arrow" width="14" height="14" alt="arrow">
-                  <use href="../img/sprite.svg#favorites-arrow"></use>
+                  <use href="../../src/img/sprite.svg#favorites-arrow"></use>
                 </svg>
               </button>
             </div>
           </div>
           <div class="favorite-title-exercises">
             <svg width="24" height="24" class="favorites-icon-man">
-              <use href="../img/sprite.svg#favorites-man"></use>
+              <use href="../../src/img/sprite.svg#favorites-man"></use>
             </svg>
             <p class="favorites-title-name">${target}</p>
           </div>
