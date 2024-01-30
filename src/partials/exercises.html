@@ -1,19 +1,34 @@
 <section class="exercises-container container">
-  <h2 class="exercises-title">Exercises</h2>
-  <p style="display: none"></p>
-  <div class="exercises-nav-box">
-    <ul class="exercises-nav-panel">
-      <button class="exercises-button">Muscles</button>
-      <button class="exercises-button">Body parts</button>
-      <button class="exercises-button">Equipment</button>
-    </ul>
-    <form class="exercises-nav-input-block" style="display: none">
-      <input class="exercises-nav-input" type="text" />
-      <button class="input-submit-button" type="submit"></button>
-    </form>
+  <div class="exercises-wrapper">
+    <div class="exercises-container-top">
+      <h2 class="exercises-title">
+        Exercises
+        <p class="is-hidden"></p>
+      </h2>
+      <div class="exercises-nav-box">
+        <ul class="exercises-nav-panel">
+          <button class="exercises-button exercises-button-isactive">
+            Muscles
+          </button>
+          <button class="exercises-button">Body parts</button>
+          <button class="exercises-button">Equipment</button>
+        </ul>
+        <div class="exercises-nav-input-block is-hidden">
+          <input class="exercises-nav-input" type="text" placeholder="Search" />
+
+          <!-- <button class="input-submit-button" type="submit"> -->
+          <svg class="input-search-icon" width="18" height="18">
+            <use href="../img/sprite.svg#search"></use>
+          </svg>
+          <!-- </button> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="subspecies"></div>
+    <div class="exercises-gallery is-hidden"></div>
+    <div class="pagination"></div>
   </div>
-  <div class="subspecies"></div>
-  <div class="exercises-gallery" style="display: none"></div>
 </section>
 <!-- Картка з вправою -->
 <!-- <a class="exercises-gallery-item">
