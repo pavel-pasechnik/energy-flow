@@ -1,4 +1,6 @@
 import { getRequest } from './api-energy-flow';
+import { addLoading } from './loader';
+import { removeLoading } from './loader';
 function checkURL() {
   const currentURL = window.location.href;
   const targetURL = 'index';
@@ -14,6 +16,8 @@ if (isOnTargetPage) {
   const searchBlock = document.querySelector('.exercises-nav-input-block');
   const searchBtn = document.querySelector('.input-search-icon');
   const pagination = document.querySelector('.pagination');
+  const scrollToUp = document.querySelector('.exercises-container');
+  const currentExer = document.querySelector('.exercises-current-ex');
 
   let currentPage = 1;
   let currentSubspecies = 'Muscles';
@@ -68,7 +72,9 @@ if (isOnTargetPage) {
           0.844px / 121.36% 108.504% no-repeat;
     "
   >
-  <p class="subspecies-item-name">${image.name}</p>
+  <p class="subspecies-item-name">${
+    image.name.charAt(0).toUpperCase() + image.name.slice(1)
+  }</p>
   <p class="subspecies-item-group">${image.filter}</p>
     </button>
 </a>`,
@@ -100,10 +106,13 @@ if (isOnTargetPage) {
         }
       });
       //
+      currentExer.textContent = '';
       currentSubspecies = event.target.textContent.trim();
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
+      scrollToUp.scrollIntoView({ behavior: 'smooth' });
       renderSubspecies(params);
+
       getPagination(params, renderSubspecies);
       subspecies.classList.remove('is-hidden');
       exercisesGallery.classList.add('is-hidden');
@@ -123,14 +132,15 @@ if (isOnTargetPage) {
       if (lowerCurrentSubspecies === 'body parts') {
         lowerCurrentSubspecies = 'bodypart';
       }
+      currentExer.textContent =
+        currentValue.charAt(0).toUpperCase() + currentValue.slice(1);
       params2[lowerCurrentSubspecies] = currentValue;
-      console.log(params2);
       subspecies.classList.add('is-hidden');
       exercisesGallery.classList.remove('is-hidden');
       searchBlock.classList.remove('is-hidden');
+      scrollToUp.scrollIntoView({ behavior: 'smooth' });
       renderExercises(params2);
       getPagination(params2, renderExercises);
-      console.log(params2);
     }
   });
   // Слухач на інпут
@@ -138,9 +148,7 @@ if (isOnTargetPage) {
     params2.keyword = searchInput.value.trim();
     renderExercises(params2);
     getPagination(params2, renderExercises);
-    console.log(params2);
     delete params2.keyword;
-    console.log(params2);
   });
   //функция для пагинации страниц
   function paginationPages(page, totalPages) {
@@ -167,8 +175,8 @@ if (isOnTargetPage) {
     pagination.addEventListener('click', event => {
       if (event.target.tagName === 'BUTTON') {
         param.page = parseInt(event.target.textContent);
-        console.log(param);
         callback(param);
+        scrollToUp.scrollIntoView({ behavior: 'smooth' });
         param.page = 1;
       }
     });
@@ -193,21 +201,25 @@ if (isOnTargetPage) {
       <p class="badge">WORKOUT</p>
       <label class="exercises-gallery-raiting">${image.rating}</label
       ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
-        <use href="../img/sprite.svg#star"></use>
+        <use href="../sprite.svg#star"></use>
       </svg>
     </div>
-    <button class="exercises-gallery-btn-start" data-action="${image._id}" type="button">
+    <button class="exercises-gallery-btn-start" data-action="${
+      image._id
+    }" type="button">
       Start
       <svg class="exercises-gallery-btn-icon">
-        <use href="../img/sprite.svg#arrow"></use>
+        <use href="../sprite.svg#"></use>
       </svg>
     </button>
   </div>
   <div class="exercises-gallery-center">
     <svg class="exercises-gallery-center-icon">
-      <use href="../img/Exercises/symbol-defs.svg#icon-icon"></use>
+      <use href="../sprite.svg#favorites-man"></use>
     </svg>
-    <label class="exercises-gallery-name">${image.name}</label>
+    <label class="exercises-gallery-name">${
+      image.name.charAt(0).toUpperCase() + image.name.slice(1)
+    }</label>
   </div>
   <ul class="exercises-gallery-bottom">
     <li class="exercises-gallery-bottom-point">
