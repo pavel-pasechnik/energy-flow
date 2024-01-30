@@ -1,4 +1,4 @@
-import{getRequest as E}from"./api-energy-flow-3175d380.js";import{S as k}from"./vendor-cae18210.js";const u=document.querySelector(".subspecies"),q=document.querySelector(".exercises-nav-panel"),p=document.querySelector(".exercises-gallery"),h=document.querySelector(".exercises-nav-input"),x=document.querySelector(".exercises-nav-input-block");let $=1,g="Muscles",c,v=window.innerWidth,o=0,n=0,w="";v<=375?(o=8,n=8):v<=768?(o=12,n=8):(o=12,n=9);const b={filter:g,page:$,limit:o},t={page:$,limit:n},f=new k(".subspecies a",{captionDelay:250,captionsData:"alt",close:!0});function S(e){E("/filters",e).then(s=>{const{results:i}=s;console.log(i);let d=i.reduce((a,l)=>a+`<a class="subspecies-item" href="">
+import{getRequest as E}from"./api-energy-flow-1a327691.js";import{S as k}from"./vendor-cae18210.js";const u=document.querySelector(".subspecies"),q=document.querySelector(".exercises-nav-panel"),p=document.querySelector(".exercises-gallery"),h=document.querySelector(".exercises-nav-input"),x=document.querySelector(".exercises-nav-input-block");let $=1,g="Muscles",c,v=window.innerWidth,o=0,n=0,w="";v<=375?(o=8,n=8):v<=768?(o=12,n=8):(o=12,n=9);const b={filter:g,page:$,limit:o},t={page:$,limit:n},f=new k(".subspecies a",{captionDelay:250,captionsData:"alt",close:!0});function S(e){E("/filters",e).then(s=>{const{results:i}=s;console.log(i);let d=i.reduce((a,l)=>a+`<a class="subspecies-item" href="">
   <button
    type="button"
    data-value="${l.name}"
@@ -57,4 +57,4 @@ import{getRequest as E}from"./api-energy-flow-3175d380.js";import{S as k}from"./
     </li>
   </ul>
 </a>`,"");p.innerHTML=l,f.refresh()}).catch(s=>{console.log(s)})}
-//# sourceMappingURL=exercises-9145a899.js.map
+//# sourceMappingURL=exercises-bc7ff547.js.map
