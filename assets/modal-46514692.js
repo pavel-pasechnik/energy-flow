@@ -2,7 +2,7 @@ import{getRequest as f}from"./api-energy-flow-3175d380.js";import"./vendor-cae18
     <div class="exercise-details">
       <button id="closeButton" class="close-button">
         <svg class="close-icon" width="12" height="12" >
-          <use href="../img/sprite.svg#close"></use>
+          <use href="/energy-flow/assets/sprite-0567d6ea.svg#close"></use>
         </svg>
       </button>
       <div class="content-wrapper">
@@ -47,4 +47,4 @@ import{getRequest as f}from"./api-energy-flow-3175d380.js";import"./vendor-cae18
     <svg class="star empty-star" width="18" height="18" >
       <use href="/energy-flow/assets/sprite-0567d6ea.svg#star"></use>
     </svg>`;let o="";for(let n=0;n<s;n++)o+=i;for(let n=0;n<t;n++)o+=a;return o}function d(e){return c().some(t=>t._id===e)}function c(){return JSON.parse(localStorage.getItem("favorites"))||[]}function h(e){const s=c();s.push(e),localStorage.setItem("favorites",JSON.stringify(s))}function y(e){const t=c().filter(i=>i._id!==e);localStorage.setItem("favorites",JSON.stringify(t))}function v(e){const s=e.querySelector("span");s.textContent="Remove from",e.querySelector("use").setAttribute("href","/energy-flow/assets/sprite-0567d6ea.svg#heart")}function b(e){const s=e.querySelector("span");s.textContent="Add to Favorites",e.querySelector("use").setAttribute("href","/energy-flow/assets/sprite-0567d6ea.svg#heart")}document.addEventListener("click",e=>{if(e.target.classList.contains("exercises-gallery-btn-start")){const s=e.target.dataset.action;l(s)}if(e.target.classList.contains("favorites-btn-arrow")){const s=e.target.getAttribute("data-action");l(s)}});
-//# sourceMappingURL=modal-5f4f967e.js.map
+//# sourceMappingURL=modal-46514692.js.map
