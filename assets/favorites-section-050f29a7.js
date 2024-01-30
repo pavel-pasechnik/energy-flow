@@ -1,4 +1,4 @@
-const p=document.querySelector(".favorites-list-item"),M=document.querySelector(".favorites-container-error-notification"),w=document.querySelector(".favorites-main"),h=document.querySelector(".favorites-pagination-container-btn");function k(){const v=window.location.href,a="favorites";return v.includes(a)}const C=k();async function x(){if(C){let f=function(s){if(s.length===0||s===null){w.remove(),y();return}const r=8;let o=1;if(window.matchMedia("(max-width: 376px)").matches){let c=function(e,t,i){p.innerHTML="",i--;const n=t*i,d=n+t,g=e.slice(n,d);p.innerHTML=L(g)},m=function(e,t){h.innerHTML="";const i=document.querySelector(".pagination"),n=Math.ceil(e.length/t);for(let d=0;d<n;d++){const g=l(d+1);h.appendChild(g)}i.appendChild(h)},l=function(e){const t=document.createElement("li");return t.innerText=e,o==e&&t.classList.add("favorites-pagination-btn"),o!==e&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{o=e,c(s,r,o);let i=document.querySelector("li.favorites-pagination-btn");i.classList.remove("favorites-pagination-btn"),i.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var b=c,u=m,B=l;c(s,r,o),m(s,r)}else p.innerHTML=L(s);p.addEventListener("click",c=>{const l=c.target.closest(".favorites-btn-trash");if(l){let e=l.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(n=>n._id!==e);localStorage.setItem("favorites",JSON.stringify(i)),x()}})};var v=f;w.classList.remove("is-hidden");let a=JSON.parse(localStorage.getItem("favorites"))||[];f(a)}else return}function L(v){return v.reduce((a,{bodyPart:f,burnedCalories:s,target:r,time:o,equipment:b,_id:u})=>a+`<li class="favorits-item">
+const p=document.querySelector(".favorites-list-item"),M=document.querySelector(".favorites-container-error-notification"),w=document.querySelector(".favorites-main"),h=document.querySelector(".favorites-pagination-container-btn");function k(){const v=window.location.href,a="favorites";return v.includes(a)}const C=k();async function x(){if(C){let f=function(s){if(s.length===0||s===null){w.remove(),y();return}const r=8;let o=1;if(window.matchMedia("(max-width: 376px)").matches){let c=function(e,t,i){p.innerHTML="",i--;const n=t*i,d=n+t,g=e.slice(n,d);p.innerHTML=L(g)},m=function(e,t){h.innerHTML="";const i=document.querySelector(".pagination"),n=Math.ceil(e.length/t);for(let d=0;d<n;d++){const g=l(d+1);h.appendChild(g)}i.appendChild(h)},l=function(e){const t=document.createElement("li");return t.innerText=e,o==e&&t.classList.add("favorites-pagination-btn"),o!==e&&t.classList.add("favorites-pagination-btn-not-activ"),t.addEventListener("click",()=>{o=e,c(s,r,o);let i=document.querySelector("li.favorites-pagination-btn");i.classList.remove("favorites-pagination-btn"),i.classList.add("favorites-pagination-btn-not-activ"),t.classList.remove("favorites-pagination-btn-not-activ"),t.classList.add("favorites-pagination-btn")}),t};var u=c,b=m,B=l;c(s,r,o),m(s,r)}else p.innerHTML=L(s);p.addEventListener("click",c=>{const l=c.target.closest(".favorites-btn-trash");if(l){let e=l.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(n=>n._id!==e);localStorage.setItem("favorites",JSON.stringify(i)),x()}})};var v=f;w.classList.remove("is-hidden");let a=JSON.parse(localStorage.getItem("favorites"))||[];f(a)}else return}function L(v){return v.reduce((a,{bodyPart:f,burnedCalories:s,target:r,time:o,_id:u,name:b})=>a+`<li class="favorits-item">
           <div class="favorites-container-nav">
             <div class="favorites-container-workout">
               <p class="favoritese-title">WORKOUT</p>
@@ -29,7 +29,7 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
             .303.211c.012.006.025.007.039.01a.738.738 0 0 0 .489.024l.003-.001c.024-.006.049-.001.073-.012a.8.8 0 0 0 .311-.226l3.14-2.665c.334-.281.193-.777-.088-1.111zm-3.972-1.899a2.201 
             2.201 0 1 0 0-4.402 2.201 2.201 0 0 0 0 4.402z" style="fill:var(--color3, #f6f6f6)"/>              
             </svg>
-            <p class="favorites-title-name">${r}</p>
+            <p class="favorites-title-name">${b}</p>
           </div>
           <div class="favorites-description-workout">
             <p class="favorites-title-descriptoin">
@@ -44,7 +44,7 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Target:</span>
-              ${b}
+              ${r}
             </p>
           </div>
         </li>`,"")}function y(){return M.innerHTML=`<h2 class="favorites-container-error-title">Favorites</h2>
@@ -54,7 +54,7 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
           ../img/favorites-section/mobile-dumbbell.png             85w,
           ../img/favorites-section/mobile-dumbbell@2x.png         170w,
           ../img/favorites-section/tablet-desctop-dumbbell.png    116w,
-          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 116w
+          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
         "
         sizes="
       (min-width: 1440px) 116px, 
@@ -70,4 +70,4 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
         for easier access in the future.
       </p>
     </div>`}x();
-//# sourceMappingURL=favorites-section-0aa4b728.js.map
+//# sourceMappingURL=favorites-section-050f29a7.js.map
