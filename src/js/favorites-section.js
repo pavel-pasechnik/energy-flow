@@ -1,6 +1,3 @@
-import { addLoading } from './loader';
-import { removeLoading } from './loader';
-
 const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
@@ -10,21 +7,6 @@ const mainContainerFavorites = document.querySelector('.favorites-main');
 const listPaginationBtn = document.querySelector(
   '.favorites-pagination-container-btn'
 );
-
-// беремо значення поточної сторінки
-// const currentURL = window.location.href;
-
-// // визначаємо поточний Url для порівняння
-// const targetURL = 'http://localhost:5173/favorites.html';
-
-// функция яка повертає true або false при порівнянні
-// function checkURL() {
-//   if (currentURL === targetURL) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
 
 function checkURL() {
   // беремо значення поточної сторінки
@@ -139,7 +121,6 @@ async function renderFavoritseList() {
       });
     }
     check(arrayData);
-    // window.addEventListener('resize', check);
   }
   // переривання функції
   else {
