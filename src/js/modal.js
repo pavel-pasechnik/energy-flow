@@ -67,11 +67,21 @@ function fillModalWithData(data) {
             </div>
             <div class="info-block">
               <hr class="section-divider-top">
-              <p class="info-item"><span class="info-label">Target:</span> ${data.target}</p>
-              <p class="info-item"><span class="info-label">Body Part:</span> ${data.bodyPart}</p>
-              <p class="info-item"><span class="info-label">Equipment:</span> ${data.equipment}</p>
-              <p class="info-item"><span class="info-label">Popularity:</span> ${data.popularity}</p>
-              <p class="info-item"><span class="info-label">Burned calories:</span> ${data.burnedCalories}/${data.time} min</p>
+              <p class="info-item"><span class="info-label">Target:</span> ${
+                data.target
+              }</p>
+              <p class="info-item"><span class="info-label">Body Part:</span> ${
+                data.bodyPart
+              }</p>
+              <p class="info-item"><span class="info-label">Equipment:</span> ${
+                data.equipment
+              }</p>
+              <p class="info-item"><span class="info-label">Popularity:</span> ${
+                data.popularity
+              }</p>
+              <p class="info-item"><span class="info-label">Burned calories:</span> ${
+                data.burnedCalories
+              }/${data.time} min</p>
               <hr class="section-divider-bottom">
             </div>
             <div class="exercise-description">
@@ -84,7 +94,9 @@ function fillModalWithData(data) {
                     <use href="/energy-flow/assets/sprite-0567d6ea.svg#heart"></use>
                     </svg>
                   </button>
-                  <button class="rating-button" data-action="${data._id}">Give a Rating</button>
+                  <button class="rating-button"  data-action="${
+                    data._id
+                  }">Give a Rating</button>
               </div>
           </div>
         </div>
@@ -93,8 +105,6 @@ function fillModalWithData(data) {
 
   modalContent.appendChild(exerciseDetails);
   modal.classList.add('is-visible');
-
-
 
   const favoriteButton = document.getElementById('favoriteButton');
 
@@ -115,7 +125,7 @@ function fillModalWithData(data) {
   });
 
   // Adding event listener for the modal window container
-  backdrop.addEventListener('click', (event) => {
+  backdrop.addEventListener('click', event => {
     // Prevent the event from reaching the document level
     event.stopPropagation();
     closeExerciseModal();
@@ -127,8 +137,8 @@ function fillModalWithData(data) {
   });
 
   // Adding event listener for closing the modal window with the "Escape" key
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
       closeExerciseModal();
     }
   });
@@ -185,7 +195,9 @@ function addToFavorites(exercise) {
 // Remove the exercise from the list of favorites
 function removeFromFavorites(exerciseId) {
   const favorites = getFavorites();
-  const updatedFavorites = favorites.filter(exercise => exercise._id !== exerciseId);
+  const updatedFavorites = favorites.filter(
+    exercise => exercise._id !== exerciseId
+  );
 
   if (updatedFavorites.length > 0) {
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
@@ -215,16 +227,14 @@ document.addEventListener('click', event => {
   const clickedElement = event.target;
 
   // Check if clicked on a button with class exercises-gallery-btn-start or favorites-btn-arrow
-  if (clickedElement.classList.contains('exercises-gallery-btn-start') || clickedElement.classList.contains('favorites-btn-arrow')) {
+  if (
+    clickedElement.classList.contains('exercises-gallery-btn-start') ||
+    clickedElement.classList.contains('favorites-btn-arrow')
+  ) {
     const exerciseId = clickedElement.dataset.action;
-    showExerciseModal(exerciseId, clickedElement.classList.contains('exercises-gallery-btn-start'));
+    showExerciseModal(
+      exerciseId,
+      clickedElement.classList.contains('exercises-gallery-btn-start')
+    );
   }
 });
-
-
-
-
-
-
-
-

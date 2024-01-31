@@ -1,6 +1,6 @@
 /* motivation-section-styles */
 .motivation {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 .motivation-desc-wrapper {
   border-radius: 30px;
@@ -53,6 +53,9 @@
   background-color: rgba(246, 246, 246, 0.1);
 }
 @media screen and (min-width: 768px) {
+  .motivation {
+    margin-top: 16px;
+  }
   .motivation-desc-wrapper {
     border-radius: 50px;
     background: #1b1b1b;

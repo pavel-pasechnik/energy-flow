@@ -181,6 +181,8 @@
 }
 
 .favorites-pagination-container-btn {
+    justify-content: center;
+    align-items: center;
     display: flex;
     gap: 8px;
 }

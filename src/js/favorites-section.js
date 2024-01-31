@@ -124,24 +124,11 @@ async function renderFavoritseList() {
           let updatedFavorites = currentFavorites.filter(
             exercise => exercise._id !== exerciseId
           );
+
           localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
           renderFavoritseList();
         }
       });
-      // ulFavoritesList.addEventListener('click', event => {
-      //   const element = event.target;
-      //   if (array.length === 0 || array === null) {
-      //     mainContainerFavorites.classList.add('is-hidden');
-      //     renderErrorCard();
-      //     return;
-      //   }
-      //   if (element.classList.contains('favorites-btn-trash')) {
-      //     let i = element.dataset.id;
-      //     const b = array.filter(id => id._id !== i);
-      //     let c = localStorage.setItem('favorites', JSON.stringify(b));
-      //     check(b);
-      //   }
-      // });
     }
     check(arrayData);
     // window.addEventListener('resize', check);
@@ -156,7 +143,7 @@ async function renderFavoritseList() {
 
 function cardMarking(obj) {
   return obj.reduce(
-    (html, { bodyPart, burnedCalories, target, time, equipment, _id }) =>
+    (html, { bodyPart, burnedCalories, target, time, _id, name }) =>
       html +
       `<li class="favorits-item">
           <div class="favorites-container-nav">
@@ -189,7 +176,7 @@ function cardMarking(obj) {
             .303.211c.012.006.025.007.039.01a.738.738 0 0 0 .489.024l.003-.001c.024-.006.049-.001.073-.012a.8.8 0 0 0 .311-.226l3.14-2.665c.334-.281.193-.777-.088-1.111zm-3.972-1.899a2.201 
             2.201 0 1 0 0-4.402 2.201 2.201 0 0 0 0 4.402z" style="fill:var(--color3, #f6f6f6)"/>              
             </svg>
-            <p class="favorites-title-name">${target}</p>
+            <p class="favorites-title-name">${name}</p>
           </div>
           <div class="favorites-description-workout">
             <p class="favorites-title-descriptoin">
@@ -204,7 +191,7 @@ function cardMarking(obj) {
             </p>
             <p class="favorites-title-descriptoin">
               <span class="favorites-description-workout-span">Target:</span>
-              ${equipment}
+              ${target}
             </p>
           </div>
         </li>`,
@@ -220,7 +207,7 @@ function renderErrorCard() {
           ../img/favorites-section/mobile-dumbbell.png             85w,
           ../img/favorites-section/mobile-dumbbell@2x.png         170w,
           ../img/favorites-section/tablet-desctop-dumbbell.png    116w,
-          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 116w
+          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
         "
         sizes="
       (min-width: 1440px) 116px, 
