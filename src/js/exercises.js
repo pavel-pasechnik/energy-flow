@@ -21,7 +21,8 @@ if (isOnTargetPage) {
   const searchBtn = document.querySelector('.input-search-icon');
   const pagination = document.querySelector('.pagination');
   const scrollToUp = document.querySelector('.exercises-container');
-  const currentExer = document.querySelector('.exercises-current-ex');
+  const currentSub = document.querySelector('.exercises-current-ex');
+  const currentExer = document.querySelector('.exercises-current-exer');
   const withoutResult = document.querySelector('.without-exercises');
 
   let currentPage = 1;
@@ -107,9 +108,9 @@ if (isOnTargetPage) {
           event.target.classList.add('exercises-button-isactive');
         }
       });
-
+      //
       currentSubspecies = event.target.textContent.trim();
-      currentExer.textContent = currentSubspecies;
+      currentSub.textContent = currentSubspecies;
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
       scrollToUp.scrollIntoView({ behavior: 'smooth' });
@@ -134,8 +135,10 @@ if (isOnTargetPage) {
       if (lowerCurrentSubspecies === 'body parts') {
         lowerCurrentSubspecies = 'bodypart';
       }
-      currentExer.textContent =
-        currentValue.charAt(0).toUpperCase() + currentValue.slice(1);
+      currentSub.textContent = `${currentSub.textContent} / ${
+        currentValue.charAt(0).toUpperCase() + currentValue.slice(1)
+      }`;
+      console.log(currentValue.charAt(0).toUpperCase() + currentValue.slice(1));
       params2[lowerCurrentSubspecies] = currentValue;
       subspecies.classList.add('is-hidden');
       exercisesGallery.classList.remove('is-hidden');
