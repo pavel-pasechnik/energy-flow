@@ -1,6 +1,8 @@
 import { getRequest } from './api-energy-flow';
 import { addLoading } from './loader';
 import { removeLoading } from './loader';
+import svgUrl from '../img/sprite.svg';
+
 function checkURL() {
   const currentURL = window.location.href;
   const targetURL = 'index';
@@ -203,7 +205,7 @@ if (isOnTargetPage) {
       <p class="badge">WORKOUT</p>
       <label class="exercises-gallery-raiting">${image.rating}</label
       ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
-        <use xlink:href="../sprite.svg#star"></use>
+        <use xlink:href="${svgUrl}#star"></use>
       </svg>
     </div>
     <button class="exercises-gallery-btn-start" data-action="${
@@ -211,13 +213,13 @@ if (isOnTargetPage) {
     }" type="button">
       Start
       <svg class="exercises-gallery-btn-icon">
-        <use xlink:href="../sprite.svg#favorites-arrow"></use>
+        <use xlink:href="${svgUrl}#favorites-arrow"></use>
       </svg>
     </button>
   </div>
   <div class="exercises-gallery-center">
     <svg class="exercises-gallery-center-icon">
-      <use xlink:href="../sprite.svg#favorites-man"></use>
+      <use xlink:href="${svgUrl}#favorites-man"></use>
     </svg>
     <label class="exercises-gallery-name">${
       image.name.charAt(0).toUpperCase() + image.name.slice(1)
