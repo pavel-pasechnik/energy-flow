@@ -31,6 +31,8 @@ function closeExerciseModal() {
   // Hide both modal and backdrop
   modal.classList.remove('is-visible');
   backdrop.classList.remove('is-visible');
+
+  location.reload();
 }
 
 // Fill the modal with data
