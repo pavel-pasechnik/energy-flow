@@ -8,28 +8,6 @@
   --white: #ffffff;
 }
 
- @font-face {
-  font-family: 'DM Sans', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
-} 
-
- @font-face {
-  font-family: 'DM Sans';
-  font-weight: normal;
-  font-style: normal;
-  src: local('DM Sans'), url('../fonts/DMSans-Regular.ttf') format('truetype'),
-    url('./fonts/DMSans-Italic.ttf') format('truetype'),
-    url('./fonts/DMSans-Bold.ttf') format('truetype'),
-    url('./fonts/DMSans-Medium.ttf') format('truetype'),
-    url('./fonts/DMSans-Regular.woff') format('woff'),
-    url('./fonts/DMSans-Italic.woff') format('woff'),
-    url('./fonts/DMSans-Bold.woff') format('woff'),
-    url('./fonts/DMSans-Medium.woff') format('woff'),
-    url('./fonts/DMSans-Regular.woff2') format('woff2'),
-    url('./fonts/DMSans-Italic.woff2') format('woff2'),
-    url('./fonts/DMSans-Bold.woff2') format('woff2'),
-    url('./fonts/DMSans-Medium.woff2') format('woff2');
-} 
 .footer-container {
   max-width: 375px;
   padding: 0 20px;
@@ -89,8 +67,8 @@
 }
 
 @media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
   .footer {
     background-image: url(../img/footer/m-f-img/mob-foot-2x.jpg);
   }
@@ -303,28 +281,28 @@
     padding: 12px 157px;
   }
 
-.input-footer {
-  margin-bottom: 20px;
-  width: 100%;
-}
+  .input-footer {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 
-.security {
-  display: flex;
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  width: 437px;
-}
+  .security {
+    display: flex;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 437px;
+  }
 
-.security-text {
-  font-size: 14px;
-  line-height: 1.28;
-}
+  .security-text {
+    font-size: 14px;
+    line-height: 1.28;
+  }
 
-.security-text.first {
-  margin-right: 32px;
-}
+  .security-text.first {
+    margin-right: 32px;
+  }
 }
 /* Desktop version */
 @media (min-width: 1440px) {
