@@ -1,31 +1,40 @@
-<section class="exercises-container container">
+<section class="container exercises-container">
   <div class="exercises-wrapper">
     <div class="exercises-container-top">
       <h2 class="exercises-title">
         Exercises
-        <p class="exercises-slach is-hidden">
-          <span class="exercises-current"></span>
-        </p>
+        <span class="exercises-slesh">
+          /
+          <span class="exercises-current-ex"></span>
+        </span>
       </h2>
       <div class="exercises-nav-box">
-        <ul class="exercises-nav-panel">
+        <div class="exercises-nav-panel">
           <button class="exercises-button exercises-button-isactive">
             Muscles
           </button>
           <button class="exercises-button">Body parts</button>
           <button class="exercises-button">Equipment</button>
-        </ul>
+        </div>
         <div class="exercises-nav-input-block is-hidden">
           <input class="exercises-nav-input" type="text" placeholder="Search" />
           <svg class="input-search-icon" width="18" height="18">
-            <use href="../img/sprite.svg#search"></use>
+            <use href="../img/Exercises/symbol-defs.svg#icon-search"></use>
           </svg>
         </div>
       </div>
     </div>
 
-    <div class="subspecies"></div>
+    <div class="subspecies load-containers"></div>
     <div class="exercises-gallery is-hidden"></div>
+    <div class="without-exercises is-hidden">
+      <p class="without-exercises-text">
+        Unfortunately, <span class="without-exercises-nr">no results</span> were
+        found. You may want to consider other search options to find the
+        exercise you are looking for. Our range is wide and you have the
+        opportunity to find more options that suit your needs.
+      </p>
+    </div>
     <div class="pagination"></div>
   </div>
 </section>
