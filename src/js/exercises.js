@@ -6,7 +6,11 @@ import svgUrl from '../img/sprite.svg';
 function checkURL() {
   const currentURL = window.location.href;
   const targetURL = 'index';
-  return currentURL.includes(targetURL);
+  return (
+    currentURL.includes(targetURL) ||
+    currentURL.endsWith('/') ||
+    currentURL.includes('localhost')
+  );
 }
 
 const isOnTargetPage = checkURL();

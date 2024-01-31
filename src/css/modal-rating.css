@@ -2,6 +2,14 @@
   z-index: 950;
 }
 
+
+@media screen and (min-width: 320px) and (max-width: 428px) {
+  .modal-raiting-wrapper {
+    width: 95%;
+  }
+}
+
+
 .modal-raiting-wrapper {
   position: fixed;
   top: 0;

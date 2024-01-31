@@ -4,6 +4,12 @@
     pointer-events: none;
 }
 
+.favorites-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .favorites-main {
     border-radius: 30px;
     background: #E8E8E8;
@@ -42,14 +48,6 @@
     display: flex;
     gap: 4px;
 }
-
-/* .favorites-trash,
-.favorites-arrow {
-    stroke: #1B1B1B;
-    fill: #E8E8E8;
-    letter-spacing: 0px;
-    line-height: 0px;
-} */
 
 .favorites-btn-trash {
     padding: 8px;
