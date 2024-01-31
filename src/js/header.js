@@ -23,7 +23,7 @@ function onload() {
     const currentHref = lnk[i].pathname;
     // перевірка чи поточний шлях збігається з шляхом елемента
     if (
-      (pathName === '/' && i === 0) ||
+      (pathName.endsWith('/') && i === 0) ||
       (pathName !== '/' && currentHref === pathName)
     ) {
       // якщо шлях кореневий то позначати перший елемент 2 якщо не кореневий то знайти відповідний шлях

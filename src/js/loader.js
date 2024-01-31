@@ -1,5 +1,5 @@
-
 // The function add Loader
+
 export const addLoading =()=>{
   const divLoader = document.createElement("div");
   divLoader.classList.add("container-loader");
@@ -8,6 +8,6 @@ export const addLoading =()=>{
 
 //  The function remove Loader
 export const removeLoading = () => {
-    const loader = document.querySelector('.loader');
-    loader.remove();
- }
+  const loader = document.querySelector('.loader');
+  loader.remove();
+};
