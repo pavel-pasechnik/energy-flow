@@ -1,3 +1,6 @@
+import { addLoading } from './loader';
+import { removeLoading } from './loader';
+
 const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
@@ -64,16 +67,21 @@ async function renderFavoritseList() {
 
         function favoritesListPaginationBtn(arrData, perPage) {
           listPaginationBtn.innerHTML = '';
-          const containerPagonationList = document.querySelector('.pagination');
           const pagesCount = Math.ceil(arrData.length / perPage);
+          if (pagesCount > 1) {
+            const containerPagonationList = document.querySelector(
+              '.favorites-pagination'
+            );
 
-          for (let i = 0; i < pagesCount; i++) {
-            const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
-            listPaginationBtn.appendChild(itemPagonationBtn);
+            for (let i = 0; i < pagesCount; i++) {
+              const itemPagonationBtn = favoritesItemPaginationBtn(i + 1);
+              listPaginationBtn.appendChild(itemPagonationBtn);
+            }
+            containerPagonationList.appendChild(listPaginationBtn);
+          } else {
+            return;
           }
-          containerPagonationList.appendChild(listPaginationBtn);
         }
-
         // формування та стилізація кількості кнопочок
 
         function favoritesItemPaginationBtn(page) {
@@ -226,4 +234,3 @@ function renderErrorCard() {
 }
 
 renderFavoritseList();
-
