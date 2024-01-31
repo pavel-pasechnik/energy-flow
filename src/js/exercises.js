@@ -1,6 +1,4 @@
 import { getRequest } from './api-energy-flow';
-import { addLoading } from './loader';
-import { removeLoading } from './loader';
 import svgUrl from '../img/sprite.svg';
 
 function checkURL() {
@@ -23,7 +21,8 @@ if (isOnTargetPage) {
   const searchBtn = document.querySelector('.input-search-icon');
   const pagination = document.querySelector('.pagination');
   const scrollToUp = document.querySelector('.exercises-container');
-  const currentExer = document.querySelector('.exercises-current-ex');
+  const currentSub = document.querySelector('.exercises-current-ex');
+  const currentExer = document.querySelector('.exercises-current-exer');
   const withoutResult = document.querySelector('.without-exercises');
 
   let currentPage = 1;
@@ -55,8 +54,6 @@ if (isOnTargetPage) {
     page: currentPage,
     limit: currentLimitExercises,
   };
-
-  //
   function renderSubspecies(params) {
     getRequest('/filters', params)
       .then(data => {
@@ -101,7 +98,6 @@ if (isOnTargetPage) {
       });
   }
   renderSubspecies(params);
-  //
   navigationBtns.addEventListener('click', event => {
     if (event.target.tagName === 'BUTTON') {
       // Логіка для відображенян вибраного підвиду
@@ -113,8 +109,8 @@ if (isOnTargetPage) {
         }
       });
       //
-      currentExer.textContent = '';
       currentSubspecies = event.target.textContent.trim();
+      currentSub.textContent = currentSubspecies;
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
       scrollToUp.scrollIntoView({ behavior: 'smooth' });
@@ -139,8 +135,10 @@ if (isOnTargetPage) {
       if (lowerCurrentSubspecies === 'body parts') {
         lowerCurrentSubspecies = 'bodypart';
       }
-      currentExer.textContent =
-        currentValue.charAt(0).toUpperCase() + currentValue.slice(1);
+      currentSub.textContent = `${currentSub.textContent} / ${
+        currentValue.charAt(0).toUpperCase() + currentValue.slice(1)
+      }`;
+      console.log(currentValue.charAt(0).toUpperCase() + currentValue.slice(1));
       params2[lowerCurrentSubspecies] = currentValue;
       subspecies.classList.add('is-hidden');
       exercisesGallery.classList.remove('is-hidden');
@@ -177,7 +175,6 @@ if (isOnTargetPage) {
   }
   const ExercisesId = getExercisesId();
   // Слухач по пагінації
-
   function getPagination(param, callback) {
     pagination.addEventListener('click', event => {
       if (event.target.tagName === 'BUTTON') {
@@ -207,7 +204,7 @@ if (isOnTargetPage) {
   <div class="exercises-gallery-top">
     <div class="exercises-gallery-top-left">
       <p class="badge">WORKOUT</p>
-      <label class="exercises-gallery-raiting">${image.rating}</label
+      <label class="exercises-gallery-raiting">${image.rating.toFixed(1)}</label
       ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
         <use xlink:href="${svgUrl}#star"></use>
       </svg>
