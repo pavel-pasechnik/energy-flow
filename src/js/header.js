@@ -24,8 +24,7 @@ function onload() {
     // перевірка чи поточний шлях збігається з шляхом елемента
     if (
       (pathName === '/' && i === 0) ||
-      (pathName !== '/' && currentHref === pathName) ||
-      pathName.endsWith('/')
+      (pathName !== '/' && currentHref === pathName)
     ) {
       // якщо шлях кореневий то позначати перший елемент 2 якщо не кореневий то знайти відповідний шлях
       lnk[i].classList.add('current-page-link');
