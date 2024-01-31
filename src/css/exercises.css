@@ -249,6 +249,8 @@
 .exercises-gallery-center-icon {
   width: 24px;
   height: 24px;
+  display: flex;
+  flex-shrink: 0;
 }
 .exercises-gallery-name {
   display: -webkit-box;
