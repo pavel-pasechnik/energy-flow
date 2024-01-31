@@ -207,7 +207,7 @@ if (isOnTargetPage) {
   <div class="exercises-gallery-top">
     <div class="exercises-gallery-top-left">
       <p class="badge">WORKOUT</p>
-      <label class="exercises-gallery-raiting">${image.rating}</label
+      <label class="exercises-gallery-raiting">${image.rating.toFixed(1)}</label
       ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
         <use xlink:href="${svgUrl}#star"></use>
       </svg>

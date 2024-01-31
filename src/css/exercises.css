@@ -307,9 +307,12 @@
 .pagination {
   margin-top: 20px;
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
+  overflow: scroll;
+  padding-left: 50%;
+  padding-right: 50%;
 }
 .pagination-btn {
   color: rgba(27, 27, 27, 0.4);
@@ -319,6 +322,7 @@
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.04em;
+  padding: 0;
   border: none;
   background: #e8e8e8;
 }
@@ -482,5 +486,10 @@
   .without-exercises {
     margin: auto;
     width: 684px;
+  }
+  .pagination {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
   }
 }
