@@ -1,7 +1,9 @@
 
 // The function add Loader
 export const addLoading =()=>{
-    load-container.insertAdjacentHTML('afterbegin', '<div class="container-loader"><div class="loader"></div></div>');
+  const divLoader = document.createElement("div");
+  divLoader.classList.add("container-loader");
+    divLoader.insertAdjacentHTML('afterbegin', '<div class="loader"></div>');
   }
 
 //  The function remove Loader
