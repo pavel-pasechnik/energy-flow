@@ -202,16 +202,16 @@ if (isOnTargetPage) {
     <div class="exercises-gallery-top-left">
       <p class="badge">WORKOUT</p>
       <label class="exercises-gallery-raiting">${image.rating}</label
-      ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
-        <use href="./img/sprite.svg#star"></use>
+      ><svg xmlns="http://www.w3.org/2000/svg" class="exercises-gallery-raiting-svg" width="14" height="13">
+        <use xlink:href="./img/sprite.svg#star"></use>
       </svg>
     </div>
     <button class="exercises-gallery-btn-start" data-action="${
       image._id
     }" type="button">
       Start
-      <svg class="exercises-gallery-btn-icon">
-        <use href="./img/sprite.svg#favorites-arrow"></use>
+      <svg xmlns="http://www.w3.org/2000/svg" class="exercises-gallery-btn-icon">
+        <use xlink:href="./img/sprite.svg#favorites-arrow"></use>
       </svg>
     </button>
   </div>
