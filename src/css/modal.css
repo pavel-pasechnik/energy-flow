@@ -80,7 +80,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+ 
 }
 
 .favorite-button:hover,
@@ -292,11 +293,6 @@
     height: auto;
   }
 
-  .section-divider-top,
-  .section-divider-bottom {
-    border: 1px solid #1b1b1b33;
-    width: 275px;
-  }
 }
 
 @media (min-width: 768px) {
