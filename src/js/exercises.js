@@ -113,8 +113,9 @@ if (isOnTargetPage) {
         }
       });
       //
-      currentExer.textContent = '';
+
       currentSubspecies = event.target.textContent.trim();
+      currentExer.textContent = currentSubspecies;
       params.filter = currentSubspecies;
       delete params2[lowerCurrentSubspecies];
       scrollToUp.scrollIntoView({ behavior: 'smooth' });
