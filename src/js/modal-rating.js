@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { patchRequest } from './api-energy-flow';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 let currentDataId; // глобальна змінна для запиту
 
 // відкриття та закриття + отримання поточного дата айді
