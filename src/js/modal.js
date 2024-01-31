@@ -147,8 +147,12 @@ function fillModalWithData(data) {
 }
 
 // Format the rating value
+// function formatRating(rating) {
+//   return isNaN(rating) ? 'N/A' : Math.round(rating).toFixed(1);
+// }
+
 function formatRating(rating) {
-  return isNaN(rating) ? 'N/A' : Math.round(rating).toFixed(1);
+  return isNaN(rating) ? 'N/A' : rating.toFixed(1);
 }
 
 // Generate the star rating SVG based on the given rating
