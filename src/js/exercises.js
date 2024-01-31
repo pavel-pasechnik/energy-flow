@@ -203,7 +203,7 @@ if (isOnTargetPage) {
       <p class="badge">WORKOUT</p>
       <label class="exercises-gallery-raiting">${image.rating}</label
       ><svg class="exercises-gallery-raiting-svg" width="14" height="13">
-        <use xlink:href="./img/sprite.svg#star"></use>
+        <use xlink:href="../sprite.svg#star"></use>
       </svg>
     </div>
     <button class="exercises-gallery-btn-start" data-action="${
@@ -211,13 +211,13 @@ if (isOnTargetPage) {
     }" type="button">
       Start
       <svg class="exercises-gallery-btn-icon">
-        <use xlink:href="./img/sprite.svg#favorites-arrow"></use>
+        <use xlink:href="../sprite.svg#favorites-arrow"></use>
       </svg>
     </button>
   </div>
   <div class="exercises-gallery-center">
     <svg class="exercises-gallery-center-icon">
-      <use href="../sprite.svg#favorites-man"></use>
+      <use xlink:href="../sprite.svg#favorites-man"></use>
     </svg>
     <label class="exercises-gallery-name">${
       image.name.charAt(0).toUpperCase() + image.name.slice(1)
