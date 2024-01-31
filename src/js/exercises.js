@@ -1,6 +1,4 @@
 import { getRequest } from './api-energy-flow';
-import { addLoading } from './loader';
-import { removeLoading } from './loader';
 import svgUrl from '../img/sprite.svg';
 
 function checkURL() {
@@ -55,8 +53,6 @@ if (isOnTargetPage) {
     page: currentPage,
     limit: currentLimitExercises,
   };
-
-  //
   function renderSubspecies(params) {
     getRequest('/filters', params)
       .then(data => {
@@ -101,7 +97,6 @@ if (isOnTargetPage) {
       });
   }
   renderSubspecies(params);
-  //
   navigationBtns.addEventListener('click', event => {
     if (event.target.tagName === 'BUTTON') {
       // Логіка для відображенян вибраного підвиду
@@ -112,7 +107,6 @@ if (isOnTargetPage) {
           event.target.classList.add('exercises-button-isactive');
         }
       });
-      //
 
       currentSubspecies = event.target.textContent.trim();
       currentExer.textContent = currentSubspecies;
@@ -178,7 +172,6 @@ if (isOnTargetPage) {
   }
   const ExercisesId = getExercisesId();
   // Слухач по пагінації
-
   function getPagination(param, callback) {
     pagination.addEventListener('click', event => {
       if (event.target.tagName === 'BUTTON') {
