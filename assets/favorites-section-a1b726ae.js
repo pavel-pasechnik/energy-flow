@@ -9,7 +9,7 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
               </button>
             </div>
             <div class="favorites-container-start">
- 
+
               <button type="button" class="favorites-btn-arrow favorites-title-btn-start" data-action="${u}">Start
 
                 <svg id="favorites-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -19,15 +19,15 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
             </div>
           </div>
           <div class="favorite-title-exercises">
-            <svg id="favorites-man" viewBox="0 0 32 32" width="32" height="32"><path fill="#7e847f" d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z" 
-            style="fill:var(--color2, #7e847f)"/><path fill="#f6f6f6" d="M25.098 11.634a.79.79 0 0 0-1.111-.099l-2.188 1.838-1.006-2.493a.757.757 0 0 
-            0-.153-.241 2.148 2.148 0 0 0-1.055-1.078 2.158 2.158 0 0 0-.655-.174c-.049-.025-.093-.059-.148-.076l-3.85-1.073a.792.792 0 0 0-.611.083.77.77 
-            0 0 0-.479.448l-1.45 3.728a.791.791 0 0 0 .451 1.022.79.79 0 0 0 1.021-.452l1.225-3.148 1.754.488c-.043.069-.089.134-.124.208l-2.248 
-            4.873c-.032.072-.05.144-.073.218l-2.732 4.58-4.572 1.529a1.168 1.168 0 0 0 1.387 1.88l4.679-1.611c.143-.104.247-.24.326-.387.059-.062.126-.112.171-.189l1.629-2.731 2.891 
-            2.464-3.094 3.486a1.167 1.167 0 0 0 1.747 1.547l3.861-4.349c.12-.134.192-.289.24-.451.029-.088.029-.179.036-.27 0-.046.017-.088.014-.131a1.143 
-            1.143 0 0 0-.401-.849l-2.661-2.269c.192-.183.355-.4.473-.655l1.724-3.733.552 1.471a.742.742 0 0 0 .159.366.754.754 0 0 0 
-            .303.211c.012.006.025.007.039.01a.738.738 0 0 0 .489.024l.003-.001c.024-.006.049-.001.073-.012a.8.8 0 0 0 .311-.226l3.14-2.665c.334-.281.193-.777-.088-1.111zm-3.972-1.899a2.201 
-            2.201 0 1 0 0-4.402 2.201 2.201 0 0 0 0 4.402z" style="fill:var(--color3, #f6f6f6)"/>              
+            <svg id="favorites-man" viewBox="0 0 32 32" width="32" height="32"><path fill="#7e847f" d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z"
+            style="fill:var(--color2, #7e847f)"/><path fill="#f6f6f6" d="M25.098 11.634a.79.79 0 0 0-1.111-.099l-2.188 1.838-1.006-2.493a.757.757 0 0
+            0-.153-.241 2.148 2.148 0 0 0-1.055-1.078 2.158 2.158 0 0 0-.655-.174c-.049-.025-.093-.059-.148-.076l-3.85-1.073a.792.792 0 0 0-.611.083.77.77
+            0 0 0-.479.448l-1.45 3.728a.791.791 0 0 0 .451 1.022.79.79 0 0 0 1.021-.452l1.225-3.148 1.754.488c-.043.069-.089.134-.124.208l-2.248
+            4.873c-.032.072-.05.144-.073.218l-2.732 4.58-4.572 1.529a1.168 1.168 0 0 0 1.387 1.88l4.679-1.611c.143-.104.247-.24.326-.387.059-.062.126-.112.171-.189l1.629-2.731 2.891
+            2.464-3.094 3.486a1.167 1.167 0 0 0 1.747 1.547l3.861-4.349c.12-.134.192-.289.24-.451.029-.088.029-.179.036-.27 0-.046.017-.088.014-.131a1.143
+            1.143 0 0 0-.401-.849l-2.661-2.269c.192-.183.355-.4.473-.655l1.724-3.733.552 1.471a.742.742 0 0 0 .159.366.754.754 0 0 0
+            .303.211c.012.006.025.007.039.01a.738.738 0 0 0 .489.024l.003-.001c.024-.006.049-.001.073-.012a.8.8 0 0 0 .311-.226l3.14-2.665c.334-.281.193-.777-.088-1.111zm-3.972-1.899a2.201
+            2.201 0 1 0 0-4.402 2.201 2.201 0 0 0 0 4.402z" style="fill:var(--color3, #f6f6f6)"/>
             </svg>
             <p class="favorites-title-name">${b}</p>
           </div>
@@ -51,16 +51,16 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
     <div class="favorites-container-error-description">
       <img
         srcset="
-          ../img/favorites-section/mobile-dumbbell.png             85w,
-          ../img/favorites-section/mobile-dumbbell@2x.png         170w,
-          ../img/favorites-section/tablet-desctop-dumbbell.png    116w,
-          ../img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
+          ./img/favorites-section/mobile-dumbbell.png             85w,
+          ./img/favorites-section/mobile-dumbbell@2x.png         170w,
+          ./img/favorites-section/tablet-desctop-dumbbell.png    116w,
+          ./img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
         "
         sizes="
-      (min-width: 1440px) 116px, 
-      (min-width: 768px) 116px, 
+      (min-width: 1440px) 116px,
+      (min-width: 768px) 116px,
       (max-width: 767px) 85px"
-        src="../img/favorites-section/mobile-dumbbell.png"
+        src="./img/favorites-section/mobile-dumbbell.png"
         alt="dumbbell"
       />
 
@@ -70,4 +70,4 @@ const p=document.querySelector(".favorites-list-item"),M=document.querySelector(
         for easier access in the future.
       </p>
     </div>`}x();
-//# sourceMappingURL=favorites-section-28e66567.js.map
+//# sourceMappingURL=favorites-section-a1b726ae.js.map
