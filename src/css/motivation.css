@@ -2,6 +2,12 @@
 .motivation {
   margin-top: 20px;
 }
+
+.motivation-girl {
+  width: 100%;
+  object-fit: cover;
+}
+
 .motivation-desc-wrapper {
   border-radius: 30px;
   background: #1b1b1b;
