@@ -1,3 +1,8 @@
+import imgUrl1 from '../img/favorites-section/mobile-dumbbell.png';
+import imgUrl2 from '../img/favorites-section/mobile-dumbbell@2x.png';
+import imgUrl3 from '../img/favorites-section/tablet-desctop-dumbbell.png';
+import imgUrl4 from '../img/favorites-section/tablet-desctop-dumbbell@2x.png';
+
 const ulFavoritesList = document.querySelector('.favorites-list-item');
 const containerErrorMasseg = document.querySelector(
   '.favorites-container-error-notification'
@@ -193,10 +198,10 @@ function renderErrorCard() {
     <div class="favorites-container-error-description">
       <img
         srcset="
-          ./img/favorites-section/mobile-dumbbell.png             85w,
-          ./img/favorites-section/mobile-dumbbell@2x.png         170w,
-          ./img/favorites-section/tablet-desctop-dumbbell.png    116w,
-          ./img/favorites-section/tablet-desctop-dumbbell@2x.png 231w
+          ${imgUrl1}             85w,
+          ${imgUrl2}         170w,
+          ${imgUrl3}    116w,
+          ${imgUrl4} 231w
         "
         sizes="
       (min-width: 1440px) 116px,
