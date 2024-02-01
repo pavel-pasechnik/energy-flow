@@ -5,6 +5,14 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <!-- Preload CSS without blocking other resources -->
+    <link
+      rel="preload"
+      as="style"
+      href="./css/header.css"
+      fetchpriority="low"
+      onload="this.rel='stylesheet'"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
