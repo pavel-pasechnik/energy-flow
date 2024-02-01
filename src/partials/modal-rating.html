@@ -1,20 +1,44 @@
-<!-- HTML основної сторінки -->
-<button id="exerciseButton">Вправа</button>
-<button id="ratingButton">Give a rating</button>
-
-<!-- Модальне вікно рейтингу -->
-<div id="ratingModal" class="modal">
-   
-    <form id="ratingForm">
-
-        <label><input type="radio" name="rating" value="1">1</label>
-        <label><input type="radio" name="rating" value="2">2</label>
-        
-        
-      
-        <label>Email: <input type="text" id="emailInput" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required></label>
-
-        <!-- кнопка для відправки форми -->
-        <button type="submit">Send</button>
-    </form>
-</div>
+<div class="modal-raiting-wrapper" data-modal>
+    <div class="modal-raiting">
+      <button type="button" class="modal-raiting-close-btn">
+        <svg class="close-btn-raiting" width="12" height="12">
+          <use href="/img/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <p class="paragrap-modal-raiting">Raiting</p>
+      <div id="ratingModal">
+        <form class="ratingForm">
+          <div class="stars">
+            <i class="fa-solid fa-star" data-value="1"></i>
+            <i class="fa-solid fa-star" data-value="2"></i>
+            <i class="fa-solid fa-star" data-value="3"></i>
+            <i class="fa-solid fa-star" data-value="4"></i>
+            <i class="fa-solid fa-star" data-value="5"></i>
+          </div>
+  
+          <div class="modal-rait-lable">
+            <label>
+              <input
+                type="email"
+                name="emailInput"
+                required
+                placeholder="Email"
+                class="raiting-modal-form-input"
+            /></label>
+          </div>
+          <div class="modal-rait-textatra">
+            <label>
+              <textarea
+                name="message"
+                placeholder=" Your comment "
+                class="rating-form-textarea"
+              ></textarea>
+            </label>
+          </div>
+  
+          <button type="submit" class="raiting-submit-form-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <script type="module" src="/src/js/modal-rating.js"></script> -->
