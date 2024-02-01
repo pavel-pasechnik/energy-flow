@@ -58,6 +58,7 @@
     url('./fonts/DMSans-Italic.woff2') format('woff2'),
     url('./fonts/DMSans-Bold.woff2') format('woff2'),
     url('./fonts/DMSans-Medium.woff2') format('woff2');
+  font-display: swap;
 }
 
 .container {
