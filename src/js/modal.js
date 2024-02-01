@@ -2,7 +2,7 @@ import { getRequest } from './api-energy-flow';
 import svgUrl from '../img/sprite.svg';
 
 // Show the exercise modal with the given exercise ID
-function showExerciseModal(exerciseId) {
+function showExerciseModal(exerciseId, isFavoritesBtn = false) {
   const modal = document.getElementById('exerciseModal');
   const backdrop = document.getElementById('modalBackdrop');
 
@@ -21,11 +21,18 @@ function showExerciseModal(exerciseId) {
     })
     .catch(error => {
       console.error('Error fetching exercise data', error);
+    })
+    .finally(() => {
+      // Pass isFavoritesBtn to closeExerciseModal
+      const closeButton = document.getElementById('closeButton');
+      closeButton.addEventListener('click', () => {
+        closeExerciseModal(isFavoritesBtn);
+      });
     });
 }
 
 // Close the exercise modal
-function closeExerciseModal() {
+function closeExerciseModal(isFavoritesBtn = false) {
   const modal = document.getElementById('exerciseModal');
   const backdrop = document.getElementById('modalBackdrop');
 
@@ -33,7 +40,9 @@ function closeExerciseModal() {
   modal.classList.remove('is-visible');
   backdrop.classList.remove('is-visible');
 
-  location.reload();
+  if (isFavoritesBtn) {
+    location.reload();
+  }
 }
 
 // Fill the modal with data
@@ -147,10 +156,6 @@ function fillModalWithData(data) {
 }
 
 // Format the rating value
-// function formatRating(rating) {
-//   return isNaN(rating) ? 'N/A' : Math.round(rating).toFixed(1);
-// }
-
 function formatRating(rating) {
   return isNaN(rating) ? 'N/A' : rating.toFixed(1);
 }
@@ -162,17 +167,12 @@ function getStarRating(rating) {
   const filledStarSvg = `<svg class="star" width="18" height="18" >
     <use href="${svgUrl}#colorstar"></use>
   </svg>`;
-  // const filledStarSvg = `<svg class="star" width="18" height="18" viewBox="0 0 34 32">
-  //   <path fill="#EEA10C" d="M15.24 1.561c.504-1.552 2.699-1.552 3.204 0l2.558 7.872a1.684 1.684 0 0 0 1.602 1.164h8.277c1.632 0 2.31 2.088.99 3.047l-6.696 4.865a1.685 1.685 0 0 0-.612 1.883l2.558 7.872c.504 1.552-1.272 2.842-2.592 1.883l-6.696-4.865a1.684 1.684 0 0 0-1.98 0l-6.696 4.865c-1.32.959-3.096-.331-2.592-1.883l2.558-7.872a1.685 1.685 0 0 0-.612-1.883l-6.696-4.865c-1.32-.959-.642-3.047.99-3.047h8.277c.73 0 1.376-.47 1.602-1.164l2.558-7.872z" style="fill:var(--color1, #EEA10C)"/>
-  // </svg>`;
+  
   const emptyStarSvg = `
     <svg class="star empty-star" width="18" height="18" >
       <use href="${svgUrl}#star"></use>
     </svg>`;
-  // const emptyStarSvg = `
-  // <svg class="star empty-star" width="18" height="18" viewBox="0 0 34 32">
-  //   <path d="M15.24 1.561c.504-1.552 2.699-1.552 3.204 0l2.558 7.872a1.684 1.684 0 0 0 1.602 1.164h8.277c1.632 0 2.31 2.088.99 3.047l-6.696 4.865a1.685 1.685 0 0 0-.612 1.883l2.558 7.872c.504 1.552-1.272 2.842-2.592 1.883l-6.696-4.865a1.684 1.684 0 0 0-1.98 0l-6.696 4.865c-1.32.959-3.096-.331-2.592-1.883l2.558-7.872a1.685 1.685 0 0 0-.612-1.883l-6.696-4.865c-1.32-.959-.642-3.047.99-3.047h8.277c.73 0 1.376-.47 1.602-1.164l2.558-7.872z" />
-  // </svg>`;
+  
 
   let stars = '';
 
@@ -225,11 +225,9 @@ function setRemoveFromFavorites(button) {
   span.textContent = 'Remove from';
   const use = button.querySelector('use');
   use.setAttribute('href', `${svgUrl}#heart`);
-  // use.setAttribute(
-  //   'href',
-  //   '<path fill="none" stroke="#f6f6f6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M27.787 6.147a7.345 7.345 0 0 0-5.187-2.15 7.33 7.33 0 0 0-5.187 2.15L16 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374L16 28.308l11.787-11.787a7.345 7.345 0 0 0 2.15-5.187 7.33 7.33 0 0 0-2.15-5.187z" style="stroke:var(--color3, #f6f6f6)"/>'
-  // );
+
 }
+
 
 // Set the "Add to Favorites" state for the button
 function setAddToFavorites(button) {
@@ -237,25 +235,21 @@ function setAddToFavorites(button) {
   span.textContent = 'Add to Favorites';
   const use = button.querySelector('use');
   use.setAttribute('href', `${svgUrl}#heart`);
-  // use.setAttribute(
-  //   'href',
-  //   '<path fill="none" stroke="#f6f6f6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M27.787 6.147a7.345 7.345 0 0 0-5.187-2.15 7.33 7.33 0 0 0-5.187 2.15L16 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374L16 28.308l11.787-11.787a7.345 7.345 0 0 0 2.15-5.187 7.33 7.33 0 0 0-2.15-5.187z" style="stroke:var(--color3, #f6f6f6)"/>'
-  // );
 }
 
-// Added event listener for both the start and favorites buttons in the exercise gallery
+
 document.addEventListener('click', event => {
   const clickedElement = event.target;
 
-  // Check if clicked on a button with class exercises-gallery-btn-start or favorites-btn-arrow
-  if (
-    clickedElement.classList.contains('exercises-gallery-btn-start') ||
-    clickedElement.classList.contains('favorites-btn-arrow')
-  ) {
+  // Check if clicked on a button with class exercises-gallery-btn-start
+  if (clickedElement.classList.contains('exercises-gallery-btn-start')) {
     const exerciseId = clickedElement.dataset.action;
-    showExerciseModal(
-      exerciseId,
-      clickedElement.classList.contains('exercises-gallery-btn-start')
-    );
+    showExerciseModal(exerciseId, false); 
+  }
+
+  // Check if clicked on a button with class favorites-btn-arrow
+  if (clickedElement.classList.contains('favorites-btn-arrow')) {
+    const exerciseId = clickedElement.dataset.action;
+    showExerciseModal(exerciseId, true); 
   }
 });
