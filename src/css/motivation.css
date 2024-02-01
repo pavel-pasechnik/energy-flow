@@ -92,6 +92,6 @@
     padding: 64px;
   }
   .motivation-girl {
-    max-width: none;
+    min-width: 704px;
   }
 }
